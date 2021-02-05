@@ -6,7 +6,10 @@ import java.io.IOException;
 import javax.swing.JPanel;
 
 import engine.map.Map;
+import engine.mobile.Checkout;
 import engine.mobile.Cook;
+import engine.mobile.Counter;
+import engine.mobile.Customer;
 import engine.mobile.Oven;
 import engine.mobile.Storage;
 import engine.process.RestaurantManager;
@@ -62,6 +65,29 @@ public class GameDisplay extends JPanel {
 			}
 		}
 
+		for(Customer customer : manager.getCustomers()) {
+			try {
+				paintStrategy.paint(customer, g);
+			} catch (IOException e ) {
+				e.printStackTrace();
+			}
+		}
+		
+		for(Checkout checkout : manager.getCheckouts()) {
+			try {
+				paintStrategy.paint(checkout, g);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		for(Counter counter : manager.getCounters()) {
+			try {
+				paintStrategy.paint(counter, g);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
 	}
 
 }

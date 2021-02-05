@@ -6,5 +6,7 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="C:/Users/HP/Documents/Cours_L3I_2020_2021/Projet_d&apos;intégration/libs/log4j.jar"/>
+	<classpathentry kind="lib" path="C:/Users/HP/Documents/Cours_L3I_2020_2021/Projet_d&apos;intégration/libs/log4j-1.2.15.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

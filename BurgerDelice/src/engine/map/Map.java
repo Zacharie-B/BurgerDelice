@@ -15,13 +15,13 @@ public class Map {
 
 		for (int lineIndex = 0; lineIndex < lineCount; lineIndex++) {
 			for (int columnIndex = 0; columnIndex < columnCount; columnIndex++) {
-				blocks[lineIndex][columnIndex] = new Block(lineIndex, columnIndex);
+				this.blocks[lineIndex][columnIndex] = new Block(lineIndex, columnIndex);
 			}
 		}
 	}
 
 	public Block[][] getBlocks() {
-		return blocks;
+		return this.blocks;
 	}
 
 	public int getLineCount() {

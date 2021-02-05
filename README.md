@@ -1,2 +1,0 @@
-# BurgerDelice
-Projet GPI 

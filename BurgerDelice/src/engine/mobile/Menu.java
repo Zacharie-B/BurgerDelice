@@ -1,24 +1,29 @@
 package engine.mobile;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
-public class Menu extends Meal{
+public class Menu {
 	
-	private List<Meal> meals = new ArrayList<Meal>();
+	private int numberOfMenu;
+	private HashMap<String, Integer> ingredients = new HashMap<String, Integer>();
 	
+	public Menu(int numberOfMenu, HashMap<String, Integer> ingredients) {
+		super();
+		this.numberOfMenu = numberOfMenu;
+		this.ingredients = ingredients;
+	}
 	
-	public Menu(HashMap<String, Integer> ingredients, List<Meal> meals) {
-		super(ingredients);
-		this.meals = meals;
+	public int getNumberOfMenu() {
+		return numberOfMenu;
+	}
+	public void setNumberOfMenu(int numberOfMenu) {
+		this.numberOfMenu = numberOfMenu;
+	}
+	public HashMap<String, Integer> getIngredients() {
+		return ingredients;
+	}
+	public void setIngredients(HashMap<String, Integer> ingredients) {
+		this.ingredients = ingredients;
 	}
 
-	public List<Meal> getMeals() {
-		return meals;
-	}
-
-	public void setMeals(List<Meal> meals) {
-		this.meals = meals;
-	}
 }

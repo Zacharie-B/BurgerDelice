@@ -2,7 +2,7 @@ package engine.mobile;
 
 import engine.map.Block;
 
-public abstract class Element{
+public abstract class Element {
 	private Block position;
 
 	public Element(Block position) {

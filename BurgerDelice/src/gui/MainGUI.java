@@ -24,6 +24,7 @@ public class MainGUI extends JFrame implements Runnable {
 	public static RestaurantManager manager;
 	private GameDisplay dashboard;
 	private ManagementDisplay managementDashboard;
+	private StorageDisplay storageDisplay;
 	private ManageCustomer manageCustomer = new ManageCustomer();
 	
 	private JButton stopButton = new JButton("Stop");
@@ -33,6 +34,7 @@ public class MainGUI extends JFrame implements Runnable {
 	public MainGUI(String title) {
 		super(title);
 		init();
+		
 	}
 
 	private void init() {
@@ -43,8 +45,8 @@ public class MainGUI extends JFrame implements Runnable {
 		map = RestaurantBuilder.buildMap();
 		manager = RestaurantBuilder.buildInitElement(map);
 		dashboard = new GameDisplay(map, manager);
-		managementDashboard = new ManagementDisplay(manager);
-		
+		storageDisplay = new StorageDisplay();
+		managementDashboard = new ManagementDisplay(manager, storageDisplay);
 		
 		dashboard.setPreferredSize(preferredSize);
 		managementDashboard.setPreferredSize(preferredSize);
@@ -54,7 +56,8 @@ public class MainGUI extends JFrame implements Runnable {
 		stopButton.addActionListener(new StartStopAction());
 		contentPane.add(stopButton, BorderLayout.SOUTH);
 		
-		
+		this.addMouseListener(new ClickListener(storageDisplay));
+				
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		pack();
 		setVisible(true);

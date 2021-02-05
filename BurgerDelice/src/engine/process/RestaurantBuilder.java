@@ -11,7 +11,7 @@ import engine.mobile.Checkout;
 import engine.mobile.Cook;
 import engine.mobile.Counter;
 import engine.mobile.Customer;
-import engine.mobile.Meal;
+import engine.mobile.Menu;
 import engine.mobile.Oven;
 import engine.mobile.Storage;
 
@@ -51,27 +51,27 @@ public class RestaurantBuilder {
 		List<Checkout> checkouts = new ArrayList<Checkout>();
 		checkouts.add(new Checkout(block,1000,0));
 		
-		List<Meal> meals = new ArrayList<Meal>();
+		List<Menu> menus = new ArrayList<Menu>();
 		HashMap<String, Integer> ingredients = new HashMap<String, Integer>();
 		ingredients.put("Steak", 1);
 		ingredients.put("Pain", 2);
-		Meal meal = new Meal(ingredients);
-		meals.add(meal);
+		Menu menu = new Menu(1, ingredients);
+		menus.add(menu);
 		
 		ingredients = new HashMap<String, Integer>();
 		ingredients.put("Steak", 1);
 		ingredients.put("Pain", 2);
 		ingredients.put("Cheddar", 2);
-		meal = new Meal(ingredients);
-		meals.add(meal);
+		menu = new Menu(2, ingredients);
+		menus.add(menu);
 		
 		ingredients = new HashMap<String, Integer>();
 		ingredients.put("Steak", 2);
 		ingredients.put("Pain", 3);
 		ingredients.put("Cheddar", 2);
 		ingredients.put("Oignon", 2);
-		meal = new Meal(ingredients);
-		meals.add(meal);
+		menu = new Menu(2, ingredients);
+		menus.add(menu);
 		
 		List<Counter> counters = new ArrayList<Counter>();
 		
@@ -87,7 +87,7 @@ public class RestaurantBuilder {
 		furnitureManager.setStorages(storages);
 		furnitureManager.setOvens(ovens);
 		furnitureManager.setCounters(counters);
-		furnitureManager.setMenus(meals);
+		furnitureManager.setMenus(menus);
 	}
 	
 	private static void initializeCharacters(RestaurantManager characterManager) {
@@ -97,11 +97,19 @@ public class RestaurantBuilder {
 		List<Block> takenBlocks = new ArrayList<Block>();
 
 		Block blockCustomer = new Block(GameConfiguration.LINE_ENTRY, GameConfiguration.COLUMN_ENTRY );
+		Block blockCustomer2 = new Block(GameConfiguration.LINE_ENTRY - 1, GameConfiguration.COLUMN_ENTRY );
+		Block blockCustomer3 = new Block(GameConfiguration.LINE_ENTRY - 2, GameConfiguration.COLUMN_ENTRY );
+
 
 		Block blockCook = new Block(GameConfiguration.LINE_COUNT - 10, GameConfiguration.COLUMN_COUNT - 2);
 
 		customers.add(new Customer(blockCustomer, "Rebecca", 1, false));
+		customers.add(new Customer(blockCustomer2, "Jean", 1, false));
+		customers.add(new Customer(blockCustomer3, "Louis", 3, false));
+
 		takenBlocks.add(blockCustomer);
+		takenBlocks.add(blockCustomer2);
+		takenBlocks.add(blockCustomer3);
 		
 		cooks.add(new Cook(blockCook,"Philippe", 1000,4));
 		

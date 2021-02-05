@@ -17,7 +17,7 @@ import engine.process.RestaurantManager;
 public class GameDisplay extends JPanel {
 
 	private static final long serialVersionUID = 1L;
-
+	
 	private Map map;
 	private RestaurantManager manager;
 	private PaintStrategy paintStrategy = new PaintStrategy();
@@ -25,6 +25,7 @@ public class GameDisplay extends JPanel {
 	public GameDisplay(Map map, RestaurantManager manager) {
 		this.map = map;
 		this.manager = manager;
+
 	}
 
 	@Override

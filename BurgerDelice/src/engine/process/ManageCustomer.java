@@ -25,6 +25,13 @@ public class ManageCustomer extends MoveElement{
 					blocked = true;
 				}
 			}
+			
+			for (Block takenBlock : MainGUI.manager.getTakenBlocks()) {
+				if (customer.getPosition().getLine() == takenBlock.getLine() && 
+						customer.getPosition().getColumn() - 1 == takenBlock.getColumn()) {
+					blocked = true;
+				}
+			}
 				
 			if (blocked == false && customer.isWaitingOrder() == false) {
 				Block customerBlock = customer.getPosition();
@@ -41,11 +48,13 @@ public class ManageCustomer extends MoveElement{
 			}
 				
 			if(blocked == false && customer.isWaitingOrder() == true) {
-				Block customerBlock = customer.getPosition();
-				MainGUI.manager.remove(customerBlock);
-				logger.info(customerBlock);
-				moveLeft(customerBlock);
-				MainGUI.manager.add(customerBlock);
+				if (!(customer.getPosition().getColumn() == GameConfiguration.COLUMN_ORDER - 5)) {
+					Block customerBlock = customer.getPosition();
+					MainGUI.manager.remove(customerBlock);
+					logger.info(customerBlock);
+					moveLeft(customerBlock);
+					MainGUI.manager.add(customerBlock);
+				}
 			}
 		}	
 	}

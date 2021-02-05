@@ -14,27 +14,12 @@ import engine.mobile.Customer;
 import engine.mobile.Oven;
 import engine.mobile.Storage;
 
-/**
- * 
- *
- */
 public class PaintStrategy {
 	public void paint(Map map, Graphics graphics) throws IOException {
 		int blockSize = GameConfiguration.BLOCK_SIZE;
 		Block[][] blocks = map.getBlocks();
 
-		for (int lineIndex = 0; lineIndex < map.getLineCount(); lineIndex++) {
-			for (int columnIndex = 0; columnIndex < map.getColumnCount(); columnIndex++) {
-				if(lineIndex == GameConfiguration.LINE_COUNT - 1 && columnIndex == GameConfiguration.COLUMN_COUNT - 2) {
-					Block block = blocks[lineIndex][columnIndex];
-					graphics.drawRect(block.getColumn() * blockSize, block.getLine() * blockSize, blockSize, blockSize);
-				}
-				else {
-					Block block = blocks[lineIndex][columnIndex];
-					graphics.drawRect(block.getColumn() * blockSize, block.getLine() * blockSize, blockSize, blockSize);
-				}
-			}
-		}
+	
 	}
 
 	public void paint(Cook cook, Graphics graphics) throws IOException {

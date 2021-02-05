@@ -11,7 +11,7 @@ import engine.mobile.Checkout;
 import engine.mobile.Cook;
 import engine.mobile.Counter;
 import engine.mobile.Customer;
-import engine.mobile.Menu;
+import engine.mobile.Meal;
 import engine.mobile.Oven;
 import engine.mobile.Storage;
 
@@ -27,7 +27,7 @@ public class RestaurantManager {
 	private List<Counter> counters = new ArrayList<Counter>();
 	
 	private List<Block> takenBlocks = new ArrayList<Block>();
-	private List<Menu> menus = new ArrayList<Menu>();
+	private List<Meal> meals = new ArrayList<Meal>();
 	
 	private HashMap<String, HashMap<String, Integer>> orders = new HashMap<String, HashMap<String, Integer>>();
 
@@ -63,8 +63,8 @@ public class RestaurantManager {
 		orders.put(name, ingredients);
 	}
 	
-	public void add(Menu menu) {
-		menus.add(menu);
+	public void add(Meal meal) {
+		meals.add(meal);
 	}
 	
 	public void remove(Block block) {
@@ -151,12 +151,12 @@ public class RestaurantManager {
 		this.takenBlocks = takenBlocks;
 	}
 
-	public List<Menu> getMenus() {
-		return menus;
+	public List<Meal> getMenus() {
+		return meals;
 	}
 
-	public void setMenus(List<Menu> menus) {
-		this.menus = menus;
+	public void setMenus(List<Meal> meals) {
+		this.meals = meals;
 	}
 	
 	public String toString(String key) {

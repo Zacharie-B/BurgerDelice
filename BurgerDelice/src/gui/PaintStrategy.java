@@ -14,6 +14,10 @@ import engine.mobile.Customer;
 import engine.mobile.Oven;
 import engine.mobile.Storage;
 
+/**
+ * 
+ *
+ */
 public class PaintStrategy {
 	public void paint(Map map, Graphics graphics) throws IOException {
 		int blockSize = GameConfiguration.BLOCK_SIZE;

@@ -11,7 +11,7 @@ import engine.mobile.Checkout;
 import engine.mobile.Cook;
 import engine.mobile.Counter;
 import engine.mobile.Customer;
-import engine.mobile.Menu;
+import engine.mobile.Meal;
 import engine.mobile.Oven;
 import engine.mobile.Storage;
 
@@ -51,27 +51,27 @@ public class RestaurantBuilder {
 		List<Checkout> checkouts = new ArrayList<Checkout>();
 		checkouts.add(new Checkout(block,1000,0));
 		
-		List<Menu> menus = new ArrayList<Menu>();
+		List<Meal> meals = new ArrayList<Meal>();
 		HashMap<String, Integer> ingredients = new HashMap<String, Integer>();
 		ingredients.put("Steak", 1);
 		ingredients.put("Pain", 2);
-		Menu menu = new Menu(1, ingredients);
-		menus.add(menu);
+		Meal meal = new Meal(ingredients);
+		meals.add(meal);
 		
 		ingredients = new HashMap<String, Integer>();
 		ingredients.put("Steak", 1);
 		ingredients.put("Pain", 2);
 		ingredients.put("Cheddar", 2);
-		menu = new Menu(2, ingredients);
-		menus.add(menu);
+		meal = new Meal(ingredients);
+		meals.add(meal);
 		
 		ingredients = new HashMap<String, Integer>();
 		ingredients.put("Steak", 2);
 		ingredients.put("Pain", 3);
 		ingredients.put("Cheddar", 2);
 		ingredients.put("Oignon", 2);
-		menu = new Menu(2, ingredients);
-		menus.add(menu);
+		meal = new Meal(ingredients);
+		meals.add(meal);
 		
 		List<Counter> counters = new ArrayList<Counter>();
 		
@@ -87,7 +87,7 @@ public class RestaurantBuilder {
 		furnitureManager.setStorages(storages);
 		furnitureManager.setOvens(ovens);
 		furnitureManager.setCounters(counters);
-		furnitureManager.setMenus(menus);
+		furnitureManager.setMenus(meals);
 	}
 	
 	private static void initializeCharacters(RestaurantManager characterManager) {

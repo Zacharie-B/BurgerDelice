@@ -77,15 +77,13 @@ public class MainGUI extends JFrame implements Runnable {
 			if(!status) {
 				dashboard.repaint();
 				managementDashboard.appendOrders();
-				manageCustomer();
+				manageCustomer.movementCustomer();
 			}
 				
 		}
 	}
 	
-	public void manageCustomer() {
-		manageCustomer.moveCustomerBeforeOrder();
-	}
+	
 	
 	private class StartStopAction implements ActionListener {
 		@Override

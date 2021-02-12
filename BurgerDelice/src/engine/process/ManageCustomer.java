@@ -8,7 +8,7 @@ import engine.mobile.Customer;
 import gui.MainGUI;
 import log.LoggerUtility;
 
-public class ManageCustomer extends MoveElement {
+public class ManageCustomer extends MoveCharacters {
 	private Logger logger = LoggerUtility.getLogger(ManageCustomer.class, "text");
 
 	public ManageCustomer() {
@@ -16,63 +16,50 @@ public class ManageCustomer extends MoveElement {
 	}
 
 	/**
-	 * This allow to manage the move of customer, we collisions are avoided.
+	 * Do the movement of all customers in the restaurant.
 	 */
-	public void moveCustomerBeforeOrder() {
-
-		for (Customer customer : MainGUI.manager.getCustomers()) {
-			Boolean blocked = false;
-
-			for (Block takenBlock : MainGUI.manager.getTakenBlocks()) {
-				// If the customer want to go at top.
-				if (customer.getPosition().getLine() - 1 == takenBlock.getLine()
-						&& customer.getPosition().getColumn() == takenBlock.getColumn()) {
-					blocked = true;
-				}
-				// If the customer wants to go at left.
-				if (customer.getPosition().getLine() == takenBlock.getLine()
-						&& customer.getPosition().getColumn() - 1 == takenBlock.getColumn()) {
-					blocked = true;
-				}
-				/*
-				 * if(customer.getPosition().getLine() == takenBlock.getLine() &&
-				 * customer.getPosition().getColumn() + 1 == takenBlock.getColumn()) { blocked =
-				 * true; } if(customer.getPosition().getLine() + 1 == takenBlock.getLine() &&
-				 * customer.getPosition().getColumn() == takenBlock.getColumn()) { blocked =
-				 * true; }
-				 */
+	public void movementCustomer() {
+		for(Customer customer : MainGUI.manager.getCustomers()) {
+			if(customer.isWaitingOrder() == false) {
+				moveCustomerBeforeOrder(customer);
 			}
-
-			// Allows to move the customer at top if there nothing which block.
-			if (blocked == false && customer.isWaitingOrder() == false) {
-				Block customerBlock = customer.getPosition();
-				MainGUI.manager.remove(customerBlock);
-				logger.info(customerBlock);
-				moveTop(customerBlock);
-				MainGUI.manager.add(customerBlock);
-			}
-
-			// Choose the menu 
-			if (customer.getPosition().getLine() - GameConfiguration.LINE_ORDER == 0
-					&& customer.getPosition().getColumn() == GameConfiguration.COLUMN_ORDER
-					&& customer.isWaitingOrder() == false) {
-				customer.setOrder(randomNumber(customer));
-				customer.setWaitingOrder(true);
-			}
-
-			if (blocked == false && customer.isWaitingOrder() == true) {
-				if (!(customer.getPosition().getColumn() == GameConfiguration.COLUMN_ORDER - 5)) {
-					Block customerBlock = customer.getPosition();
-					MainGUI.manager.remove(customerBlock);
-					logger.info(customerBlock);
-					moveLeft(customerBlock);
-					MainGUI.manager.add(customerBlock);
-				}
+			else {
+				moveCustomerToTHeExit(customer);
 			}
 		}
+	}
+	
+	/**
+	 * This allow to manage the move of customer, we collisions are avoided.
+	 */
+	public void moveCustomerBeforeOrder(Customer customer) {
+			Block customerBlock = customer.getPosition();
+			logger.info(customerBlock);
+			moveTopCollisionFree(customerBlock, MainGUI.manager.getTakenBlocks());
 
+		// Choose the menu randomly.
+		if (customer.getPosition().getLine() - GameConfiguration.LINE_ORDER == 0
+				&& customer.getPosition().getColumn() == GameConfiguration.COLUMN_ORDER_1
+				&& customer.isWaitingOrder() == false) {
+			customer.setOrder(randomNumber(customer));
+			customer.setWaitingOrder(true);
+		}
+		// 
+		if (customer.isWaitingOrder() == true) {
+			if (!(customer.getPosition().getColumn() == GameConfiguration.COLUMN_ORDER_1 - 5)) {
+				MainGUI.manager.remove(customerBlock);
+				logger.info(customerBlock);
+				moveLeft(customerBlock);
+				MainGUI.manager.add(customerBlock);
+			}
+		}
 	}
 
+	private void moveCustomerToTHeExit(Customer customer) {
+		// TODO Auto-generated method stub
+		moveLeftCollisionFree(customer.getPosition(), MainGUI.manager.getTakenBlocks());
+	}
+	
 	public int randomNumber(Customer customer) {
 		int randomNumber = (int) (Math.random() * 3);
 		MainGUI.manager.add(customer.getName(), MainGUI.manager.getMenus().get(randomNumber).getIngredients());

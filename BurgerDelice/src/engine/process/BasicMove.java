@@ -7,7 +7,7 @@ import engine.map.Block;
  * there are nobody on this future case.
  *
  */
-public class MoveElement {
+public class BasicMove {
 	
 	public Block moveTop(Block block) {
 		int line = block.getLine();

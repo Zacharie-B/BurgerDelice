@@ -19,6 +19,11 @@ public class ManagementDisplay extends JPanel {
 	private JTextPane orderDisplay = new JTextPane();
 	private StorageDisplay storageDisplay;
 	
+	/**
+	 * Manage the organization on the dashboard, with the restaurant and the storage in the restaurant.
+	 * @param manager
+	 * @param storageDisplay
+	 */
 	public ManagementDisplay (RestaurantManager manager, StorageDisplay storageDisplay) {
 		this.manager = manager;
 		this.storageDisplay = storageDisplay;
@@ -26,6 +31,9 @@ public class ManagementDisplay extends JPanel {
 		initStyle();
 	}
 	
+	/**
+	 * Initialize the Border Layout and display this.
+	 */
 	protected void initStyle() {
 		setLayout(new BorderLayout());
 		add(orderDisplay, BorderLayout.NORTH);
@@ -34,6 +42,9 @@ public class ManagementDisplay extends JPanel {
 		setVisible(true);
 	}
 	
+	/**
+	 * Add the orders to HashMap in order to allow the choice for the customer.
+	 */
 	protected void appendOrders() {
 		orderDisplay.setText(null);
 		String message = "";

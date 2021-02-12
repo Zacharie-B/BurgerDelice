@@ -3,8 +3,8 @@ package engine.process;
 import engine.map.Block;
 
 /**
- * This class make the base of the move of all elements.
- * @author HP
+ * This class make the base of the move of all elements, we do the movement if
+ * there are nobody on this future case.
  *
  */
 public class MoveElement {

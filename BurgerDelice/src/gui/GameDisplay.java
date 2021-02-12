@@ -74,14 +74,6 @@ public class GameDisplay extends JPanel {
 			}
 		}
 		
-		for(Checkout checkout : manager.getCheckouts()) {
-			try {
-				paintStrategy.paint(checkout, g);
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		}
-		
 		for(Counter counter : manager.getCounters()) {
 			try {
 				paintStrategy.paint(counter, g);
@@ -89,6 +81,16 @@ public class GameDisplay extends JPanel {
 				e.printStackTrace();
 			}
 		}
+		
+		for(Checkout checkout : manager.getCheckouts()) {
+			try {
+				System.out.println(checkout.getPosition().toString());
+				paintStrategy.paint(checkout, g);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+		
 	}
 
 }

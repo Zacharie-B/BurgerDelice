@@ -14,7 +14,7 @@ public class GameConfiguration {
 	public static final int LINE_ENTRY = LINE_COUNT - 2;
 	public static final int COLUMN_ENTRY = COLUMN_COUNT - 2; // This is also the column of order.
 	
-	public static final int LINE_ORDER = LINE_ENTRY - 6;
+	public static final int LINE_ORDER = LINE_ENTRY - 5;
 	public static final int COLUMN_ORDER = COLUMN_ENTRY;
 	
 	public static final String INGREDIENT[] = {"Steak","Pain","Cheddar","Tomate","Salade","Oignon"};

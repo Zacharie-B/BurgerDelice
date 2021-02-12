@@ -12,7 +12,7 @@ public class ManageCustomer extends MoveElement{
 	private Logger logger = LoggerUtility.getLogger(ManageCustomer.class, "text");
 
 	public ManageCustomer() {
-		
+		 
 	}
 	
 	public void moveCustomerBeforeOrder() {

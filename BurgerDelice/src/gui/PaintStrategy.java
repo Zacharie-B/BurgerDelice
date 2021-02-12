@@ -19,7 +19,6 @@ public class PaintStrategy {
 		int blockSize = GameConfiguration.BLOCK_SIZE;
 		Block[][] blocks = map.getBlocks();
 
-	
 	}
 
 	public void paint(Cook cook, Graphics graphics) throws IOException {

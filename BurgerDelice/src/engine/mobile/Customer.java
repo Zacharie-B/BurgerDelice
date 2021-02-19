@@ -4,19 +4,24 @@ import engine.map.Block;
 
 public class Customer extends Element{
 
-	private String name;
+	private int id;
 	private int order;
 	private boolean waitingOrder;
+	private int timeWaiting = 0;
 	
-	public Customer(Block position, String name, int order, boolean waitingOrder) {
+	public Customer(Block position, int id, boolean waitingOrder) {
 		super(position);
-		this.name = name;
-		this.order = order;
+		this.id = id;
 		this.waitingOrder = waitingOrder;
+		this.order = randomNumber();
+	}
+	
+	public void incrementWaitingTime() {
+		timeWaiting++;
 	}
 
-	public String getName() {
-		return name;
+	public int getId() {
+		return id;
 	}
 
 	public int getOrder() {
@@ -33,6 +38,19 @@ public class Customer extends Element{
 
 	public void setWaitingOrder(boolean waitingOrder) {
 		this.waitingOrder = waitingOrder;
+	}
+	
+	public int getTimeWaiting() {
+		return timeWaiting;
+	}
+
+	public void setTimeWaiting(int timeWaiting) {
+		this.timeWaiting = timeWaiting;
+	}
+
+	public int randomNumber() {
+		int randomNumber = (int) (Math.random() * 3);
+		return randomNumber;
 	}
 	
 }

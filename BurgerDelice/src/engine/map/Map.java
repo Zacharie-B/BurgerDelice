@@ -1,7 +1,7 @@
 package engine.map;
 
 public class Map {
-	
+
 	private Block[][] blocks;
 
 	private int lineCount;

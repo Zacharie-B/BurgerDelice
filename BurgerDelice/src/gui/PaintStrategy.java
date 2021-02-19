@@ -6,7 +6,6 @@ import java.io.IOException;
 
 import config.GameConfiguration;
 import engine.map.Block;
-import engine.map.Map;
 import engine.mobile.Checkout;
 import engine.mobile.Cook;
 import engine.mobile.Counter;
@@ -15,11 +14,6 @@ import engine.mobile.Oven;
 import engine.mobile.Storage;
 
 public class PaintStrategy {
-	public void paint(Map map, Graphics graphics) throws IOException {
-		int blockSize = GameConfiguration.BLOCK_SIZE;
-		Block[][] blocks = map.getBlocks();
-
-	}
 
 	public void paint(Cook cook, Graphics graphics) throws IOException {
 		Block position = cook.getPosition();

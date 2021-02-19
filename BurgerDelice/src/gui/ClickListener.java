@@ -30,6 +30,22 @@ public class ClickListener extends MouseAdapter {
 						storageDisplay.breadQuantityLabel.setText(""+secondStorage.getCurrentCapacity());
 						storageDisplay.breadQuantityMaxLabel.setText(""+secondStorage.getCapacityMax());
 					}
+					if(secondStorage.getName().equals("Tomate")) {
+						storageDisplay.tomatoQuantityLabel.setText(""+secondStorage.getCurrentCapacity());
+						storageDisplay.tomatoQuantityMaxLabel.setText(""+secondStorage.getCapacityMax());
+					}
+					if(secondStorage.getName().equals("Fromage")) {
+						storageDisplay.cheeseQuantityLabel.setText(""+secondStorage.getCurrentCapacity());
+						storageDisplay.cheeseQuantityMaxLabel.setText(""+secondStorage.getCapacityMax());
+					}
+					if(secondStorage.getName().equals("Oignon")) {
+						storageDisplay.onionQuantityLabel.setText(""+secondStorage.getCurrentCapacity());
+						storageDisplay.onionQuantityMaxLabel.setText(""+secondStorage.getCapacityMax());
+					}
+					if(secondStorage.getName().equals("Salade")) {
+						storageDisplay.saladQuantityLabel.setText(""+secondStorage.getCurrentCapacity());
+						storageDisplay.saladQuantityMaxLabel.setText(""+secondStorage.getCapacityMax());
+					}
 				}
 			}
 		}

@@ -22,9 +22,11 @@ public class MainGUI extends JFrame implements Runnable {
 	
 	private final static Dimension preferredSize = new Dimension(GameConfiguration.WINDOW_WIDTH, GameConfiguration.WINDOW_HEIGHT);
 	public static RestaurantManager manager;
+	
 	private GameDisplay dashboard;
 	private ManagementDisplay managementDashboard;
 	private StorageDisplay storageDisplay;
+	private MenuDisplay menuDisplay;
 	private ManageCustomer manageCustomer = new ManageCustomer();
 	
 	private JButton stopButton = new JButton("Stop");
@@ -44,9 +46,10 @@ public class MainGUI extends JFrame implements Runnable {
 
 		map = RestaurantBuilder.buildMap();
 		manager = RestaurantBuilder.buildInitElement(map);
-		dashboard = new GameDisplay(map, manager);
+		dashboard = new GameDisplay(manager);
 		storageDisplay = new StorageDisplay();
-		managementDashboard = new ManagementDisplay(manager, storageDisplay);
+		menuDisplay = new MenuDisplay(manager);
+		managementDashboard = new ManagementDisplay(manager, storageDisplay, menuDisplay);
 		
 		dashboard.setPreferredSize(preferredSize);
 		managementDashboard.setPreferredSize(preferredSize);
@@ -78,8 +81,9 @@ public class MainGUI extends JFrame implements Runnable {
 				dashboard.repaint();
 				managementDashboard.appendOrders();
 				manageCustomer.movementCustomer();
-			}
-				
+				manager.generateCustomer();
+
+			}				
 		}
 	}
 	

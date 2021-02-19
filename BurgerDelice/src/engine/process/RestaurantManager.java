@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map.Entry;
 
+import config.GameConfiguration;
 import engine.map.Block;
 import engine.map.Map;
 import engine.mobile.Checkout;
@@ -17,36 +18,38 @@ import engine.mobile.Storage;
 
 public class RestaurantManager {
 	private Map map;
-	
+
 	private List<Cook> cooks = new ArrayList<Cook>();
-	
+
 	private List<Storage> storages = new ArrayList<Storage>();
 	private List<Checkout> checkouts = new ArrayList<Checkout>();
-	private List<Oven> ovens = new ArrayList <Oven>();
+	private List<Oven> ovens = new ArrayList<Oven>();
 	private List<Customer> customers = new ArrayList<Customer>();
 	private List<Counter> counters = new ArrayList<Counter>();
-	
+
 	private List<Block> takenBlocks = new ArrayList<Block>();
 	private List<Menu> menus = new ArrayList<Menu>();
-	
-	private HashMap<String, HashMap<String, Integer>> orders = new HashMap<String, HashMap<String, Integer>>();
+
+	private int id = 0;
+
+	private HashMap<Integer, HashMap<String, Integer>> orders = new HashMap<Integer, HashMap<String, Integer>>();
 
 	public RestaurantManager(Map map) {
 		this.map = map;
 	}
-	
+
 	public void add(Cook cook) {
 		cooks.add(cook);
 	}
-	
+
 	public void add(Storage storage) {
 		storages.add(storage);
 	}
-	
+
 	public void add(Checkout checkout) {
 		checkouts.add(checkout);
 	}
-	
+
 	public void add(Oven oven) {
 		ovens.add(oven);
 	}
@@ -54,27 +57,27 @@ public class RestaurantManager {
 	public void add(Customer customer) {
 		customers.add(customer);
 	}
-	
+
 	public void add(Block block) {
 		takenBlocks.add(block);
 	}
-	
-	public void add(String name, HashMap<String, Integer> ingredients) {
-		orders.put(name, ingredients);
+
+	public void add(Integer id, HashMap<String, Integer> ingredients) {
+		orders.put(id, ingredients);
 	}
-	
+
 	public void add(Menu menu) {
 		menus.add(menu);
 	}
-	
+
 	public void remove(Block block) {
 		takenBlocks.remove(block);
 	}
-	
-	public void remove(String name) {
-		orders.remove(name);
+
+	public void remove(Integer id) {
+		orders.remove(id);
 	}
-	
+
 	public Map getMap() {
 		return map;
 	}
@@ -90,7 +93,7 @@ public class RestaurantManager {
 	public List<Storage> getStorages() {
 		return storages;
 	}
-	
+
 	public void setStorages(List<Storage> storages) {
 		this.storages = storages;
 	}
@@ -106,7 +109,7 @@ public class RestaurantManager {
 	public List<Oven> getOvens() {
 		return ovens;
 	}
-	
+
 	public void setOvens(List<Oven> ovens) {
 		this.ovens = ovens;
 	}
@@ -138,12 +141,12 @@ public class RestaurantManager {
 	public void setTakenBlock(List<Block> takenBlock) {
 		this.takenBlocks = takenBlock;
 	}
-	
-	public HashMap<String, HashMap<String, Integer>> getOrders() {
+
+	public HashMap<Integer, HashMap<String, Integer>> getOrders() {
 		return orders;
 	}
 
-	public void setOrders(HashMap<String, HashMap<String, Integer>> orders) {
+	public void setOrders(HashMap<Integer, HashMap<String, Integer>> orders) {
 		this.orders = orders;
 	}
 
@@ -158,26 +161,39 @@ public class RestaurantManager {
 	public void setMenus(List<Menu> menus) {
 		this.menus = menus;
 	}
-	
-	public String toString(String key) {
-		String message = key + "\t Commande : ";
+
+	public String toString(Integer key) {
+		String message = "N°" + key + " - Commande : ";
 		for (Entry<String, Integer> mapentry : orders.get(key).entrySet()) {
-			message += mapentry.getKey() + " : " + mapentry.getValue() + " : ";			
+			message += mapentry.getKey() + " : " + mapentry.getValue() + " : ";
 		}
 		return message;
 	}
-	
+
 	public int randomNumber(int max) {
-		int randomNumber = (int)(Math.random() * max) + 1;
+		int randomNumber = (int) (Math.random() * max) + 1;
 		return randomNumber;
 	}
 
 	public void moveStorages(Block position, Storage storage) {
 		for (Storage str : storages) {
-			if(str.equals(storage)) {
+			if (str.equals(storage)) {
 				str.setPosition(position);
 			}
 		}
 	}
-	
-}	
+
+	public void generateCustomer() {
+		if (randomNumber(5) < 2) {
+
+			Block blockCustomer = new Block(GameConfiguration.LINE_ENTRY, GameConfiguration.COLUMN_ENTRY);
+
+			Customer customer = new Customer(blockCustomer, id, false);
+
+			add(customer);
+			add(blockCustomer);
+			id++;
+
+		}
+	}
+}

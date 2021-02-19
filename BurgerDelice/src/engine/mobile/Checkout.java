@@ -3,10 +3,10 @@ package engine.mobile;
 import engine.map.Block;
 
 public class Checkout extends Element {
-	
+
 	private float capacityMax;
 	private float currentMoney;
-	
+
 	public Checkout(Block position, float capacityMax, float currentMoney) {
 		super(position);
 		this.capacityMax = capacityMax;

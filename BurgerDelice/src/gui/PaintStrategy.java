@@ -83,4 +83,15 @@ public class PaintStrategy {
 		graphics.setColor(Color.YELLOW);
 		graphics.fillRect( x * blockSize, y * blockSize, blockSize, blockSize);
 	}
+	
+	public void paint(Graphics graphics) throws IOException{
+		Block position = new Block(GameConfiguration.LINE_ORDER - 1, GameConfiguration.COLUMN_ORDER_RECEPTION);
+		int blockSize = GameConfiguration.BLOCK_SIZE;
+
+		int y = position.getLine();
+		int x = position.getColumn();
+		
+		graphics.setColor(Color.MAGENTA);
+		graphics.fillRect( x * blockSize, y * blockSize, blockSize, blockSize);
+	}
 }

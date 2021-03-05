@@ -1,23 +1,25 @@
 package engine.process;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 import config.GameConfiguration;
 import engine.map.Block;
-import engine.map.Map;
+import engine.map.RestaurantMap;
 import engine.mobile.Checkout;
 import engine.mobile.Cook;
 import engine.mobile.Counter;
+import engine.mobile.Ingredient;
 import engine.mobile.Menu;
 import engine.mobile.Oven;
 import engine.mobile.Storage;
 
 public class RestaurantBuilder {
 
-	public static Map buildMap() {
-		return new Map(GameConfiguration.LINE_COUNT, GameConfiguration.COLUMN_COUNT);
+	private static StorageMap storageMapInstance = StorageMap.getInstance();
+	
+	public static RestaurantMap buildMap() {
+		return new RestaurantMap(GameConfiguration.LINE_COUNT, GameConfiguration.COLUMN_COUNT);
 	}
 
 	/**
@@ -26,7 +28,7 @@ public class RestaurantBuilder {
 	 * @param map
 	 * @return
 	 */
-	public static RestaurantManager buildInitElement(Map map) {
+	public static RestaurantManager buildInitElement(RestaurantMap map) {
 		RestaurantManager elementManager = new RestaurantManager(map);
 
 		initializeMaterial(map, elementManager);
@@ -42,7 +44,7 @@ public class RestaurantBuilder {
 	 * @param map
 	 * @param furnitureManager
 	 */
-	private static void initializeMaterial(Map map, RestaurantManager furnitureManager) {
+	private static void initializeMaterial(RestaurantMap map, RestaurantManager furnitureManager) {
 		createStorage(map, furnitureManager);
 		createOven(map, furnitureManager);
 		createCheckout(map, furnitureManager);
@@ -72,21 +74,23 @@ public class RestaurantBuilder {
 	/**
 	 * Initialize the storage in the restaurant before that customers are arriving.
 	 * 
-	 * @param map
+	 * @param restaurantMap
 	 * @param furnitureManager
 	 */
-	private static void createStorage(Map map, RestaurantManager furnitureManager) {
-		Block block = map.getBlock(GameConfiguration.LINE_COUNT - 12, GameConfiguration.COLUMN_COUNT - 2);
+	private static void createStorage(RestaurantMap restaurantMap, RestaurantManager furnitureManager) {
+		Block block = restaurantMap.getBlock(GameConfiguration.LINE_COUNT - 12, GameConfiguration.COLUMN_COUNT - 2);
 		
-		List<Storage> storages = new ArrayList<Storage>();
-		storages.add(new Storage(block, 100, 0, "Steak"));
-		storages.add(new Storage(block, 100, 0, "Pain"));
-		storages.add(new Storage(block, 100, 0, "Tomate"));
-		storages.add(new Storage(block, 100, 0, "Fromage"));
-		storages.add(new Storage(block, 100, 0, "Oignon"));
-		storages.add(new Storage(block, 100, 0, "Salade"));
-
-		furnitureManager.setStorages(storages);
+		storageMapInstance.addIngredientInStorage("Steak", new Storage(block, 100, 80, "Steak"));
+		storageMapInstance.addIngredientInStorage("Pain", new Storage(block, 100, 80, "Pain"));
+		storageMapInstance.addIngredientInStorage("Tomate", new Storage(block, 100, 50, "Tomate"));
+		storageMapInstance.addIngredientInStorage("Cheddar", new Storage(block, 100, 100, "Cheddar"));
+		storageMapInstance.addIngredientInStorage("Cornichon", new Storage(block, 100, 100, "Cornichon"));
+		storageMapInstance.addIngredientInStorage("Oignon", new Storage(block, 100, 50, "Oignon"));
+		storageMapInstance.addIngredientInStorage("Salade", new Storage(block, 100, 60, "Salade"));
+		storageMapInstance.addIngredientInStorage("Poulet pané", new Storage(block, 100, 90, "Poulet pané"));
+		storageMapInstance.addIngredientInStorage("Fish", new Storage(block, 100, 50, "Fish"));
+		storageMapInstance.addIngredientInStorage("Frites moyenne", new Storage(block, 100, 100, "Frites moyenne"));
+		storageMapInstance.addIngredientInStorage("Sauce", new Storage(block, 100, 80, "Sauce"));
 	}
 
 	/**
@@ -95,7 +99,7 @@ public class RestaurantBuilder {
 	 * @param map
 	 * @param furnitureManager
 	 */
-	private static void createOven(Map map, RestaurantManager furnitureManager) {
+	private static void createOven(RestaurantMap map, RestaurantManager furnitureManager) {
 		Block block = map.getBlock(GameConfiguration.LINE_COUNT - 12, GameConfiguration.COLUMN_COUNT - 3);
 		List<Oven> ovens = new ArrayList<Oven>();
 		ovens.add(new Oven(block, 3, 4));
@@ -112,7 +116,7 @@ public class RestaurantBuilder {
 	 * @param map
 	 * @param furnitureManager
 	 */
-	private static void createCheckout(Map map, RestaurantManager furnitureManager) {
+	private static void createCheckout(RestaurantMap map, RestaurantManager furnitureManager) {
 		List<Checkout> checkouts = new ArrayList<Checkout>();
 		checkouts.add(new Checkout(new Block(GameConfiguration.LINE_COUNT - 8, GameConfiguration.COLUMN_COUNT - 2),
 				10000, 0));
@@ -129,7 +133,7 @@ public class RestaurantBuilder {
 	 * @param map
 	 * @param furnitureManager
 	 */
-	private static void createCounter(Map map, RestaurantManager furnitureManager) {
+	private static void createCounter(RestaurantMap map, RestaurantManager furnitureManager) {
 		List<Counter> counters = new ArrayList<Counter>();
 
 		for (int index = 0; index < GameConfiguration.COLUMN_COUNT; index++) {
@@ -147,39 +151,48 @@ public class RestaurantBuilder {
 	 * @param map
 	 * @param furnitureManager
 	 */
-	private static void createMenu(Map map, RestaurantManager furnitureManager) {
+	private static void createMenu(RestaurantMap map, RestaurantManager furnitureManager) {
 		List<Menu> menus = new ArrayList<Menu>();
-		HashMap<String, Integer> ingredients = new HashMap<String, Integer>();
-		ingredients.put("Steak", 1);
-		ingredients.put("Pain", 2);
-		ingredients.put("Salade", 2);
-		ingredients.put("Cornichon", 2);
-		ingredients.put("Cheddar", 0);
-		ingredients.put("Oignon", 0);
-		ingredients.put("Tomate", 2);
-		Menu menu = new Menu(1, ingredients);
+		List<Ingredient> ingredients = new ArrayList<Ingredient>();
+		ingredients.add(new Ingredient("Steak", 2));
+		ingredients.add(new Ingredient("Pain", 2));
+		ingredients.add(new Ingredient("Salade", 2));
+		ingredients.add(new Ingredient("Cornichon", 2));
+		ingredients.add(new Ingredient("Cheddar", 1));
+		ingredients.add(new Ingredient("Oignon", 0));
+		ingredients.add(new Ingredient("Tomate", 2));
+		ingredients.add(new Ingredient("Frites moyenne", 2));
+		ingredients.add(new Ingredient("Sauce", 1));
+		
+		Menu menu = new Menu(0, ingredients);
+		menus.add(menu);
+		
+		List<Ingredient> ingredients1 = new ArrayList<Ingredient>();
+		ingredients1.add(new Ingredient("Poulet pané", 2));
+		ingredients1.add(new Ingredient("Pain", 3));
+		ingredients1.add(new Ingredient("Salade", 2));
+		ingredients1.add(new Ingredient("Cornichon", 2));
+		ingredients1.add(new Ingredient("Cheddar", 1));
+		ingredients1.add(new Ingredient("Oignon", 1));
+		ingredients1.add(new Ingredient("Tomate", 2));
+		ingredients1.add(new Ingredient("Frites moyenne", 1));
+		ingredients1.add(new Ingredient("Sauce", 1));
+		
+		menu = new Menu(1, ingredients1);
 		menus.add(menu);
 
-		ingredients = new HashMap<String, Integer>();
-		ingredients.put("Steak", 2);
-		ingredients.put("Pain", 3);
-		ingredients.put("Salade", 2);
-		ingredients.put("Cornichon", 2);
-		ingredients.put("Cheddar", 1);
-		ingredients.put("Oignon", 1);
-		ingredients.put("Tomate", 2);
-		menu = new Menu(2, ingredients);
-		menus.add(menu);
-
-		ingredients = new HashMap<String, Integer>();
-		ingredients.put("Steak", 2);
-		ingredients.put("Pain", 2);
-		ingredients.put("Salade", 1);
-		ingredients.put("Cornichon", 2);
-		ingredients.put("Cheddar", 3);
-		ingredients.put("Oignon", 0);
-		ingredients.put("Tomate", 2);
-		menu = new Menu(2, ingredients);
+		List<Ingredient> ingredients2 = new ArrayList<Ingredient>();
+		ingredients2.add(new Ingredient("Fish", 2));
+		ingredients2.add(new Ingredient("Pain", 2));
+		ingredients2.add(new Ingredient("Salade", 1));
+		ingredients2.add(new Ingredient("Cornichon", 2));
+		ingredients2.add(new Ingredient("Cheddar", 3));
+		ingredients2.add(new Ingredient("Oignon", 0));
+		ingredients2.add(new Ingredient("Tomate", 2));
+		ingredients2.add(new Ingredient("Frites moyenne", 2));
+		ingredients2.add(new Ingredient("Sauce", 1));
+		
+		menu = new Menu(2, ingredients2);
 		menus.add(menu);
 
 		furnitureManager.setMenus(menus);

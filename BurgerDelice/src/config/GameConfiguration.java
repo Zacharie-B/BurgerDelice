@@ -25,7 +25,10 @@ public class GameConfiguration {
 	public static final int COLUMN_EXIT = COLUMN_ENTRY - 6;
 	
 	public static final int COLUMN_ORDER_RECEPTION = COLUMN_COUNT - 10;
+	public static final int TIME_FOR_ORDER_RECEPTION = 5;
 
-	public static final String INGREDIENT[] = { "Steak", "Pain", "Cheddar", "Tomate", "Salade", "Oignon", "Cornichon" };
+	// Table with all ingredients in the restaurant
+	public static final String INGREDIENT[] = { "Steak", "Poulet pané", "Fish", "Pain", "Salade", "Cornichon", 
+			"Cheddar", "Oignon", "Tomate", "Frites moyenne", "Sauce" };
 
 }

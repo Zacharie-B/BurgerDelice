@@ -12,13 +12,18 @@ import engine.mobile.Customer;
 import engine.mobile.Oven;
 import engine.mobile.Storage;
 import engine.process.RestaurantManager;
+import engine.process.StorageMap;
 
+/**
+ * Here, we paint all graphical elements in the restaurant, there are
+ * customers, restaurant material, ovens and cooks.
+ *
+ */
 public class GameDisplay extends JPanel {
-
-	private static final long serialVersionUID = 1L;
 	
 	private RestaurantManager manager;
 	private PaintStrategy paintStrategy = new PaintStrategy();
+	private StorageMap storageMapInstance = StorageMap.getInstance();
 
 	public GameDisplay(RestaurantManager manager) {
 		this.manager = manager;
@@ -38,14 +43,13 @@ public class GameDisplay extends JPanel {
 			}
 		}
 		
-		for(Storage storage : manager.getStorages()) {
+		Storage storage = storageMapInstance.getIngredientToStorage("Frites moyenne");
 			try {
 				paintStrategy.paint(storage, g);
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		}
 		
 		for(Oven oven : manager.getOvens()) {
 			try {
@@ -78,6 +82,12 @@ public class GameDisplay extends JPanel {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
+		}
+		
+		try {
+			paintStrategy.paint(g);
+		} catch(IOException e){
+			e.printStackTrace();
 		}
 		
 	}

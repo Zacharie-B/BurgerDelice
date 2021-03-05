@@ -48,6 +48,10 @@ public class Customer extends Element{
 		this.timeWaiting = timeWaiting;
 	}
 
+	/**
+	 * Allow to decides the menu choose by a customer.
+	 * @return the number of the menu that customer will take
+	 */
 	public int randomNumber() {
 		int randomNumber = (int) (Math.random() * 3);
 		return randomNumber;

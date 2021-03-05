@@ -38,5 +38,11 @@ public class Storage extends Element{
 	public void setName(String name) {
 		this.name = name;
 	}
+
+	@Override
+	public String toString() {
+		return "Storage [capacityMax=" + capacityMax + ", currentCapacity=" + currentCapacity + ", name=" + name + "]";
+	}
+	
 	
 }

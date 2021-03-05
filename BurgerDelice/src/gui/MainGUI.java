@@ -10,22 +10,21 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 
 import config.GameConfiguration;
-import engine.map.Map;
+import engine.map.RestaurantMap;
 import engine.process.ManageCustomer;
 import engine.process.RestaurantBuilder;
 import engine.process.RestaurantManager;
 
 public class MainGUI extends JFrame implements Runnable {
 
-	private static final long serialVersionUID = 1L;
-	private Map map;
+	private RestaurantMap restaurantMap;
 	
 	private final static Dimension preferredSize = new Dimension(GameConfiguration.WINDOW_WIDTH, GameConfiguration.WINDOW_HEIGHT);
 	public static RestaurantManager manager;
 	
 	private GameDisplay dashboard;
 	private ManagementDisplay managementDashboard;
-	private StorageDisplay storageDisplay;
+	public static StorageDisplay storageDisplay;
 	private MenuDisplay menuDisplay;
 	private ManageCustomer manageCustomer = new ManageCustomer();
 	
@@ -36,7 +35,6 @@ public class MainGUI extends JFrame implements Runnable {
 	public MainGUI(String title) {
 		super(title);
 		init();
-		
 	}
 
 	private void init() {
@@ -44,11 +42,12 @@ public class MainGUI extends JFrame implements Runnable {
 		Container contentPane = getContentPane();
 		contentPane.setLayout(new BorderLayout());
 
-		map = RestaurantBuilder.buildMap();
-		manager = RestaurantBuilder.buildInitElement(map);
+		restaurantMap = RestaurantBuilder.buildMap();
+		manager = RestaurantBuilder.buildInitElement(restaurantMap);
 		dashboard = new GameDisplay(manager);
+		
 		storageDisplay = new StorageDisplay();
-		menuDisplay = new MenuDisplay(manager);
+		menuDisplay = new MenuDisplay();
 		managementDashboard = new ManagementDisplay(manager, storageDisplay, menuDisplay);
 		
 		dashboard.setPreferredSize(preferredSize);
@@ -59,12 +58,12 @@ public class MainGUI extends JFrame implements Runnable {
 		stopButton.addActionListener(new StartStopAction());
 		contentPane.add(stopButton, BorderLayout.SOUTH);
 		
-		this.addMouseListener(new ClickListener(storageDisplay));
+		this.addMouseListener(new ClickListener());
 				
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		pack();
 		setVisible(true);
-		setPreferredSize(new Dimension(GameConfiguration.WINDOW_WIDTH*2, GameConfiguration.WINDOW_HEIGHT*2));
+		setPreferredSize(new Dimension(GameConfiguration.WINDOW_WIDTH * 2, GameConfiguration.WINDOW_HEIGHT * 2));
 		setResizable(false);
 	}
 
@@ -73,21 +72,19 @@ public class MainGUI extends JFrame implements Runnable {
 		while (!status) {
 			try {
 				Thread.sleep(GameConfiguration.GAME_SPEED);
-				
 			} catch (InterruptedException e) {
 				System.out.println(e.getMessage());
 			}
 			if(!status) {
-				dashboard.repaint();
-				managementDashboard.appendOrders();
-				manageCustomer.movementCustomer();
 				manager.generateCustomer();
+				dashboard.repaint();
+				managementDashboard.displayOrders();
+				manageCustomer.movementCustomer();
+				storageDisplay.updateStorageDisplay();
 
 			}				
 		}
 	}
-	
-	
 	
 	private class StartStopAction implements ActionListener {
 		@Override
@@ -98,8 +95,8 @@ public class MainGUI extends JFrame implements Runnable {
 			} else {
 				status = false;
 				stopButton.setText("Stop");
-				Thread chronoThread = new Thread(instance);
-				chronoThread.start();
+				Thread dashboardThread = new Thread(instance);
+				dashboardThread.start();
 			}
 		}
 	}

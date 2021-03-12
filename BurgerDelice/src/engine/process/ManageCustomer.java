@@ -100,15 +100,24 @@ public class ManageCustomer extends MoveCharacters {
 		for(Ingredient ingredient : ingredients) {
 			for(Entry<String, Storage> mapentry : storageMapInstance.ingredientsStorage.entrySet()) {
 				if(ingredient.getName().equals(mapentry.getKey())){
-					if(ingredient.getNbByMenu() <= mapentry.getValue().getCurrentCapacity()) {
-						mapentry.getValue().setCurrentCapacity(mapentry.getValue().getCurrentCapacity() - ingredient.getNbByMenu());
-					}
-					else {
-						mapentry.getValue().setCurrentCapacity(0);
-					}
+					StorageToMenu(mapentry.getValue(), ingredient);
 					break;
 				}
 			}
+		}
+	}
+	
+	/**
+	 * Transfer one ingredient from storage in the menu of one customer.
+	 * @param mapentry
+	 * @param ingredient
+	 */
+	public void StorageToMenu(Storage storage, Ingredient ingredient) {
+		if(ingredient.getNbByMenu() <= storage.getCurrentCapacity()) {
+			storage.setCurrentCapacity(storage.getCurrentCapacity() - ingredient.getNbByMenu());
+		}
+		else {
+			storage.setCurrentCapacity(0);
 		}
 	}
 }

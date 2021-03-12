@@ -19,7 +19,7 @@ import engine.process.StorageMap;
  * customers, restaurant material, ovens and cooks.
  *
  */
-public class GameDisplay extends JPanel {
+public class GameDisplay extends JPanel{
 	
 	private RestaurantManager manager;
 	private PaintStrategy paintStrategy = new PaintStrategy();

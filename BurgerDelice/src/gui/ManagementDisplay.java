@@ -68,7 +68,6 @@ public class ManagementDisplay extends JPanel {
 		String message = "";
 		for(Entry<Integer, List<Ingredient>> mapentry : manager.getOrders().entrySet()) {
 			message += manager.toString(mapentry.getKey()) + "\n";
-			
 		}
 		orderDisplay.setText(message);
 	}

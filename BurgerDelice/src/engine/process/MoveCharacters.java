@@ -3,7 +3,6 @@ package engine.process;
 import java.util.List;
 
 import engine.map.Block;
-import gui.MainGUI;
 
 /**
  * Each method on this class verify the presence on the square where we want to
@@ -13,19 +12,12 @@ import gui.MainGUI;
 public class MoveCharacters extends BasicMove {
 
 	public void moveTopCollisionFree(Block blockCustomer, List<Block> takenBlocks) {
-		Boolean isBlocked = false;
 		for (Block takenBlock : takenBlocks) {
-			if (blockCustomer.getLine() - 1 == takenBlock.getLine()
+			if (blockCustomer.getLine() - 1 != takenBlock.getLine()
 					&& blockCustomer.getColumn() == takenBlock.getColumn()) {
-				isBlocked = true;
+				moveTop(blockCustomer);
 				break;
 			}
-		}
-
-		if (isBlocked == false) {
-			MainGUI.manager.remove(blockCustomer);
-			moveTop(blockCustomer);
-			MainGUI.manager.add(blockCustomer);
 		}
 	}
 
@@ -37,24 +29,17 @@ public class MoveCharacters extends BasicMove {
 				break;
 			}
 		}
+		
 	}
 
 	public void moveLeftCollisionFree(Block blockCustomer, List<Block> takenBlocks) {
-		Boolean isBlocked = false;
 		for (Block takenBlock : takenBlocks) {
-			if (blockCustomer.getColumn() - 1 == takenBlock.getColumn()
+			if (blockCustomer.getColumn() - 1 != takenBlock.getColumn()
 					&& blockCustomer.getLine() == takenBlock.getLine()) {
-				isBlocked = true;
+				moveLeft(blockCustomer);
 				break;
 			}
 		}
-
-		if (isBlocked == false) {
-			MainGUI.manager.remove(blockCustomer);
-			moveLeft(blockCustomer);
-			MainGUI.manager.add(blockCustomer);
-		}
-
 	}
 
 	public void moveRightCollisionFree(Block blockCustomer, List<Block> takenBlocks) {
@@ -66,5 +51,4 @@ public class MoveCharacters extends BasicMove {
 			}
 		}
 	}
-
 }

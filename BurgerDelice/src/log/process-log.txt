@@ -1,0 +1,499 @@
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger4
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger8
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger6
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger9
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger7
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger5
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger3
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger8
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger6
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger9
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger7
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger10
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger8
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger11
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger9
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger12
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger10
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 4
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 8
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 6
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 9
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 7
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 5
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 3
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 8
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 6
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 9
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 7
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 10
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 8
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 11
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 9
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 12
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 10
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance : 10
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 4
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 8
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 6
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 9
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 7
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 5
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 3
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 8
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 6
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 9
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 7
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 10
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 8
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 11
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 9
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 12
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 10
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 4
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 8
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 6
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 9
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 7
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 5
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 3
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 8
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 6
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 9
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 7
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 10
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 8
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 11
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 9
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 12
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 10
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 100
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 4
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 100
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 3
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 100
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 100
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 4
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 100
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 3
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 100
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 100
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 4
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 100
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 3
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 100
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 100
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 4
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 100
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 3
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 100
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 100
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 4
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 100
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 3
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 100
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 100
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 4
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 100
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 3
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 100
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 100
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 4
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 100
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 3
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 100
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance avec la position pour manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - distance : 0

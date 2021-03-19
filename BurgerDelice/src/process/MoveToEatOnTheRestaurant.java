@@ -1,10 +1,14 @@
 package process;
 
+import org.apache.log4j.Logger;
+
 import data.Block;
 import data.Customer;
+import log.LoggerUtility;
 
 public class MoveToEatOnTheRestaurant extends MoveCharacters{
-
+	
+	private Logger logger = LoggerUtility.getLogger(MoveToEatOnTheRestaurant.class, "process");
 	/**
 	 * Move the customer in order to eat on the restaurant.
 	 * @param customer
@@ -12,7 +16,7 @@ public class MoveToEatOnTheRestaurant extends MoveCharacters{
 	 */
 	public void eatOnTable(Customer customer, RestaurantManager restaurantManager) {
 		if(!customer.isEating()) {
-			int nearestdistance = 0;
+			int nearestDistance = 100;
 			// TODO Auto-generated method stub
 			int lineDistance = 0;
 			int columnDistance = 0;
@@ -22,9 +26,17 @@ public class MoveToEatOnTheRestaurant extends MoveCharacters{
 				lineDistance = customer.getPosition().getX() - eating.getX();
 				columnDistance = customer.getPosition().getY() - eating.getY();
 				currentDistance = Math.abs(lineDistance) + Math.abs(columnDistance);
-				if(nearestdistance > currentDistance) {
+				
+				logger.info("distance avec la position pour manger : " + nearestDistance);
+				if(nearestDistance > currentDistance) {
+					nearestDistance = currentDistance;
 					nearestBlock = eating;
 				}
+			}
+			
+			logger.info("distance : " + nearestDistance);
+			if(nearestDistance == 0) {
+				customer.setEating(true);
 			}
 			
 			if(Math.abs(lineDistance) > Math.abs(columnDistance)) {
@@ -43,6 +55,7 @@ public class MoveToEatOnTheRestaurant extends MoveCharacters{
 					moveDownCollision(customer.getPosition(), restaurantManager);
 				}
 			}
+			
 		}
 		else if(customer.isEating()) {
 			if(customer.getTimeForEat() > 0) {

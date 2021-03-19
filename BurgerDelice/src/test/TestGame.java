@@ -8,6 +8,6 @@ public class TestGame {
 		MainGUI gameMainGUI = new MainGUI("Burger Delice");
 
 		Thread gameThread = new Thread(gameMainGUI);
-		gameThread.start(); 
+		gameThread.start();
 	}
 }

@@ -9,7 +9,7 @@ public class GameConfiguration {
 	public static final int LINE_COUNT = WINDOW_HEIGHT / BLOCK_SIZE;
 	public static final int COLUMN_COUNT = WINDOW_WIDTH / BLOCK_SIZE;
 
-	public static final int GAME_SPEED = 500;
+	public static final int GAME_SPEED = 1000;
 
 	public static final int LINE_ENTRY = LINE_COUNT - 2;
 	public static final int COLUMN_ENTRY = COLUMN_COUNT - 2; // This is also the column of order.
@@ -23,12 +23,15 @@ public class GameConfiguration {
 	// Position for to exit the restaurant.
 	public static final int LINE_EXIT = LINE_ENTRY;
 	public static final int COLUMN_EXIT = COLUMN_ENTRY - 6;
-	
+
 	public static final int COLUMN_ORDER_RECEPTION = COLUMN_COUNT - 10;
 	public static final int TIME_FOR_ORDER_RECEPTION = 5;
 
 	// Table with all ingredients in the restaurant
-	public static final String INGREDIENT[] = { "Steak", "Poulet pané", "Fish", "Pain", "Salade", "Cornichon", 
+	public static final String INGREDIENT[] = { "Steak", "Poulet pane", "Fish", "Pain", "Salade", "Cornichon",
 			"Cheddar", "Oignon", "Tomate", "Frites moyenne", "Sauce" };
+
+	// Table with all ingredient prices
+	public static final double INGREDIENTPRICES[] = { 1.50, 1.15, 0.90, 0.30, 0.25, 0.20, 0.25, 0.20, 0.20, 0.35, 0.10 };
 
 }

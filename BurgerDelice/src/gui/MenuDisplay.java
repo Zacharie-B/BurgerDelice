@@ -2,7 +2,6 @@ package gui;
 
 import java.awt.Color;
 import java.awt.GridLayout;
-import java.awt.Panel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
@@ -13,12 +12,12 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
-import org.apache.log4j.Logger;
-
-import engine.mobile.Ingredient;
-import log.LoggerUtility;
+import data.Ingredient;
+import process.RestaurantManager;
 
 public class MenuDisplay extends JPanel {
+
+	private static final long serialVersionUID = 1L;
 
 	/*
 	 * Buttons for choose the menu to give at customer.
@@ -30,7 +29,7 @@ public class MenuDisplay extends JPanel {
 	/*
 	 * Ingredients name in the menu.
 	 */
-	private JLabel ingredientLabel = new JLabel("Ingrédient");
+	private JLabel ingredientLabel = new JLabel("Ingredient");
 	private JLabel meatLabel = new JLabel();
 	private JLabel breadLabel = new JLabel();
 	private JLabel cheeseLabel = new JLabel();
@@ -40,7 +39,7 @@ public class MenuDisplay extends JPanel {
 	private JLabel chipsLabel = new JLabel();
 	private JLabel cornichonLabel = new JLabel();
 	private JLabel sauceLabel = new JLabel();
-	
+
 	/*
 	 * Quantity of each ingredients in the table of display.
 	 */
@@ -82,19 +81,24 @@ public class MenuDisplay extends JPanel {
 
 	private int currentMenu = 0;
 	private int ingredientIndex = 0;
-	private List<Ingredient> ingredientsInMenu = MainGUI.manager.getMenus().get(currentMenu).getIngredients();
-	private Logger logger = LoggerUtility.getLogger(MenuDisplay.class, "text");
-	
+	private List<Ingredient> ingredientsInMenu;
 
-	public MenuDisplay() {
+	private RestaurantManager restaurantManager;
+
+	public MenuDisplay(RestaurantManager restaurantManager) {
+
+		this.restaurantManager = restaurantManager;
+		
+		ingredientsInMenu = restaurantManager.getMenus().get(currentMenu).getIngredients();
+
 		initStyleMenu();
 		initLayout();
 		initActions();
 	}
 
 	/**
-	 * Initialize the table which display the menu and his ingredients, 
-	 * there is border between elements.
+	 * Initialize the table which display the menu and his ingredients, there is
+	 * border between elements.
 	 */
 	private void initStyleMenu() {
 
@@ -113,7 +117,7 @@ public class MenuDisplay extends JPanel {
 		makeStyleIngredientInMenuPanel(onionLabel, alignement);
 		makeStyleIngredientInMenuPanel(chipsLabel, alignement);
 		makeStyleIngredientInMenuPanel(sauceLabel, alignement);
-		
+
 		/*
 		 * Do the style for the quantity of each ingredient.
 		 */
@@ -141,18 +145,20 @@ public class MenuDisplay extends JPanel {
 		changeThirdMenu.setBorderPainted(false);
 		changeThirdMenu.setContentAreaFilled(false);
 	}
-	
+
 	/**
 	 * 
-	 * Make style an ingredient in the menu panel of the window with border and orientation.
+	 * Make style an ingredient in the menu panel of the window with border and
+	 * orientation.
+	 * 
 	 * @param jLabel get the text or quantity about an ingredient
-	 * @param make a center alignment
+	 * @param make   a center alignment
 	 */
 	private void makeStyleIngredientInMenuPanel(JLabel jLabel, int alignement) {
 		jLabel.setHorizontalAlignment(alignement);
-		jLabel.setBorder(BorderFactory.createMatteBorder(1, 0, 0, 0, Color.LIGHT_GRAY));
+		jLabel.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.LIGHT_GRAY));
 	}
-	
+
 	/**
 	 * Initialize the layout with the menu with his ingredients and this button.
 	 */
@@ -164,12 +170,12 @@ public class MenuDisplay extends JPanel {
 		add(changeFirstMenu);
 		add(changeSecondMenu);
 		add(changeThirdMenu);
-		
+
 		add(ingredientLabel);
-		add(new JLabel("Quantité d'ingrédients"));
-		add(new JLabel("Ajouter une quantité"));
-		add(new JLabel("Enlever une quantité"));
-		
+		add(new JLabel("Quantite d'ingredients"));
+		add(new JLabel("Ajouter une quantite"));
+		add(new JLabel("Enlever une quantite"));
+
 		addInitMenuPanel(meatLabel, meatQuantityLabel, addMeatButton, removeMeatButton);
 		addInitMenuPanel(breadLabel, breadQuantityLabel, addBreadButton, removeBreadButton);
 		addInitMenuPanel(saladLabel, saladQuantityLabel, addSaladButton, removeSaladButton);
@@ -179,15 +185,16 @@ public class MenuDisplay extends JPanel {
 		addInitMenuPanel(tomatoLabel, tomatoQuantityLabel, addTomatoButton, removeTomatoButton);
 		addInitMenuPanel(chipsLabel, chipsQuantityLabel, addChipsButton, removeChipsButton);
 		addInitMenuPanel(sauceLabel, sauceQuantityLabel, addSauceButton, removeSauceButton);
-		
+
 		setVisible(true);
 	}
-	
+
 	/*
-	 * Add all panel about one at table in order to display name of ingredient, 
-	 * the quantity of this and to allows modification of this quantity.
+	 * Add all panel about one at table in order to display name of ingredient, the
+	 * quantity of this and to allows modification of this quantity.
 	 */
-	private void addInitMenuPanel(JLabel jLabel, JLabel quantityLabel, JButton incrementButton, JButton decrementButton) {
+	private void addInitMenuPanel(JLabel jLabel, JLabel quantityLabel, JButton incrementButton,
+			JButton decrementButton) {
 		jLabel.setText(ingredientsInMenu.get(ingredientIndex).getName());
 		add(jLabel);
 		add(quantityLabel);
@@ -197,11 +204,11 @@ public class MenuDisplay extends JPanel {
 	}
 
 	/**
-	 * Add all action for the menu which allows to increment or decrement one ingredient
-	 * in the menu, and change menu to modify.
+	 * Add all action for the menu which allows to increment or decrement one
+	 * ingredient in the menu, and change menu to modify.
 	 */
 	private void initActions() {
-		
+
 		/*
 		 * Action to show the menu.
 		 */
@@ -212,7 +219,7 @@ public class MenuDisplay extends JPanel {
 		/*
 		 * Action to increment an ingredient in the menu.
 		 */
-		addMeatButton.addActionListener(new IncrementIngredient("Steak",meatQuantityLabel));
+		addMeatButton.addActionListener(new IncrementIngredient("Steak", meatQuantityLabel));
 		addBreadButton.addActionListener(new IncrementIngredient("Pain", breadQuantityLabel));
 		addCheeseButton.addActionListener(new IncrementIngredient("Cheddar", cheeseQuantityLabel));
 		addTomatoButton.addActionListener(new IncrementIngredient("Tomate", tomatoQuantityLabel));
@@ -237,8 +244,8 @@ public class MenuDisplay extends JPanel {
 	}
 
 	/**
-	 * Allow to display the menus with the ingredients and allow to modify of 
-	 * number of ingredients.
+	 * Allow to display the menus with the ingredients and allow to modify of number
+	 * of ingredients.
 	 *
 	 */
 	private class ShowMenu implements ActionListener {
@@ -249,18 +256,19 @@ public class MenuDisplay extends JPanel {
 			super();
 			this.numberOfMenu = numberOfMenu;
 		}
-		
+
 		/**
-		 * Change the background color to menu which selected and 
-		 * display the ingredients which are in the new menu display.
+		 * Change the background color to menu which selected and display the
+		 * ingredients which are in the new menu display.
+		 * 
 		 * @param e button which change the menu of customer
 		 */
 		@Override
 		public void actionPerformed(ActionEvent e) {
 
 			currentMenu = this.numberOfMenu;
-			ingredientsInMenu = MainGUI.manager.getMenus().get(currentMenu).getIngredients();
-			
+			ingredientsInMenu = restaurantManager.getMenus().get(currentMenu).getIngredients();
+
 //			logger.info(" Menu choisi : " + currentMenu);
 			if (numberOfMenu == 0) {
 				changeFirstMenu.setBackground(Color.LIGHT_GRAY);
@@ -277,11 +285,11 @@ public class MenuDisplay extends JPanel {
 				changeSecondMenu.setBackground(Color.WHITE);
 				changeThirdMenu.setBackground(Color.LIGHT_GRAY);
 			}
-			
+
 			changeFirstMenu.setOpaque(true);
 			changeSecondMenu.setOpaque(true);
 			changeThirdMenu.setOpaque(true);
-			
+
 			meatLabel.setText(String.valueOf(ingredientsInMenu.get(0).getName()));
 			meatQuantityLabel.setText(String.valueOf(ingredientsInMenu.get(0).getNbByMenu()));
 			breadQuantityLabel.setText(String.valueOf(ingredientsInMenu.get(1).getNbByMenu()));
@@ -292,42 +300,40 @@ public class MenuDisplay extends JPanel {
 			tomatoQuantityLabel.setText(String.valueOf(ingredientsInMenu.get(6).getNbByMenu()));
 			chipsQuantityLabel.setText(String.valueOf(ingredientsInMenu.get(7).getNbByMenu()));
 			sauceQuantityLabel.setText(String.valueOf(ingredientsInMenu.get(8).getNbByMenu()));
-			
+
 //			logger.info("Nombre de viandes" + " : " + steakQuantityLabel.getText());
-			
+
 			setVisible(true);
 		}
 	}
-	
 
 	/**
 	 * Use action listener when the user want increment an ingredient in his menu.
 	 * 
 	 */
 	private class IncrementIngredient implements ActionListener {
-		
+
 		private String ingredient;
 		private JLabel jLabel;
-		
+
 		public IncrementIngredient(String ingredient, JLabel jLabel) {
 			super();
 			this.ingredient = ingredient;
 			this.jLabel = jLabel;
 		}
-		
+
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			List<Ingredient> ingredients = MainGUI.manager.getMenus().get(currentMenu).getIngredients();
+			List<Ingredient> ingredients = restaurantManager.getMenus().get(currentMenu).getIngredients();
+
 			for (Ingredient ingredient : ingredients) {
-				if(this.ingredient.equals(ingredient.getName())) {
-					System.out.println(ingredient.toString());
-					MainGUI.manager.getMenus().get(currentMenu).addIngredient(this.ingredient);
+				if (this.ingredient.equals(ingredient.getName())) {
+					restaurantManager.getMenus().get(currentMenu).addIngredient(this.ingredient);
 					this.jLabel.setText(String.valueOf(ingredient.getNbByMenu()));
 				}
 			}
 		}
 	}
-	
 
 	/**
 	 * Use action listener when the user wants decrement an ingredient in the menu.
@@ -346,10 +352,11 @@ public class MenuDisplay extends JPanel {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			List<Ingredient> ingredients = MainGUI.manager.getMenus().get(currentMenu).getIngredients();
+			List<Ingredient> ingredients = restaurantManager.getMenus().get(currentMenu).getIngredients();
+
 			for (Ingredient ingredient : ingredients) {
-				if(this.ingredient.equals(ingredient.getName())) {
-					MainGUI.manager.getMenus().get(currentMenu).decrementIngredient(this.ingredient);
+				if (this.ingredient.equals(ingredient.getName())) {
+					restaurantManager.getMenus().get(currentMenu).decrementIngredient(this.ingredient);
 					this.jLabel.setText(String.valueOf(ingredient.getNbByMenu()));
 				}
 			}

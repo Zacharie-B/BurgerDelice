@@ -5,36 +5,37 @@ import java.io.IOException;
 
 import javax.swing.JPanel;
 
-import engine.mobile.Checkout;
-import engine.mobile.Cook;
-import engine.mobile.Counter;
-import engine.mobile.Customer;
-import engine.mobile.Oven;
-import engine.mobile.Storage;
-import engine.process.RestaurantManager;
-import engine.process.StorageMap;
+import data.Checkout;
+import data.Cook;
+import data.Counter;
+import data.Customer;
+import data.Oven;
+import data.Storage;
+import data.StorageMap;
+import process.RestaurantManager;
 
 /**
- * Here, we paint all graphical elements in the restaurant, there are
- * customers, restaurant material, ovens and cooks.
+ * Here, we paint all graphical elements in the restaurant, there are customers,
+ * restaurant material, ovens and cooks.
  *
  */
-public class GameDisplay extends JPanel{
-	
-	private RestaurantManager manager;
+public class GameDisplay extends JPanel {
+
+	private static final long serialVersionUID = 1L;
+
+	private RestaurantManager restaurantManager;
 	private PaintStrategy paintStrategy = new PaintStrategy();
 	private StorageMap storageMapInstance = StorageMap.getInstance();
 
-	public GameDisplay(RestaurantManager manager) {
-		this.manager = manager;
-
+	public GameDisplay(RestaurantManager restaurantManager) {
+		this.restaurantManager = restaurantManager;
 	}
 
 	@Override
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 
-		for(Cook cook : manager.getCooks()) {
+		for (Cook cook : restaurantManager.getCooks()) {
 			try {
 				paintStrategy.paint(cook, g);
 			} catch (IOException e) {
@@ -42,16 +43,17 @@ public class GameDisplay extends JPanel{
 				e.printStackTrace();
 			}
 		}
-		
+
 		Storage storage = storageMapInstance.getIngredientToStorage("Frites moyenne");
-			try {
-				paintStrategy.paint(storage, g);
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		
-		for(Oven oven : manager.getOvens()) {
+
+		try {
+			paintStrategy.paint(storage, g);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		for (Oven oven : restaurantManager.getOvens()) {
 			try {
 				paintStrategy.paint(oven, g);
 			} catch (IOException e) {
@@ -60,36 +62,36 @@ public class GameDisplay extends JPanel{
 			}
 		}
 
-		for(Customer customer : manager.getCustomers()) {
+		for (Customer customer : restaurantManager.getCustomers()) {
 			try {
 				paintStrategy.paint(customer, g);
-			} catch (IOException e ) {
+			} catch (IOException e) {
 				e.printStackTrace();
 			}
 		}
-		
-		for(Counter counter : manager.getCounters()) {
+
+		for (Counter counter : restaurantManager.getCounters()) {
 			try {
 				paintStrategy.paint(counter, g);
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
 		}
-		
-		for(Checkout checkout : manager.getCheckouts()) {
+
+		for (Checkout checkout : restaurantManager.getCheckouts()) {
 			try {
 				paintStrategy.paint(checkout, g);
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
 		}
-		
+
 		try {
 			paintStrategy.paint(g);
-		} catch(IOException e){
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
+
 	}
 
 }

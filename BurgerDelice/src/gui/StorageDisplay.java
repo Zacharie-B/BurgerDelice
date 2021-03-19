@@ -7,21 +7,19 @@ import javax.swing.BorderFactory;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import org.apache.log4j.Logger;
-
 import config.GameConfiguration;
-import engine.mobile.Ingredient;
-import engine.mobile.Storage;
-import engine.process.StorageMap;
-import log.LoggerUtility;
+import data.Storage;
+import data.StorageMap;
 
 public class StorageDisplay extends JPanel {
+	
+	private static final long serialVersionUID = 1L;
 	
 	/**
 	 * Name of each ingredient display in window.
 	 */
 	protected JLabel steakLabel = new JLabel("Steak");
-	protected JLabel chickenLabel= new JLabel("Poulet pané");
+	protected JLabel chickenLabel= new JLabel("Poulet pane");
 	protected JLabel fishLabel= new JLabel("Fish");
 	protected JLabel breadLabel= new JLabel("Pain");
 	protected JLabel cheeseLabel= new JLabel("Cheddar");
@@ -63,7 +61,6 @@ public class StorageDisplay extends JPanel {
 	protected JLabel sauceQuantityMaxLabel = new JLabel();
 	
 	private StorageMap storageMapInstance = StorageMap.getInstance();
-	private Logger logger = LoggerUtility.getLogger(StorageDisplay.class, "text");
 	
 	public StorageDisplay () {
 		initStoragePanel();
@@ -78,9 +75,9 @@ public class StorageDisplay extends JPanel {
 		grid.setVgap(1);
 		setLayout(grid);
 		setBackground(Color.WHITE);
-		add(new JLabel("Nom de l'ingrédient"));
+		add(new JLabel("Nom de l'ingredient"));
 		add(new JLabel("Nombre en stock"));
-		add(new JLabel("Capacité max de stockage"));
+		add(new JLabel("Capacite max de stockage"));
 		
 		addStorageLabel(steakLabel,steakQuantityLabel, steakQuantityMaxLabel);
 		addStorageLabel(chickenLabel,chickenQuantityLabel, chickenQuantityMaxLabel);
@@ -94,7 +91,7 @@ public class StorageDisplay extends JPanel {
 		addStorageLabel(chipsLabel,chipsQuantityLabel, chipsQuantityMaxLabel);
 		addStorageLabel(sauceLabel,sauceQuantityLabel, sauceQuantityMaxLabel);
 		
-		setVisible(false);
+		setVisible(true);
 	}
 	
 	/**
@@ -133,6 +130,7 @@ public class StorageDisplay extends JPanel {
 	 * take by customers or increase when one delivery is arrived.
 	 */
 	public void updateStorageDisplay() {
+		
 		updateStorageIngredient(steakQuantityLabel, steakQuantityMaxLabel, GameConfiguration.INGREDIENT[0]);
 		updateStorageIngredient(chickenQuantityLabel, chickenQuantityMaxLabel, GameConfiguration.INGREDIENT[1]);
 		updateStorageIngredient(fishQuantityLabel, fishQuantityMaxLabel, GameConfiguration.INGREDIENT[2]);
@@ -144,5 +142,7 @@ public class StorageDisplay extends JPanel {
 		updateStorageIngredient(tomatoQuantityLabel, tomatoQuantityMaxLabel, GameConfiguration.INGREDIENT[8]);
 		updateStorageIngredient(chipsQuantityLabel, chipsQuantityMaxLabel, GameConfiguration.INGREDIENT[9]);
 		updateStorageIngredient(sauceQuantityLabel, sauceQuantityMaxLabel,GameConfiguration.INGREDIENT[10]);
+		
 	}
+	
 }

@@ -15,7 +15,7 @@ public class CustomerManager extends MoveCharacters {
 	private StorageMap storageMapInstance = StorageMap.getInstance();
 
 	private RestaurantManager restaurantManager;
-
+	
 	public CustomerManager(RestaurantManager restaurantManager) {
 		this.restaurantManager = restaurantManager;
 	}
@@ -30,7 +30,12 @@ public class CustomerManager extends MoveCharacters {
 					&& customer.getTimeWaiting() < GameConfiguration.TIME_FOR_ORDER_RECEPTION) {
 				customer.incrementWaitingTime();
 			} else if (customer.getTimeWaiting() == GameConfiguration.TIME_FOR_ORDER_RECEPTION) {
-				moveCustomerToExit(customer);
+				if(customer.isOnTheRestaurant()) {
+					moveToFindTable(customer);
+				}
+				else{
+					moveCustomerToExit(customer);
+				}
 			} else {
 				moveCustomerToOrder(customer);
 			}
@@ -69,15 +74,18 @@ public class CustomerManager extends MoveCharacters {
 		for (Ingredient ingredient : ingredients) {
 			for (Entry<String, Storage> storage : storageMapInstance.getIngredientsStorage().entrySet()) {
 				if (ingredient.getName().equals(storage.getKey())) {
-					
 					storage.getValue().decrementCapacity(ingredient.getNbByMenu());
-					
 					restaurantManager.addMoney(SimulationUtility.lookingForPrice(ingredient.getName()) * ingredient.getNbByMenu());
-					
 				}
-
 			}
 		}
-
 	}
+	
+	private void moveToFindTable(Customer customer) {
+		moveDownCollision(customer.getPosition(), restaurantManager);
+
+		restaurantManager.removeOrder(customer.getId());
+	}
+	
+	
 }

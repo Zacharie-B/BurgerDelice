@@ -12,6 +12,7 @@ import data.Counter;
 import data.Customer;
 import data.Oven;
 import data.Storage;
+import data.TableForEating;
 
 public class PaintStrategy {
 
@@ -94,4 +95,16 @@ public class PaintStrategy {
 		graphics.setColor(Color.MAGENTA);
 		graphics.fillRect(x * blockSize, y * blockSize, blockSize, blockSize);
 	}
+	
+	public void paint(TableForEating tableForEating, Graphics graphics) throws IOException {
+		Block position = tableForEating.getPosition();
+		int blockSize = GameConfiguration.BLOCK_SIZE;
+
+		int y = position.getY();
+		int x = position.getX();
+
+		graphics.setColor(new Color(88, 41, 0));
+		graphics.fillRect(x * blockSize, y * blockSize, blockSize, blockSize);
+
+	} 
 }

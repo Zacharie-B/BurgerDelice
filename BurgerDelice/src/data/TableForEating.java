@@ -2,14 +2,20 @@ package data;
 
 public class TableForEating extends Element{
 
-	private int sizeForcustomer;
-
-	public TableForEating(Block position, int sizeForcustomer) {
+	PositionForEating posForEating1;
+	PositionForEating posForEating2;
+	
+	public TableForEating(Block position, PositionForEating posForEating1, PositionForEating posForEating2) {
 		super(position);
-		this.sizeForcustomer = sizeForcustomer;
+		this.posForEating1 = posForEating1;
+		this.posForEating2 = posForEating2;
 	}
 
-	public int getSizeForcustomer() {
-		return sizeForcustomer;
+	public PositionForEating getPosForEating1() {
+		return posForEating1;
 	}
+
+	public PositionForEating getPosForEating2() {
+		return posForEating2;
+	}	
 }

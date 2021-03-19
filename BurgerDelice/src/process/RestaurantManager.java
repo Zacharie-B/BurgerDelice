@@ -13,6 +13,7 @@ import data.Customer;
 import data.Ingredient;
 import data.Menu;
 import data.Oven;
+import data.TableForEating;
 
 public class RestaurantManager {
 
@@ -26,6 +27,8 @@ public class RestaurantManager {
 	private List<Block> takenBlocks = new ArrayList<Block>();
 
 	private List<Menu> menus = new ArrayList<Menu>();
+	
+	private List<TableForEating> tableForEatings = new ArrayList<TableForEating>();
 
 	private HashMap<Integer, List<Ingredient>> orders = new HashMap<Integer, List<Ingredient>>();
 
@@ -36,6 +39,14 @@ public class RestaurantManager {
 		super();
 	}
 	
+	public void addTable(TableForEating tableForEating) {
+		tableForEatings.add(tableForEating);
+	}
+	
+	public List<TableForEating> getTableForEatings() {
+		return tableForEatings;
+	}
+
 	public void addMoney(double money) {
 		this.money += money;
 	}
@@ -150,10 +161,10 @@ public class RestaurantManager {
 				Block block = new Block(GameConfiguration.LINE_ENTRY, GameConfiguration.COLUMN_ENTRY);
 				Customer customer;
 				if(SimulationUtility.getRandom(0, 10) < 3) {
-					customer = new Customer(block, currentId, false, true);
+					customer = new Customer(block, currentId, false, true, SimulationUtility.getRandom(0, 20));
 				}
 				else {
-					customer = new Customer(block, currentId, false, false);
+					customer = new Customer(block, currentId, false, false, SimulationUtility.getRandom(0, 20));
 				}
 				addCustomer(customer);
 				addTakenBlock(block);

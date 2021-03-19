@@ -11,9 +11,11 @@ import data.Counter;
 import data.Ingredient;
 import data.Menu;
 import data.Oven;
+import data.PositionForEating;
 import data.RestaurantMap;
 import data.Storage;
 import data.StorageMap;
+import data.TableForEating;
 
 public class RestaurantBuilder {
 
@@ -27,15 +29,63 @@ public class RestaurantBuilder {
 		RestaurantManager restaurantManager = new RestaurantManager();
 
 		initCharacters(restaurantManager);
-		createStorages(restaurantMap, restaurantManager);
-		createOvens(restaurantMap, restaurantManager);
-		createCheckouts(restaurantMap, restaurantManager);
-		createCounters(restaurantMap, restaurantManager);
+		createStorages(restaurantMap);
+		createOvens(restaurantManager);
+		createCheckouts(restaurantManager);
+		createCounters(restaurantManager);
+		initTableForEating(restaurantMap, restaurantManager);
 		createMenu(restaurantManager);
 
 		return restaurantManager;
 	}
 
+	private void initTableForEating(RestaurantMap restaurantMap, RestaurantManager restaurantManager) {
+		TableForEating tableForEating1 = new TableForEating(new 
+				Block(GameConfiguration.LINE_COUNT - 9, GameConfiguration.COLUMN_COUNT - 5),
+				new PositionForEating(GameConfiguration.LINE_COUNT - 8, GameConfiguration.COLUMN_COUNT - 5),
+				new PositionForEating(GameConfiguration.LINE_COUNT - 10, GameConfiguration.COLUMN_COUNT - 5));
+		restaurantManager.addTable(tableForEating1);
+		restaurantManager.addTakenBlock(tableForEating1.getPosition());
+		
+		TableForEating tableForEating2 = new TableForEating(new 
+				Block(GameConfiguration.LINE_COUNT - 5, GameConfiguration.COLUMN_COUNT - 5), 
+				new PositionForEating(GameConfiguration.LINE_COUNT - 4, GameConfiguration.COLUMN_COUNT - 5),
+				new PositionForEating(GameConfiguration.LINE_COUNT - 6, GameConfiguration.COLUMN_COUNT - 5));
+		restaurantManager.addTable(tableForEating2);
+		restaurantManager.addTakenBlock(tableForEating2.getPosition());
+		
+		TableForEating tableForEating3 = new TableForEating(new 
+				Block(GameConfiguration.LINE_COUNT - 5, GameConfiguration.COLUMN_COUNT - 4),
+				new PositionForEating(GameConfiguration.LINE_COUNT - 4, GameConfiguration.COLUMN_COUNT - 4),
+				new PositionForEating(GameConfiguration.LINE_COUNT - 6, GameConfiguration.COLUMN_COUNT - 4));
+		restaurantManager.addTable(tableForEating3);
+		restaurantManager.addTakenBlock(tableForEating3.getPosition());
+		
+		TableForEating tableForEating4 = new TableForEating(new 
+				Block(GameConfiguration.LINE_COUNT - 9, GameConfiguration.COLUMN_COUNT - 4),
+				new PositionForEating(GameConfiguration.LINE_COUNT - 8, GameConfiguration.COLUMN_COUNT - 4),
+				new PositionForEating(GameConfiguration.LINE_COUNT - 10, GameConfiguration.COLUMN_COUNT - 4));
+		restaurantManager.addTable(tableForEating4);
+		restaurantManager.addTakenBlock(tableForEating4.getPosition());
+		
+		for(int i = 9; i > 4; i--) {
+			createOneTable(restaurantManager, i);
+		}
+	}
+	
+	private void createOneTable(RestaurantManager restaurantManager, int column) {
+		TableForEating tableForEating = new TableForEating(new 
+				Block(GameConfiguration.LINE_COUNT - column, GameConfiguration.COLUMN_COUNT - 1),
+				new PositionForEating(GameConfiguration.LINE_COUNT - column + 1, GameConfiguration.COLUMN_COUNT - 1),
+				new PositionForEating(GameConfiguration.LINE_COUNT - column - 1, GameConfiguration.COLUMN_COUNT - 1));
+		restaurantManager.addTable(tableForEating);
+		restaurantManager.addTakenBlock(tableForEating.getPosition());
+	}
+	
+	/**
+	 * Initialize the staff on the restaurant.
+	 * @param restaurantManager initialize staff in the RestaurantManager class.
+	 */
 	private void initCharacters(RestaurantManager restaurantManager) {
 		List<Cook> cooks = new ArrayList<Cook>();
 		List<Block> takenBlocks = new ArrayList<Block>();
@@ -48,7 +98,7 @@ public class RestaurantBuilder {
 		restaurantManager.setTakenBlocks(takenBlocks);
 	}
 
-	private void createStorages(RestaurantMap restaurantMap, RestaurantManager restaurantManager) {
+	private void createStorages(RestaurantMap restaurantMap) {
 		Block block = restaurantMap.getBlock(GameConfiguration.COLUMN_COUNT - 2, GameConfiguration.LINE_COUNT - 12);
 
 		String[] ingredients = GameConfiguration.INGREDIENT;
@@ -64,7 +114,7 @@ public class RestaurantBuilder {
 
 	}
 
-	private void createOvens(RestaurantMap restaurantMap, RestaurantManager restaurantManager) {
+	private void createOvens(RestaurantManager restaurantManager) {
 		List<Oven> ovens = new ArrayList<Oven>();
 
 		ovens.add(new Oven(new Block(GameConfiguration.COLUMN_COUNT - 4, GameConfiguration.LINE_COUNT - 12), 5, 4));
@@ -73,7 +123,7 @@ public class RestaurantBuilder {
 		restaurantManager.setOvens(ovens);
 	}
 
-	private void createCheckouts(RestaurantMap restaurantMap, RestaurantManager restaurantManager) {
+	private void createCheckouts(RestaurantManager restaurantManager) {
 		List<Checkout> checkouts = new ArrayList<Checkout>();
 
 		checkouts.add(new Checkout(new Block(GameConfiguration.COLUMN_COUNT - 2, GameConfiguration.LINE_COUNT - 8),
@@ -82,7 +132,7 @@ public class RestaurantBuilder {
 		restaurantManager.setCheckouts(checkouts);
 	}
 
-	private void createCounters(RestaurantMap restaurantMap, RestaurantManager restaurantManager) {
+	private void createCounters(RestaurantManager restaurantManager) {
 		List<Counter> counters = new ArrayList<Counter>();
 
 		for (int index = 0; index < GameConfiguration.COLUMN_COUNT; index++) {

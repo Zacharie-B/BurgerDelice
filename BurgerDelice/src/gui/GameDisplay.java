@@ -12,6 +12,7 @@ import data.Customer;
 import data.Oven;
 import data.Storage;
 import data.StorageMap;
+import data.TableForEating;
 import process.RestaurantManager;
 
 /**
@@ -81,6 +82,14 @@ public class GameDisplay extends JPanel {
 		for (Checkout checkout : restaurantManager.getCheckouts()) {
 			try {
 				paintStrategy.paint(checkout, g);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		for(TableForEating tableForEating : restaurantManager.getTableForEatings()) {
+			try {
+				paintStrategy.paint(tableForEating, g);
 			} catch (IOException e) {
 				e.printStackTrace();
 			}

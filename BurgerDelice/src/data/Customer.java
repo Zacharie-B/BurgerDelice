@@ -7,15 +7,24 @@ public class Customer extends Element {
 	private boolean waitingOrder;
 	private boolean onTheRestaurant;
 	private int timeWaiting = 0;
+	private int timeForEat;
 
-	public Customer(Block position, int id, boolean waitingOrder, boolean onTheRestaurant) {
+	public Customer(Block position, int id, boolean waitingOrder, boolean onTheRestaurant, int timeForEat) {
 		super(position);
 		this.id = id;
 		this.waitingOrder = waitingOrder;
 		this.onTheRestaurant = onTheRestaurant;
+		this.timeForEat = timeForEat;
+	}
+	
+	public int getTimeForEat() {
+		return timeForEat;
 	}
 
-	
+	public void setTimeForEat(int timeForEat) {
+		this.timeForEat = timeForEat;
+	}
+
 	public boolean isOnTheRestaurant() {
 		return onTheRestaurant;
 	}
@@ -47,6 +56,8 @@ public class Customer extends Element {
 	public void setWaitingOrder(boolean waitingOrder) {
 		this.waitingOrder = waitingOrder;
 	}
+	
+	
 
 	public int getTimeWaiting() {
 		return timeWaiting;

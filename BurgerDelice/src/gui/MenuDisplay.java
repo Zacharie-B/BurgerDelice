@@ -220,6 +220,8 @@ public class MenuDisplay extends JPanel {
 		 * Action to increment an ingredient in the menu.
 		 */
 		addMeatButton.addActionListener(new IncrementIngredient("Steak", meatQuantityLabel));
+		addMeatButton.addActionListener(new IncrementIngredient("Poulet Pane", meatQuantityLabel));
+		addMeatButton.addActionListener(new IncrementIngredient("Fish", meatQuantityLabel));
 		addBreadButton.addActionListener(new IncrementIngredient("Pain", breadQuantityLabel));
 		addCheeseButton.addActionListener(new IncrementIngredient("Cheddar", cheeseQuantityLabel));
 		addTomatoButton.addActionListener(new IncrementIngredient("Tomate", tomatoQuantityLabel));
@@ -233,6 +235,8 @@ public class MenuDisplay extends JPanel {
 		 * Action to decrement an ingredient in the menu.
 		 */
 		removeMeatButton.addActionListener(new DecrementIngredient("Steak", meatQuantityLabel));
+		removeMeatButton.addActionListener(new DecrementIngredient("Poulet Pane", meatQuantityLabel));
+		removeMeatButton.addActionListener(new DecrementIngredient("Fish", meatQuantityLabel));
 		removeBreadButton.addActionListener(new DecrementIngredient("Pain", breadQuantityLabel));
 		removeCheeseButton.addActionListener(new DecrementIngredient("Cheddar", cheeseQuantityLabel));
 		removeTomatoButton.addActionListener(new DecrementIngredient("Tomate", tomatoQuantityLabel));

@@ -71,6 +71,12 @@ public class RestaurantBuilder {
 		for(int i = 9; i > 4; i--) {
 			createOneTable(restaurantManager, i);
 		}
+		
+		for(TableForEating eating : restaurantManager.getTableForEatings()) {
+			restaurantManager.addPositionForEating(eating.getPosForEating1());
+			restaurantManager.addPositionForEating(eating.getPosForEating2());
+		}
+		
 	}
 	
 	private void createOneTable(RestaurantManager restaurantManager, int column) {

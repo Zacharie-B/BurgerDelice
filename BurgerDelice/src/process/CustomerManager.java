@@ -15,6 +15,7 @@ public class CustomerManager extends MoveCharacters {
 	private StorageMap storageMapInstance = StorageMap.getInstance();
 
 	private RestaurantManager restaurantManager;
+	private MoveToEatOnTheRestaurant moveToEatOnTheRestaurant = new MoveToEatOnTheRestaurant();
 	
 	public CustomerManager(RestaurantManager restaurantManager) {
 		this.restaurantManager = restaurantManager;
@@ -82,7 +83,8 @@ public class CustomerManager extends MoveCharacters {
 	}
 	
 	private void moveToFindTable(Customer customer) {
-		moveDownCollision(customer.getPosition(), restaurantManager);
+		moveToEatOnTheRestaurant.eatOnTable(customer, restaurantManager);
+//		moveDownCollision(customer.getPosition(), restaurantManager);
 
 		restaurantManager.removeOrder(customer.getId());
 	}

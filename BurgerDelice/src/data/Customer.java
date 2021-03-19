@@ -6,6 +6,7 @@ public class Customer extends Element {
 	private int order;
 	private boolean waitingOrder;
 	private boolean onTheRestaurant;
+	private boolean eating = false;
 	private int timeWaiting = 0;
 	private int timeForEat;
 
@@ -57,7 +58,13 @@ public class Customer extends Element {
 		this.waitingOrder = waitingOrder;
 	}
 	
-	
+	public boolean isEating() {
+		return eating;
+	}
+
+	public void setEating(boolean eating) {
+		this.eating = eating;
+	}
 
 	public int getTimeWaiting() {
 		return timeWaiting;

@@ -13,6 +13,7 @@ import data.Customer;
 import data.Ingredient;
 import data.Menu;
 import data.Oven;
+import data.PositionForEating;
 import data.TableForEating;
 
 public class RestaurantManager {
@@ -29,6 +30,8 @@ public class RestaurantManager {
 	private List<Menu> menus = new ArrayList<Menu>();
 	
 	private List<TableForEating> tableForEatings = new ArrayList<TableForEating>();
+	
+	private List<PositionForEating> positionForEatings = new ArrayList<PositionForEating>();
 
 	private HashMap<Integer, List<Ingredient>> orders = new HashMap<Integer, List<Ingredient>>();
 
@@ -37,6 +40,10 @@ public class RestaurantManager {
 
 	public RestaurantManager() {
 		super();
+	}
+	
+	public void addPositionForEating(PositionForEating positionForEating) {
+		positionForEatings.add(positionForEating);
 	}
 	
 	public void addTable(TableForEating tableForEating) {
@@ -117,6 +124,10 @@ public class RestaurantManager {
 
 	public List<Block> getTakenBlocks() {
 		return takenBlocks;
+	}
+	
+	public List<PositionForEating> getPositionForEatings() {
+		return positionForEatings;
 	}
 
 	public void setTakenBlocks(List<Block> takenBlocks) {

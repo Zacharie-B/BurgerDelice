@@ -171,7 +171,7 @@ public class RestaurantManager {
 			if (SimulationUtility.getRandom(0, 10) < 2) {
 				Block block = new Block(GameConfiguration.LINE_ENTRY, GameConfiguration.COLUMN_ENTRY);
 				Customer customer;
-				if(SimulationUtility.getRandom(0, 10) < 3) {
+				if(SimulationUtility.getRandom(0, 10) < 10) {
 					customer = new Customer(block, currentId, false, true, SimulationUtility.getRandom(0, 20));
 				}
 				else {

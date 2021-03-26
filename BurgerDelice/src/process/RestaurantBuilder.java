@@ -80,10 +80,10 @@ public class RestaurantBuilder {
 	}
 	
 	private void createOneTable(RestaurantManager restaurantManager, int column) {
-		TableForEating tableForEating = new TableForEating(new 
-				Block(GameConfiguration.LINE_COUNT - column, GameConfiguration.COLUMN_COUNT - 1),
-				new PositionForEating(GameConfiguration.LINE_COUNT - column + 1, GameConfiguration.COLUMN_COUNT - 1),
-				new PositionForEating(GameConfiguration.LINE_COUNT - column - 1, GameConfiguration.COLUMN_COUNT - 1));
+		TableForEating tableForEating = new TableForEating(
+				new Block(GameConfiguration.LINE_COUNT - column, GameConfiguration.COLUMN_COUNT - 1),
+				new PositionForEating(GameConfiguration.LINE_COUNT - column, GameConfiguration.COLUMN_COUNT - 2),
+				null);
 		restaurantManager.addTable(tableForEating);
 		restaurantManager.addTakenBlock(tableForEating.getPosition());
 	}

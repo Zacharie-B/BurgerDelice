@@ -26,4 +26,10 @@ public class Block {
 		this.y = y;
 	}
 
+	@Override
+	public String toString() {
+		return "Block [x=" + x + ", y=" + y + "]";
+	}
+
+	
 }

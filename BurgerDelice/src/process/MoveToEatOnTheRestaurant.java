@@ -13,7 +13,7 @@ public class MoveToEatOnTheRestaurant extends MoveCharacters{
 	
 	/**
 	 * Move the customer in order to eat on the restaurant.
-	 * @param customer
+	 * @param customer who eat on the restaurant 
 	 * @param restaurantManager
 	 */
 	public void eatOnTable(Customer customer, RestaurantManager restaurantManager) {
@@ -25,26 +25,38 @@ public class MoveToEatOnTheRestaurant extends MoveCharacters{
 			int currentDistance = 0;
 			Block nearestBlock = null;
 			for(PositionForEating eating : restaurantManager.getPositionForEatings()) {
-				if(!eating.isOccuped()) {
-					lineDistance = customer.getPosition().getX() - eating.getX();
-					columnDistance = customer.getPosition().getY() - eating.getY();
-					currentDistance = Math.abs(lineDistance) + Math.abs(columnDistance);
-					
-					if(nearestDistance > currentDistance) {
-						nearestDistance = currentDistance;
-						nearestBlock = eating;
+				if(eating != null) {
+					if(!eating.isOccuped()) {
+						int xDistance = customer.getPosition().getX() - eating.getX();
+						int yDistance = customer.getPosition().getY() - eating.getY();
+						currentDistance = Math.abs(xDistance) + Math.abs(yDistance);
+						
+						logger.info("Client n°" + customer.getId() + " à la distance la plus proche : " + currentDistance); 
+						
+						if(nearestDistance > currentDistance && currentDistance > 0) {
+							lineDistance = xDistance;
+							columnDistance = yDistance;
+							nearestDistance = currentDistance;
+							nearestBlock = eating;
+						}
+					}
+				}
+			}
+			logger.info("Le client n°" + customer.getId() + " va à la place " + nearestBlock.toString());
+			
+			if(nearestDistance == 100) {
+				customer.setEating(true);
+				for(PositionForEating eating : restaurantManager.getPositionForEatings()) {
+					if(eating != null) {
+						if(nearestBlock.equals(eating)) {
+							eating.setOccuped(true);
+							logger.info("La place " + eating.toString() + "est prise ?: " + eating.isOccuped());
+						}
 					}
 				}
 			}
 			
-			if(nearestDistance == 0) {
-				customer.setEating(true);
-				for(PositionForEating eating : restaurantManager.getPositionForEatings()) {
-					if(nearestBlock.equals(eating)) {
-						eating.setOccuped(true);
-					}
-				}
-			}
+			logger.info("Client n°" + customer.getId() + " avec ligne : " + lineDistance + " et colonne : " + columnDistance);
 			
 			if(Math.abs(lineDistance) > Math.abs(columnDistance)) {
 				if(lineDistance > 0) {
@@ -64,18 +76,30 @@ public class MoveToEatOnTheRestaurant extends MoveCharacters{
 			}
 		}
 		else if(customer.isEating()) {
+			/**
+			 * We check if the customer is still in the process of eating,
+			 * if yes, he continue to eat his menu
+			 * else he leaves out the restaurant.
+			 */
 			if(customer.getTimeForEat() > 0) {
 				customer.setTimeForEat(customer.getTimeForEat() - 1);
-//				logger.info("Il mange : " + customer.getTimeForEat());
+				logger.info("Il mange : " + customer.getTimeForEat());
 			}
 			else if(customer.getTimeForEat() == 0){
 				customer.setOnTheRestaurant(false);
+				/**
+				 * We browse the list of all position where the customer can eat on the restaurant.
+				 */
 				for(PositionForEating eating : restaurantManager.getPositionForEatings()) {
-					if(customer.getPosition().equals(eating)) {
-						eating.setOccuped(false);
+					if(eating != null) {
+						if(customer.getPosition().getX() == eating.getX() 
+								&& customer.getPosition().getY() == eating.getY()) {
+							eating.setOccuped(false);
+							logger.info("La place " + eating.toString() + "est prise ?: " + eating.isOccuped());
+						}
 					}
 				}
-//				logger.info("Il a fini de manger : " + customer.getTimeForEat());
+				logger.info("Il a fini de manger : " + customer.getTimeForEat());
 			}
 		}
 	}

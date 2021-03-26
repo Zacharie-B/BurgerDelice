@@ -105,6 +105,23 @@ public class PaintStrategy {
 
 		graphics.setColor(new Color(88, 41, 0));
 		graphics.fillRect(x * blockSize, y * blockSize, blockSize, blockSize);
-
+		
+		Block eatingPosition1 = tableForEating.getPosForEating1();
+		
+		int y1 = eatingPosition1.getY();
+		int x1 = eatingPosition1.getX();
+		
+		graphics.setColor(new Color(255, 235, 0));
+		graphics.fillOval(x1 * blockSize, y1 * blockSize, blockSize, blockSize);
+		
+		if(tableForEating.getPosForEating2() != null) {
+			Block eatingPosition2 = tableForEating.getPosForEating2();
+			
+			int y2 = eatingPosition2.getY();
+			int x2 = eatingPosition2.getX();
+			
+			graphics.setColor(new Color(255, 235, 0));
+			graphics.fillOval(x2 * blockSize, y2 * blockSize, blockSize, blockSize);
+		}
 	} 
 }

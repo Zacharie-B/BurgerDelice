@@ -35,7 +35,7 @@ public class Customer extends Element {
 	}
 
 	public void incrementWaitingTime() {
-		timeWaiting++;
+		this.timeWaiting++;
 	}
 
 	public int getId() {

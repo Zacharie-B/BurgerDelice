@@ -40,7 +40,7 @@ public class RestaurantBuilder {
 	}
 
 	private void initTableForEating(RestaurantMap restaurantMap, RestaurantManager restaurantManager) {
-		TableForEating tableForEating1 = new TableForEating(new 
+		TableForEating tableForEating1 = new TableForEating(new
 				Block(GameConfiguration.LINE_COUNT - 9, GameConfiguration.COLUMN_COUNT - 5),
 				new PositionForEating(GameConfiguration.LINE_COUNT - 8, GameConfiguration.COLUMN_COUNT - 5),
 				new PositionForEating(GameConfiguration.LINE_COUNT - 10, GameConfiguration.COLUMN_COUNT - 5));

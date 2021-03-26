@@ -1,11 +1,11 @@
 package test;
 
-import gui.MainGUI;
+import gui.RestaurantGUI;
 
 public class TestGame {
 	public static void main(String[] args) {
 
-		MainGUI gameMainGUI = new MainGUI("Burger Delice");
+		RestaurantGUI gameMainGUI = new RestaurantGUI("Burger Delice");
 
 		Thread gameThread = new Thread(gameMainGUI);
 		gameThread.start();

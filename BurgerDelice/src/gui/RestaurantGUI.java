@@ -13,7 +13,7 @@ import process.RestaurantBuilder;
 import process.RestaurantManager;
 import process.SimulationUtility;
 
-public class MainGUI extends JFrame implements Runnable {
+public class RestaurantGUI extends JFrame implements Runnable {
 
 	private static final long serialVersionUID = 1L;
 
@@ -32,7 +32,7 @@ public class MainGUI extends JFrame implements Runnable {
 
 	private boolean status = false;
 
-	public MainGUI(String title) {
+	public RestaurantGUI(String title) {
 		super(title);
 
 		init();
@@ -79,7 +79,6 @@ public class MainGUI extends JFrame implements Runnable {
 
 			restaurantManager.generateCustomer();
 			
-
 			gameDisplay.repaint();
 			customerManager.moveCustomer();
 			managementDisplay.display();

@@ -25308,3 +25308,159 @@ INFO Thread-0 process.MoveToEatOnTheRestaurant - La place Block [x=6, y=7]est pr
 INFO Thread-0 process.MoveToEatOnTheRestaurant - Il a fini de manger : 0
 INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°11 mange : 1
 INFO Thread-0 process.MoveToEatOnTheRestaurant - La place Block [x=4, y=7]est prise ?: true
+INFO Thread-0 process.MoveToEatOnTheRestaurant - La place Block [x=2, y=7]est prise ?: true
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°0 mange : 16
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°0 mange : 15
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°0 mange : 14
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°0 mange : 13
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°0 mange : 12
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°0 mange : 11
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°0 mange : 10
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°0 mange : 9
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°0 mange : 8
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°0 mange : 7
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°0 mange : 6
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°0 mange : 5
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°0 mange : 4
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°0 mange : 3
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°0 mange : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°0 mange : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°0 mange : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - La place Block [x=2, y=7]est prise ?: false
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Il a fini de manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - La place Block [x=2, y=7]est prise ?: true
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°1 mange : 41
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°1 mange : 40
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°1 mange : 39
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°1 mange : 38
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°1 mange : 37
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°1 mange : 36
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°1 mange : 35
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°1 mange : 34
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°1 mange : 33
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°1 mange : 32
+INFO Thread-0 process.MoveToEatOnTheRestaurant - La place Block [x=4, y=7]est prise ?: true
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°1 mange : 31
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°2 mange : 25
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°1 mange : 30
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°2 mange : 24
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°1 mange : 29
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°2 mange : 23
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°1 mange : 28
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°2 mange : 22
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°1 mange : 27
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°2 mange : 21
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°1 mange : 26
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°2 mange : 20
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°1 mange : 25
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°2 mange : 19
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°1 mange : 24
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°2 mange : 18
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°1 mange : 23
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°2 mange : 17
+INFO Thread-0 process.MoveToEatOnTheRestaurant - La place Block [x=6, y=7]est prise ?: true
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°1 mange : 22
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°2 mange : 16
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°3 mange : 28
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°1 mange : 21
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°2 mange : 15
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°3 mange : 27
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°1 mange : 20
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°2 mange : 14
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°3 mange : 26
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°1 mange : 19
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°2 mange : 13
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°3 mange : 25
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°1 mange : 18
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°2 mange : 12
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°3 mange : 24
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°1 mange : 17
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°2 mange : 11
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°3 mange : 23
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°1 mange : 16
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°2 mange : 10
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°3 mange : 22
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°1 mange : 15
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°2 mange : 9
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°3 mange : 21
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°1 mange : 14
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°2 mange : 8
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°3 mange : 20
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°1 mange : 13
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°2 mange : 7
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°3 mange : 19
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°1 mange : 12
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°2 mange : 6
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°3 mange : 18
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°1 mange : 11
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°2 mange : 5
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°3 mange : 17
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°1 mange : 10
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°2 mange : 4
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°3 mange : 16
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°1 mange : 9
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°2 mange : 3
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°3 mange : 15
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°1 mange : 8
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°2 mange : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°3 mange : 14
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°1 mange : 7
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°2 mange : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°3 mange : 13
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°1 mange : 6
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°2 mange : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°3 mange : 12
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°1 mange : 5
+INFO Thread-0 process.MoveToEatOnTheRestaurant - La place Block [x=4, y=7]est prise ?: false
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Il a fini de manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°3 mange : 11
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°1 mange : 4
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°3 mange : 10
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°1 mange : 3
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°3 mange : 9
+INFO Thread-0 process.MoveToEatOnTheRestaurant - La place Block [x=4, y=7]est prise ?: true
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°1 mange : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°3 mange : 8
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°6 mange : 19
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°1 mange : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°3 mange : 7
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°6 mange : 18
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°1 mange : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°3 mange : 6
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°6 mange : 17
+INFO Thread-0 process.MoveToEatOnTheRestaurant - La place Block [x=2, y=7]est prise ?: false
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Il a fini de manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°3 mange : 5
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°6 mange : 16
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°3 mange : 4
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°6 mange : 15
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°3 mange : 3
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°6 mange : 14
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°3 mange : 2
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°6 mange : 13
+INFO Thread-0 process.MoveToEatOnTheRestaurant - La place Block [x=2, y=7]est prise ?: true
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°3 mange : 1
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°6 mange : 12
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°7 mange : 43
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°3 mange : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°6 mange : 11
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°7 mange : 42
+INFO Thread-0 process.MoveToEatOnTheRestaurant - La place Block [x=6, y=7]est prise ?: false
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Il a fini de manger : 0
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°6 mange : 10
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°7 mange : 41
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°6 mange : 9
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°7 mange : 40
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°6 mange : 8
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°7 mange : 39
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°6 mange : 7
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°7 mange : 38
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°6 mange : 6
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°7 mange : 37
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°6 mange : 5
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°7 mange : 36
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°6 mange : 4
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°7 mange : 35
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°6 mange : 3
+INFO Thread-0 process.MoveToEatOnTheRestaurant - Le client n°7 mange : 34
+INFO Thread-0 process.MoveToEatOnTheRestaurant - La place Block [x=6, y=7]est prise ?: true

@@ -14,6 +14,7 @@ import data.Ingredient;
 import data.Menu;
 import data.Oven;
 import data.PositionForEating;
+import data.Server;
 import data.TableForEating;
 
 public class RestaurantManager {
@@ -24,6 +25,7 @@ public class RestaurantManager {
 
 	private List<Customer> customers = new ArrayList<Customer>();
 	private List<Cook> cooks = new ArrayList<Cook>();
+	private List<Server> servers = new ArrayList<Server>();
 
 	private List<Block> takenBlocks = new ArrayList<Block>();
 
@@ -61,7 +63,7 @@ public class RestaurantManager {
 	public void addOven(Oven oven) {
 		ovens.add(oven);
 	}
-
+	
 	public void addCustomer(Customer customer) {
 		customers.add(customer);
 	}
@@ -80,6 +82,15 @@ public class RestaurantManager {
 
 	public void removeOrder(int id) {
 		orders.remove(id);
+	}
+
+	
+	public List<Server> getServers() {
+		return servers;
+	}
+
+	public void setServers(List<Server> servers) {
+		this.servers = servers;
 	}
 
 	public List<Oven> getOvens() {

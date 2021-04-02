@@ -13,6 +13,7 @@ import data.Menu;
 import data.Oven;
 import data.PositionForEating;
 import data.RestaurantMap;
+import data.Server;
 import data.Storage;
 import data.StorageMap;
 import data.TableForEating;
@@ -93,39 +94,49 @@ public class RestaurantBuilder {
 	 * @param restaurantManager initialize staff in the RestaurantManager class.
 	 */
 	private void initCharacters(RestaurantManager restaurantManager) {
-		List<Cook> cooks = new ArrayList<Cook>();
+		List<Server> servers = new ArrayList<Server>();
 		List<Block> takenBlocks = new ArrayList<Block>();
 
-		Block blockCook = new Block(GameConfiguration.COLUMN_COUNT - 2, GameConfiguration.LINE_COUNT - 9);
-
-		cooks.add(new Cook(blockCook, "Philippe", 1000, 4));
-
+		Block blockServer = new Block(GameConfiguration.COLUMN_COUNT - 2, GameConfiguration.LINE_COUNT - 9);
+		servers.add(new Server(blockServer, "Philippe", 1000, 4));
+		takenBlocks.add(blockServer);
+		
+		Block blockServer1 = new Block(GameConfiguration.COLUMN_ORDER_RECEPTION, GameConfiguration.LINE_COUNT - 9);
+		servers.add(new Server(blockServer1, "Sirine", 1100, 5));
+		takenBlocks.add(blockServer1);
+		
+		restaurantManager.setServers(servers);
+		
+		List<Cook> cooks = new ArrayList<Cook>();
+		
+		Block blockCook = new Block(GameConfiguration.COLUMN_COUNT - 8, GameConfiguration.LINE_COUNT - 11);
+		cooks.add(new Cook(blockCook, "Roger", 1500, 10));
+		takenBlocks.add(blockCook);
+		
 		restaurantManager.setCooks(cooks);
 		restaurantManager.setTakenBlocks(takenBlocks);
 	}
 
 	private void createStorages(RestaurantMap restaurantMap) {
-		Block block = restaurantMap.getBlock(GameConfiguration.COLUMN_COUNT - 2, GameConfiguration.LINE_COUNT - 12);
+		Block block = restaurantMap.getBlock(GameConfiguration.COLUMN_COUNT - 4, GameConfiguration.LINE_COUNT - 12);
 
-		String[] ingredients = GameConfiguration.INGREDIENT;
-
-		for (int index = 0; index < ingredients.length; index++) {
-			addIngredientToStorage(ingredients[index], 100, 50, block);
+		for (int index = 0; index < GameConfiguration.INGREDIENT.length; index++) {
+			addIngredientToStorage(GameConfiguration.INGREDIENT[index], 100, 50, block);
 		}
 	}
 
 	private void addIngredientToStorage(String name, int capacityMax, int quantity, Block block) {
 		Storage storage = new Storage(block, capacityMax, quantity, name);
 		storageMapInstance.addIngredientInStorage(name, storage);
-
 	}
 
 	private void createOvens(RestaurantManager restaurantManager) {
 		List<Oven> ovens = new ArrayList<Oven>();
 
-		ovens.add(new Oven(new Block(GameConfiguration.COLUMN_COUNT - 4, GameConfiguration.LINE_COUNT - 12), 5, 4));
-		ovens.add(new Oven(new Block(GameConfiguration.COLUMN_COUNT - 5, GameConfiguration.LINE_COUNT - 12), 5, 4));
-
+		ovens.add(new Oven(new Block(GameConfiguration.COLUMN_COUNT - 7, GameConfiguration.LINE_COUNT - 12), 5, 4));
+		ovens.add(new Oven(new Block(GameConfiguration.COLUMN_COUNT - 8, GameConfiguration.LINE_COUNT - 12), 5, 4));
+		ovens.add(new Oven(new Block(GameConfiguration.COLUMN_COUNT - 9, GameConfiguration.LINE_COUNT - 12), 5, 4));
+		
 		restaurantManager.setOvens(ovens);
 	}
 
@@ -143,6 +154,10 @@ public class RestaurantBuilder {
 
 		for (int index = 0; index < GameConfiguration.COLUMN_COUNT; index++) {
 			counters.add(new Counter(new Block(index, GameConfiguration.COLUMN_COUNT - 8)));
+		}
+		
+		for (int index = 0; index < 4; index++) {
+			counters.add(new Counter(new Block(index + 2, GameConfiguration.COLUMN_COUNT - 10)));
 		}
 
 		restaurantManager.setCounters(counters);

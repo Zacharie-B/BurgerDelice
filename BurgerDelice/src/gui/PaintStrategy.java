@@ -11,6 +11,7 @@ import data.Cook;
 import data.Counter;
 import data.Customer;
 import data.Oven;
+import data.Server;
 import data.Storage;
 import data.TableForEating;
 
@@ -19,11 +20,11 @@ public class PaintStrategy {
 	public void paint(Cook cook, Graphics graphics) throws IOException {
 		Block position = cook.getPosition();
 		int blockSize = GameConfiguration.BLOCK_SIZE;
-
+		
 		int y = position.getY();
 		int x = position.getX();
 
-		graphics.setColor(Color.RED);
+		graphics.setColor(Color.LIGHT_GRAY);
 		graphics.fillOval(x * blockSize, y * blockSize, blockSize, blockSize);
 
 	}
@@ -84,6 +85,17 @@ public class PaintStrategy {
 		graphics.setColor(Color.YELLOW);
 		graphics.fillRect(x * blockSize, y * blockSize, blockSize, blockSize);
 	}
+	
+	public void paint(Server server, Graphics graphics) throws IOException {
+		Block position = server.getPosition();
+		int blockSize = GameConfiguration.BLOCK_SIZE;
+		
+		int y = position.getY();
+		int x = position.getX();
+		
+		graphics.setColor(Color.GREEN);
+		graphics.fillOval(x * blockSize, y * blockSize, blockSize, blockSize);
+	}
 
 	public void paint(Graphics graphics) throws IOException {
 		Block position = new Block(GameConfiguration.COLUMN_ORDER_RECEPTION, GameConfiguration.LINE_ORDER - 1);
@@ -105,23 +117,5 @@ public class PaintStrategy {
 
 		graphics.setColor(new Color(88, 41, 0));
 		graphics.fillRect(x * blockSize, y * blockSize, blockSize, blockSize);
-		
-//		Block eatingPosition1 = tableForEating.getPosForEating1();
-//		
-//		int y1 = eatingPosition1.getY();
-//		int x1 = eatingPosition1.getX();
-//		
-//		graphics.setColor(new Color(255, 235, 0));
-//		graphics.fillOval(x1 * blockSize, y1 * blockSize, blockSize, blockSize);
-//		
-//		if(tableForEating.getPosForEating2() != null) {
-//			Block eatingPosition2 = tableForEating.getPosForEating2();
-//			
-//			int y2 = eatingPosition2.getY();
-//			int x2 = eatingPosition2.getX();
-//			
-//			graphics.setColor(new Color(255, 235, 0));
-//			graphics.fillOval(x2 * blockSize, y2 * blockSize, blockSize, blockSize);
-//		}
 	} 
 }

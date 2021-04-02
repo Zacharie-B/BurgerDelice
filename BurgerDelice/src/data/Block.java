@@ -1,5 +1,9 @@
 package data;
 
+/**
+ * 
+ *
+ */
 public class Block {
 	private int x;
 	private int y;

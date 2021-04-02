@@ -10,6 +10,7 @@ import data.Cook;
 import data.Counter;
 import data.Customer;
 import data.Oven;
+import data.Server;
 import data.Storage;
 import data.StorageMap;
 import data.TableForEating;
@@ -41,6 +42,14 @@ public class GameDisplay extends JPanel {
 				paintStrategy.paint(cook, g);
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		for (Server server : restaurantManager.getServers()) {
+			try {
+				paintStrategy.paint(server, g);
+			} catch (IOException e) {
 				e.printStackTrace();
 			}
 		}

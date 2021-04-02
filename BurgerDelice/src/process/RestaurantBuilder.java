@@ -146,7 +146,7 @@ public class RestaurantBuilder {
 		checkouts.add(new Checkout(new Block(GameConfiguration.COLUMN_COUNT - 2, GameConfiguration.LINE_COUNT - 8),
 				10000, 0));
 
-		restaurantManager.setCheckouts(checkouts);
+		restaurantManager.setCheckouts(checkouts); 
 	}
 
 	private void createCounters(RestaurantManager restaurantManager) {

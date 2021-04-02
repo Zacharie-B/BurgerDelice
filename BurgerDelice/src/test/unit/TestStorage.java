@@ -12,7 +12,7 @@ import data.Ingredient;
 import data.Menu;
 
 
-public class TestMenu {
+public class TestStorage {
 
 	private Menu menu;
 	private List<Ingredient> ingredients = new ArrayList<Ingredient>();

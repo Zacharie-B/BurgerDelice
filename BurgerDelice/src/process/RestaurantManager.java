@@ -182,11 +182,11 @@ public class RestaurantManager {
 			if (SimulationUtility.getRandom(0, 10) < 2) {
 				Block block = new Block(GameConfiguration.LINE_ENTRY, GameConfiguration.COLUMN_ENTRY);
 				Customer customer;
-				if(SimulationUtility.getRandom(0, 10) < 10) {
+				if(SimulationUtility.getRandom(0, 10) < 4) {
 					customer = new Customer(block, currentId, false, true, SimulationUtility.getRandom(0, 20));
 				}
 				else {
-					customer = new Customer(block, currentId, false, false, SimulationUtility.getRandom(0, 20));
+					customer = new Customer(block, currentId, false, false, SimulationUtility.getRandom(10, 50));
 				}
 				addCustomer(customer);
 				addTakenBlock(block);

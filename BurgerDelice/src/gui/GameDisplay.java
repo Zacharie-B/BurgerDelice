@@ -19,7 +19,7 @@ import process.RestaurantManager;
 /**
  * Here, we paint all graphical elements in the restaurant, there are customers,
  * restaurant material, ovens and cooks.
- *
+ * 
  */
 public class GameDisplay extends JPanel {
 

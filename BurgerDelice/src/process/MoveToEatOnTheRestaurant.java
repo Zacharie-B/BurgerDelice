@@ -23,7 +23,7 @@ public class MoveToEatOnTheRestaurant extends MoveCharacters{
 			int lineDistance = 0;
 			int columnDistance = 0;
 			int currentDistance = 0;
-			Block nearestBlock = null;
+			PositionForEating positionForEating = null;
 			for(PositionForEating eating : restaurantManager.getPositionForEatings()) {
 				if(eating != null) {
 					if(!eating.isOccuped()) {
@@ -31,50 +31,51 @@ public class MoveToEatOnTheRestaurant extends MoveCharacters{
 						int yDistance = customer.getPosition().getY() - eating.getY();
 						currentDistance = Math.abs(xDistance) + Math.abs(yDistance);
 						
-						logger.info("Client n°" + customer.getId() + " à la distance la plus proche : " + currentDistance); 
-						
 						if(nearestDistance > currentDistance && currentDistance > 0) {
 							lineDistance = xDistance;
 							columnDistance = yDistance;
 							nearestDistance = currentDistance;
-							nearestBlock = eating;
+							positionForEating = eating;
 						}
-					}
-				}
-			}
-			logger.info("Le client n°" + customer.getId() + " va à la place " + nearestBlock.toString());
-			
-			if(nearestDistance == 100) {
-				customer.setEating(true);
-				for(PositionForEating eating : restaurantManager.getPositionForEatings()) {
-					if(eating != null) {
-						if(nearestBlock.equals(eating)) {
-							eating.setOccuped(true);
-							logger.info("La place " + eating.toString() + "est prise ?: " + eating.isOccuped());
-						}
-					}
+					}	
 				}
 			}
 			
-			logger.info("Client n°" + customer.getId() + " avec ligne : " + lineDistance + " et colonne : " + columnDistance);
-			
+			/** Move the customer to a place to eat on the place */
 			if(Math.abs(lineDistance) > Math.abs(columnDistance)) {
 				if(lineDistance > 0) {
-					moveLeftCollision(customer.getPosition(), restaurantManager);
+					int error = moveLeftCollision(customer.getPosition(), restaurantManager);
+					if(error == 1) 
+						moveDownCollision(customer.getPosition(), restaurantManager);
 				}
 				else {
-					moveRightCollision(customer.getPosition(), restaurantManager);
+					int error = moveRightCollision(customer.getPosition(), restaurantManager);
+					if(error == 1)
+						moveDownCollision(customer.getPosition(), restaurantManager);
 				}
 			}
 			else {
 				if(columnDistance > 0) {
-					moveTopCollision(customer.getPosition(), restaurantManager);
+					int error = moveTopCollision(customer.getPosition(), restaurantManager);
+					if(error == 1)
+						moveLeftCollision(customer.getPosition(), restaurantManager);
 				}
 				else {
-					moveDownCollision(customer.getPosition(), restaurantManager);
+					int error = moveDownCollision(customer.getPosition(), restaurantManager);
+					if(error == 1)
+						moveRightCollision(customer.getPosition(), restaurantManager);
 				}
 			}
+			
+			/** if the customer is in a place where he can eat*/
+			if((customer.getPosition().getX() == positionForEating.getX())
+				&& (customer.getPosition().getY() == positionForEating.getY())) {
+				customer.setEating(true);
+				positionForEating.setOccuped(true);
+				logger.info("La place " + positionForEating.toString() + "est prise ?: " + positionForEating.isOccuped());
+			}
 		}
+		
 		else if(customer.isEating()) {
 			/**
 			 * We check if the customer is still in the process of eating,
@@ -83,7 +84,7 @@ public class MoveToEatOnTheRestaurant extends MoveCharacters{
 			 */
 			if(customer.getTimeForEat() > 0) {
 				customer.setTimeForEat(customer.getTimeForEat() - 1);
-				logger.info("Il mange : " + customer.getTimeForEat());
+				logger.info("Le client n°" + customer.getId() + " mange : " + customer.getTimeForEat());
 			}
 			else if(customer.getTimeForEat() == 0){
 				customer.setOnTheRestaurant(false);

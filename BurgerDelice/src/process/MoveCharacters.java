@@ -4,12 +4,12 @@ import data.Block;
 
 public class MoveCharacters extends BasicMove {
 
-	public void moveTopCollision(Block block, RestaurantManager restaurantManager) {
+	public int moveTopCollision(Block block, RestaurantManager restaurantManager) {
 		Boolean isBlocked = false;
 		for (Block takenBlock : restaurantManager.getTakenBlocks()) {
 			if (block.getY() - 1 == takenBlock.getY() && block.getX() == takenBlock.getX()) {
 				isBlocked = true;
-				break;
+				return 1;
 			}
 		}
 
@@ -18,14 +18,15 @@ public class MoveCharacters extends BasicMove {
 			moveTop(block);
 			restaurantManager.addTakenBlock(block);
 		}
+		return 0;
 	}
 
-	public void moveDownCollision(Block block, RestaurantManager restaurantManager) {
+	public int moveDownCollision(Block block, RestaurantManager restaurantManager) {
 		Boolean isBlocked = false;
 		for (Block takenBlock : restaurantManager.getTakenBlocks()) {
 			if (block.getY() + 1 == takenBlock.getY() && block.getX() == takenBlock.getX()) {
 				isBlocked = true;
-				break;
+				return 1;
 			}
 		}
 
@@ -34,14 +35,15 @@ public class MoveCharacters extends BasicMove {
 			moveDown(block);
 			restaurantManager.addTakenBlock(block);
 		}
+		return 0;
 	}
 
-	public void moveLeftCollision(Block block, RestaurantManager restaurantManager) {
+	public int moveLeftCollision(Block block, RestaurantManager restaurantManager) {
 		Boolean isBlocked = false;
 		for (Block takenBlock : restaurantManager.getTakenBlocks()) {
 			if (block.getY() == takenBlock.getY() && block.getX() - 1 == takenBlock.getX()) {
 				isBlocked = true;
-				break;
+				return 1;
 			}
 		}
 
@@ -50,14 +52,15 @@ public class MoveCharacters extends BasicMove {
 			moveLeft(block);
 			restaurantManager.addTakenBlock(block);
 		}
+		return 0;
 	}
 
-	public void moveRightCollision(Block block, RestaurantManager restaurantManager) {
+	public int moveRightCollision(Block block, RestaurantManager restaurantManager) {
 		Boolean isBlocked = false;
 		for (Block takenBlock : restaurantManager.getTakenBlocks()) {
 			if (block.getY() == takenBlock.getY() && block.getX() + 1 == takenBlock.getX()) {
 				isBlocked = true;
-				break;
+				return 1;
 			}
 		}
 
@@ -66,6 +69,6 @@ public class MoveCharacters extends BasicMove {
 			moveRight(block);
 			restaurantManager.addTakenBlock(block);
 		}
+		return 0;
 	}
-
 }

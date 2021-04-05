@@ -26,7 +26,7 @@ public class TestStorage {
 	}
 	
 	@Test
-	public void testAddStorage() {
+	public void testAddMenuIngredient() {
 		int count1 = 0;
 		for(Ingredient ingredient : menu.getIngredients()) {
 			if(ingredient.getName().equals("a")) {
@@ -44,7 +44,7 @@ public class TestStorage {
 	}
 	
 	@Test
-	public void testDecrementStorage() {
+	public void testDecrementMenuIngredient() {
 		int count1 = 0;
 		for(Ingredient ingredient : menu.getIngredients()) {
 			if(ingredient.getName().equals("b")) {

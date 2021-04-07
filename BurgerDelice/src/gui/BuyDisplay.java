@@ -3,6 +3,8 @@ package gui;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.Map;
 
 import javax.swing.JButton;
@@ -18,7 +20,7 @@ public class BuyDisplay extends JPanel {
 	private static final long serialVersionUID = 1L;
 
 	private JLabel basketLabel = new JLabel("Votre panier : ");
-	
+
 	private JButton buyButton = new JButton("Payer");
 
 	private JTextPane basketPane = new JTextPane();
@@ -36,11 +38,13 @@ public class BuyDisplay extends JPanel {
 
 	private void init() {
 		setLayout(new BorderLayout());
-		
+
 		basketLabel.setBackground(Color.WHITE);
 		basketLabel.setOpaque(true);
 
 		basketPane.setPreferredSize(preferredSize);
+
+		buyButton.addActionListener(new BuyBasket());
 
 		add(basketLabel, BorderLayout.NORTH);
 		add(jScrollPane);
@@ -53,5 +57,13 @@ public class BuyDisplay extends JPanel {
 			message += mapentry.getKey() + " : " + mapentry.getValue() + "\n";
 		}
 		basketPane.setText(message);
+	}
+
+	private class BuyBasket implements ActionListener {
+
+		public void actionPerformed(ActionEvent e) {
+			restaurantManager.getOrder().buyBasket();
+			basketPane.setText("");
+		}
 	}
 }

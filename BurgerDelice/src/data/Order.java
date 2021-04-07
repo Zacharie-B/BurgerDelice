@@ -35,4 +35,10 @@ public class Order {
 		}
 	}
 
+	public void buyBasket() {
+		order = basket;
+		basket = new HashMap<String, Integer>();
+
+	}
+
 }

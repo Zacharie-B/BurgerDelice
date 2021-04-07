@@ -12,7 +12,10 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
+import org.apache.log4j.Logger;
+
 import data.Ingredient;
+import log.LoggerUtility;
 import process.RestaurantManager;
 
 public class MenuDisplay extends JPanel {
@@ -84,6 +87,8 @@ public class MenuDisplay extends JPanel {
 	private List<Ingredient> ingredientsInMenu;
 
 	private RestaurantManager restaurantManager;
+	
+	private Logger logger = LoggerUtility.getLogger(MenuDisplay.class, "gui");
 
 	public MenuDisplay(RestaurantManager restaurantManager) {
 
@@ -273,7 +278,6 @@ public class MenuDisplay extends JPanel {
 			currentMenu = this.numberOfMenu;
 			ingredientsInMenu = restaurantManager.getMenus().get(currentMenu).getIngredients();
 
-//			logger.info(" Menu choisi : " + currentMenu);
 			if (numberOfMenu == 0) {
 				changeFirstMenu.setBackground(Color.LIGHT_GRAY);
 				changeSecondMenu.setBackground(Color.WHITE);
@@ -304,8 +308,6 @@ public class MenuDisplay extends JPanel {
 			tomatoQuantityLabel.setText(String.valueOf(ingredientsInMenu.get(6).getNbByMenu()));
 			chipsQuantityLabel.setText(String.valueOf(ingredientsInMenu.get(7).getNbByMenu()));
 			sauceQuantityLabel.setText(String.valueOf(ingredientsInMenu.get(8).getNbByMenu()));
-
-//			logger.info("Nombre de viandes" + " : " + steakQuantityLabel.getText());
 
 			setVisible(true);
 		}

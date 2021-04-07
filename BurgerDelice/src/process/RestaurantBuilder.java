@@ -110,11 +110,11 @@ public class RestaurantBuilder {
 		List<Block> takenBlocks = new ArrayList<Block>();
 
 		Block blockServer = new Block(GameConfiguration.COLUMN_COUNT - 2, GameConfiguration.LINE_COUNT - 9);
-		servers.add(new Server(blockServer, "Philippe", 1000, 4));
+		servers.add(new Server(blockServer, "Philippe", 100, 4));
 		takenBlocks.add(blockServer);
 		
 		Block blockServer1 = new Block(GameConfiguration.COLUMN_ORDER_RECEPTION, GameConfiguration.LINE_COUNT - 9);
-		servers.add(new Server(blockServer1, "Sirine", 1100, 5));
+		servers.add(new Server(blockServer1, "Sirine", 110, 5));
 		takenBlocks.add(blockServer1);
 		
 		restaurantManager.setServers(servers);
@@ -122,7 +122,7 @@ public class RestaurantBuilder {
 		List<Cook> cooks = new ArrayList<Cook>();
 		
 		Block blockCook = new Block(GameConfiguration.COLUMN_COUNT - 8, GameConfiguration.LINE_COUNT - 11);
-		cooks.add(new Cook(blockCook, "Roger", 1500, 10));
+		cooks.add(new Cook(blockCook, "Roger", 150, 10));
 		takenBlocks.add(blockCook);
 		
 		restaurantManager.setCooks(cooks);

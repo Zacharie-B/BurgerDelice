@@ -32,6 +32,6 @@ public class GameConfiguration {
 			"Cheddar", "Oignon", "Tomate", "Frites moyenne", "Sauce" };
 
 	// Table with all ingredient prices
-	public static final double INGREDIENTPRICES[] = { 1.50, 1.15, 0.90, 0.30, 0.25, 0.20, 0.25, 0.20, 0.20, 0.35, 0.10 };
+	public static final double INGREDIENT_PRICES[] = { 1.50, 1.15, 0.90, 0.30, 0.25, 0.20, 0.25, 0.20, 0.20, 0.35, 0.10};
 
 }

@@ -72,7 +72,6 @@ public class MoveToEatOnTheRestaurant extends MoveCharacters{
 				&& (customer.getPosition().getY() == positionForEating.getY())) {
 				customer.setEating(true);
 				positionForEating.setOccuped(true);
-				logger.info("La place " + positionForEating.toString() + "est prise ?: " + positionForEating.isOccuped());
 			}
 		}
 		
@@ -84,7 +83,6 @@ public class MoveToEatOnTheRestaurant extends MoveCharacters{
 			 */
 			if(customer.getTimeForEat() > 0) {
 				customer.setTimeForEat(customer.getTimeForEat() - 1);
-				logger.info("Le client n°" + customer.getId() + " mange : " + customer.getTimeForEat());
 			}
 			else if(customer.getTimeForEat() == 0){
 				customer.setOnTheRestaurant(false);
@@ -96,11 +94,9 @@ public class MoveToEatOnTheRestaurant extends MoveCharacters{
 						if(customer.getPosition().getX() == eating.getX() 
 								&& customer.getPosition().getY() == eating.getY()) {
 							eating.setOccuped(false);
-							logger.info("La place " + eating.toString() + "est prise ?: " + eating.isOccuped());
 						}
 					}
 				}
-				logger.info("Il a fini de manger : " + customer.getTimeForEat());
 			}
 		}
 	}

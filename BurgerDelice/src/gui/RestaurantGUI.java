@@ -9,6 +9,7 @@ import javax.swing.JFrame;
 import config.GameConfiguration;
 import data.RestaurantMap;
 import process.CustomerManager;
+import process.PaieOfEmployee;
 import process.RestaurantBuilder;
 import process.RestaurantManager;
 import process.SimulationUtility;
@@ -22,6 +23,7 @@ public class RestaurantGUI extends JFrame implements Runnable {
 	private RestaurantMap restaurantMap;
 	private RestaurantManager restaurantManager;
 	private CustomerManager customerManager;
+	private PaieOfEmployee paieOfEmployee;
 
 	private RestaurantBuilder restaurantBuilder;
 
@@ -58,6 +60,8 @@ public class RestaurantGUI extends JFrame implements Runnable {
 
 		managementDisplay = new ManagementDisplay(restaurantManager, storageDisplay, menuDisplay);
 		managementDisplay.setPreferredSize(preferredSize);
+		
+		paieOfEmployee = new PaieOfEmployee(restaurantManager, 100);
 
 		contentPane.add(gameDisplay, BorderLayout.WEST);
 		contentPane.add(managementDisplay, BorderLayout.EAST);
@@ -81,8 +85,9 @@ public class RestaurantGUI extends JFrame implements Runnable {
 			
 			gameDisplay.repaint();
 			customerManager.moveCustomer();
-			managementDisplay.display();
+			managementDisplay.moneyDisplay();
 			storageDisplay.updateStorageDisplay();
+			paieOfEmployee.manageEmployeePaiement();
 
 		}
 	}

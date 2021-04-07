@@ -71,8 +71,8 @@ public class ManagementDisplay extends JPanel {
 	/**
 	 * Display the orders in preparing in window.
 	 */
-	protected void display() {
-		String message = "Argent : ";
+	protected void moneyDisplay() {
+		String message = "Argent du restaurant : ";
 		message += (double) Math.round(restaurantManager.getMoney() * 100) / 100 + " euros \n";
 		for (Entry<Integer, List<Ingredient>> mapentry : restaurantManager.getOrders().entrySet()) {
 			message += restaurantManager.toString(mapentry.getKey()) + "\n";

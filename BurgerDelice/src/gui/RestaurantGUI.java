@@ -9,7 +9,8 @@ import javax.swing.JFrame;
 import config.GameConfiguration;
 import data.RestaurantMap;
 import process.CustomerManager;
-import process.PaieOfEmployee;
+import process.PayOfEmployee;
+import process.Payment;
 import process.RestaurantBuilder;
 import process.RestaurantManager;
 import process.SimulationUtility;
@@ -23,7 +24,7 @@ public class RestaurantGUI extends JFrame implements Runnable {
 	private RestaurantMap restaurantMap;
 	private RestaurantManager restaurantManager;
 	private CustomerManager customerManager;
-	private PaieOfEmployee paieOfEmployee;
+	private Payment payOfEmployee;
 
 	private RestaurantBuilder restaurantBuilder;
 
@@ -40,6 +41,9 @@ public class RestaurantGUI extends JFrame implements Runnable {
 		init();
 	}
 
+	/**
+	 * Initialize all elements in the restaurant, allowing to manage of all features.
+	 */
 	private void init() {
 
 		Container contentPane = getContentPane();
@@ -61,7 +65,7 @@ public class RestaurantGUI extends JFrame implements Runnable {
 		managementDisplay = new ManagementDisplay(restaurantManager, storageDisplay, menuDisplay);
 		managementDisplay.setPreferredSize(preferredSize);
 		
-		paieOfEmployee = new PaieOfEmployee(restaurantManager, 100);
+		payOfEmployee = new PayOfEmployee(restaurantManager, 100);
 
 		contentPane.add(gameDisplay, BorderLayout.WEST);
 		contentPane.add(managementDisplay, BorderLayout.EAST);
@@ -74,20 +78,20 @@ public class RestaurantGUI extends JFrame implements Runnable {
 
 	}
 
+	/**
+	 * Call the different features of our restaurant.
+	 */
 	@Override
 	public void run() {
 		// TODO Auto-generated method stub
 		while (!status) {
-
 			SimulationUtility.unitTime();
-
 			restaurantManager.generateCustomer();
-			
 			gameDisplay.repaint();
 			customerManager.moveCustomer();
 			managementDisplay.moneyDisplay();
 			storageDisplay.updateStorageDisplay();
-			paieOfEmployee.manageEmployeePaiement();
+			payOfEmployee.managePayment();
 
 		}
 	}

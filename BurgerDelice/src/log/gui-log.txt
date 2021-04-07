@@ -2665,3 +2665,28 @@ INFO main GUI.GraphicalStatistics - J'affiche la liste de tous les employés
 INFO main GUI.GraphicalStatistics - J'affiche la liste de tous les employés
 INFO main GUI.GraphicalStatistics - J'affiche la liste de tous les employés
 INFO main GUI.GraphicalStatistics - J'affiche la liste de tous les employés
+INFO AWT-EventQueue-0 gui.MenuDisplay - data.Ingredient@3de326a5
+INFO AWT-EventQueue-0 gui.MenuDisplay -  Menu choisi : 1
+INFO AWT-EventQueue-0 gui.MenuDisplay - Ingredient [name=Poulet pane, nbByMenu=2]
+INFO AWT-EventQueue-0 gui.MenuDisplay -  Menu choisi : 2
+INFO AWT-EventQueue-0 gui.MenuDisplay - Ingredient [name=Fish, nbByMenu=2]
+INFO AWT-EventQueue-0 gui.MenuDisplay -  Menu choisi : 1
+INFO AWT-EventQueue-0 gui.MenuDisplay - Ingredient [name=Poulet pane, nbByMenu=2]
+INFO AWT-EventQueue-0 gui.MenuDisplay -  Menu choisi : 0
+INFO AWT-EventQueue-0 gui.MenuDisplay - Ingredient [name=Steak, nbByMenu=2]
+INFO AWT-EventQueue-0 gui.MenuDisplay -  Menu choisi : 2
+INFO AWT-EventQueue-0 gui.MenuDisplay - Ingredient [name=Fish, nbByMenu=2]
+INFO AWT-EventQueue-0 gui.MenuDisplay -  Menu choisi : 1
+INFO AWT-EventQueue-0 gui.MenuDisplay - Ingredient [name=Poulet pane, nbByMenu=2]
+INFO AWT-EventQueue-0 gui.MenuDisplay -  Menu choisi : 0
+INFO AWT-EventQueue-0 gui.MenuDisplay - Ingredient [name=Steak, nbByMenu=2]
+INFO AWT-EventQueue-0 gui.MenuDisplay -  Menu choisi : 1
+INFO AWT-EventQueue-0 gui.MenuDisplay - Ingredient [name=Poulet pane, nbByMenu=2]
+INFO AWT-EventQueue-0 gui.MenuDisplay -  Menu choisi : 2
+INFO AWT-EventQueue-0 gui.MenuDisplay - Ingredient [name=Fish, nbByMenu=2]
+INFO AWT-EventQueue-0 gui.MenuDisplay -  Menu choisi : 1
+INFO AWT-EventQueue-0 gui.MenuDisplay - Ingredient [name=Poulet pane, nbByMenu=2]
+INFO AWT-EventQueue-0 gui.MenuDisplay -  Menu choisi : 2
+INFO AWT-EventQueue-0 gui.MenuDisplay - Ingredient [name=Fish, nbByMenu=2]
+INFO AWT-EventQueue-0 gui.MenuDisplay -  Menu choisi : 1
+INFO AWT-EventQueue-0 gui.MenuDisplay - Ingredient [name=Poulet pane, nbByMenu=2]

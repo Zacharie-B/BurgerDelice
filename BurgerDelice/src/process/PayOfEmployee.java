@@ -9,22 +9,19 @@ import data.Server;
  * @author Zacharie
  *
  */
-public class PaieOfEmployee {
+public class PayOfEmployee implements Payment{
 
 	private RestaurantManager restaurantManager;
 	private int baseTourPaie;
 	private int currentTour = 0;
 	
-	public PaieOfEmployee(RestaurantManager restaurantManager, int baseTourPaie) {
+	public PayOfEmployee(RestaurantManager restaurantManager, int baseTourPaie) {
 		this.restaurantManager = restaurantManager;
 		this.baseTourPaie = baseTourPaie;
 	}
 	
-	/**
-	 * Manage all employees payments during the game, we get the money of the restaurant
-	 * in order to subtract with the salary of the employees.
-	 */
-	public void manageEmployeePaiement() {
+	
+	public void managePayment() {
 		double restaurantMoney = restaurantManager.getMoney();
 		currentTour++;
 		if(baseTourPaie <= currentTour){

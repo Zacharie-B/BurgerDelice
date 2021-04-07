@@ -48,7 +48,7 @@ public class RestaurantBuilder {
 	}
 
 	/**
-	 * 
+	 * Create all position where the customer can eat when this eat his meal on the restaurant.
 	 * @param restaurantMap
 	 * @param restaurantManager
 	 */
@@ -129,6 +129,7 @@ public class RestaurantBuilder {
 		restaurantManager.setTakenBlocks(takenBlocks);
 	}
 
+	
 	private void createStorages(RestaurantMap restaurantMap) {
 		Block block = restaurantMap.getBlock(GameConfiguration.COLUMN_COUNT - 4, GameConfiguration.LINE_COUNT - 12);
 
@@ -137,11 +138,19 @@ public class RestaurantBuilder {
 		}
 	}
 
+	/**
+	 * Add each ingredient at storage with this several parameters.
+	 * @param name of ingredient
+	 * @param capacityMax in the storage
+	 * @param quantity actual in the storage
+	 * @param block position for the storage
+	 */
 	private void addIngredientToStorage(String name, int capacityMax, int quantity, Block block) {
 		Storage storage = new Storage(block, capacityMax, quantity, name);
 		storageMapInstance.addIngredientInStorage(name, storage);
 	}
-
+	
+	
 	private void createOvens(RestaurantManager restaurantManager) {
 		List<Oven> ovens = new ArrayList<Oven>();
 
@@ -152,6 +161,10 @@ public class RestaurantBuilder {
 		restaurantManager.setOvens(ovens);
 	}
 
+	/**
+	 * Create an checkout with a capacity max of money.
+	 * @param restaurantManager
+	 */
 	private void createCheckouts(RestaurantManager restaurantManager) {
 		List<Checkout> checkouts = new ArrayList<Checkout>();
 
@@ -161,21 +174,32 @@ public class RestaurantBuilder {
 		restaurantManager.setCheckouts(checkouts); 
 	}
 
+	/**
+	 * Create the counter where nobody can go on.
+	 * @param restaurantManager
+	 */
 	private void createCounters(RestaurantManager restaurantManager) {
 		List<Counter> counters = new ArrayList<Counter>();
+		List<Block> takenBlocks = new ArrayList<Block>();
 
 		for (int index = 0; index < GameConfiguration.COLUMN_COUNT; index++) {
 			counters.add(new Counter(new Block(index, GameConfiguration.COLUMN_COUNT - 8)));
+			takenBlocks.add(new Block(index, GameConfiguration.COLUMN_COUNT - 8));
 		}
 		
 		for (int index = 0; index < 4; index++) {
 			counters.add(new Counter(new Block(index + 2, GameConfiguration.COLUMN_COUNT - 10)));
+			takenBlocks.add(new Block(index + 2, GameConfiguration.COLUMN_COUNT - 10));
 		}
 
 		restaurantManager.setCounters(counters);
 
 	}
 
+	/**
+	 * Create 3 menus which allows at user to choose his ingredients.
+	 * @param restaurantManager
+	 */
 	private void createMenu(RestaurantManager restaurantManager) {
 
 		List<Menu> menus = new ArrayList<Menu>();
@@ -224,5 +248,4 @@ public class RestaurantBuilder {
 
 		restaurantManager.setMenus(menus);
 	}
-
 }

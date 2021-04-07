@@ -2,7 +2,6 @@ package process;
 
 import org.apache.log4j.Logger;
 
-import data.Block;
 import data.Customer;
 import data.PositionForEating;
 import log.LoggerUtility;

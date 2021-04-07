@@ -29,7 +29,7 @@ public class RestaurantGUI extends JFrame implements Runnable {
 
 	private GameDisplay gameDisplay;
 	private ManagementDisplay managementDisplay;
-	private StorageDisplay storageDisplay;
+	private StorageManagementDisplay storageManagementDisplay;
 	private MenuDisplay menuDisplay;
 
 	private boolean status = false;
@@ -55,10 +55,10 @@ public class RestaurantGUI extends JFrame implements Runnable {
 		gameDisplay = new GameDisplay(restaurantManager);
 		gameDisplay.setPreferredSize(preferredSize);
 
-		storageDisplay = new StorageDisplay();
+		storageManagementDisplay = new StorageManagementDisplay(restaurantManager);
 		menuDisplay = new MenuDisplay(restaurantManager);
 
-		managementDisplay = new ManagementDisplay(restaurantManager, storageDisplay, menuDisplay);
+		managementDisplay = new ManagementDisplay(restaurantManager, storageManagementDisplay, menuDisplay);
 		managementDisplay.setPreferredSize(preferredSize);
 		
 		paieOfEmployee = new PaieOfEmployee(restaurantManager, 100);
@@ -86,7 +86,7 @@ public class RestaurantGUI extends JFrame implements Runnable {
 			gameDisplay.repaint();
 			customerManager.moveCustomer();
 			managementDisplay.moneyDisplay();
-			storageDisplay.updateStorageDisplay();
+			storageManagementDisplay.getStorageDisplay().updateStorageDisplay();
 			paieOfEmployee.manageEmployeePaiement();
 
 		}

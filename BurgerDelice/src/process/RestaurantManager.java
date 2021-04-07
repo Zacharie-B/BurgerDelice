@@ -12,6 +12,7 @@ import data.Counter;
 import data.Customer;
 import data.Ingredient;
 import data.Menu;
+import data.Order;
 import data.Oven;
 import data.PositionForEating;
 import data.Server;
@@ -30,9 +31,9 @@ public class RestaurantManager {
 	private List<Block> takenBlocks = new ArrayList<Block>();
 
 	private List<Menu> menus = new ArrayList<Menu>();
-	
+
 	private List<TableForEating> tableForEatings = new ArrayList<TableForEating>();
-	
+
 	private List<PositionForEating> positionForEatings = new ArrayList<PositionForEating>();
 
 	private HashMap<Integer, List<Ingredient>> orders = new HashMap<Integer, List<Ingredient>>();
@@ -40,18 +41,20 @@ public class RestaurantManager {
 	private int currentId;
 	private double money = 0;
 
+	public Order order = new Order();
+
 	public RestaurantManager() {
 		super();
 	}
-	
+
 	public void addPositionForEating(PositionForEating positionForEating) {
 		positionForEatings.add(positionForEating);
 	}
-	
+
 	public void addTable(TableForEating tableForEating) {
 		tableForEatings.add(tableForEating);
 	}
-	
+
 	public List<TableForEating> getTableForEatings() {
 		return tableForEatings;
 	}
@@ -63,7 +66,7 @@ public class RestaurantManager {
 	public void addOven(Oven oven) {
 		ovens.add(oven);
 	}
-	
+
 	public void addCustomer(Customer customer) {
 		customers.add(customer);
 	}
@@ -84,7 +87,6 @@ public class RestaurantManager {
 		orders.remove(id);
 	}
 
-	
 	public List<Server> getServers() {
 		return servers;
 	}
@@ -136,7 +138,7 @@ public class RestaurantManager {
 	public List<Block> getTakenBlocks() {
 		return takenBlocks;
 	}
-	
+
 	public List<PositionForEating> getPositionForEatings() {
 		return positionForEatings;
 	}
@@ -169,6 +171,14 @@ public class RestaurantManager {
 		this.money = money;
 	}
 
+	public Order getOrder() {
+		return order;
+	}
+
+	public void setOrder(Order order) {
+		this.order = order;
+	}
+
 	public String toString(Integer index) {
 		String message = "N°" + index + " - Commande : ";
 		for (Ingredient ingredient : orders.get(index)) {
@@ -182,10 +192,9 @@ public class RestaurantManager {
 			if (SimulationUtility.getRandom(0, 10) < 2) {
 				Block block = new Block(GameConfiguration.LINE_ENTRY, GameConfiguration.COLUMN_ENTRY);
 				Customer customer;
-				if(SimulationUtility.getRandom(0, 10) < 6) {
+				if (SimulationUtility.getRandom(0, 10) < 6) {
 					customer = new Customer(block, currentId, false, true, SimulationUtility.getRandom(10, 50));
-				}
-				else {
+				} else {
 					customer = new Customer(block, currentId, false, false, 0);
 				}
 				addCustomer(customer);

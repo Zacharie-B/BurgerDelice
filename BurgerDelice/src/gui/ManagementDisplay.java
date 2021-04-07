@@ -26,7 +26,7 @@ public class ManagementDisplay extends JPanel {
 	private RestaurantManager restaurantManager;
 
 	private JTextPane orderDisplay = new JTextPane();
-	private StorageDisplay storageDisplay;
+	private StorageManagementDisplay storageManagementDisplay;
 	private MenuDisplay menuDisplay;
 
 	/**
@@ -36,10 +36,10 @@ public class ManagementDisplay extends JPanel {
 	 * @param manager
 	 * @param storageDisplay
 	 */
-	public ManagementDisplay(RestaurantManager restaurantManager, StorageDisplay storageDisplay,
+	public ManagementDisplay(RestaurantManager restaurantManager, StorageManagementDisplay storageManagementDisplay,
 			MenuDisplay menuDisplay) {
 		this.restaurantManager = restaurantManager;
-		this.storageDisplay = storageDisplay;
+		this.storageManagementDisplay = storageManagementDisplay;
 		this.menuDisplay = menuDisplay;
 
 		initInformationDisplay();
@@ -57,11 +57,11 @@ public class ManagementDisplay extends JPanel {
 
 		setLayout(grid);
 
-		storageDisplay.setPreferredSize(preferredSize);
+		storageManagementDisplay.setPreferredSize(preferredSize);
 
 		add(jScrollPaneOrder);
 		add(menuDisplay);
-		add(storageDisplay);
+		add(storageManagementDisplay);
 
 		setBorder(BorderFactory.createMatteBorder(0, 1, 0, 0, Color.LIGHT_GRAY));
 		setBackground(Color.WHITE);

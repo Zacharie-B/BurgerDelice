@@ -76,7 +76,6 @@ public class ManagementDisplay extends JPanel {
 		message += (double) Math.round(restaurantManager.getMoney() * 100) / 100 + " euros \n";
 		for (Entry<Integer, List<Ingredient>> mapentry : restaurantManager.getOrders().entrySet()) {
 			message += restaurantManager.toString(mapentry.getKey()) + "\n";
-
 		}
 		orderDisplay.setText(message);
 	}

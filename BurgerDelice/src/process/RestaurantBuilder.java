@@ -26,6 +26,13 @@ public class RestaurantBuilder {
 		return new RestaurantMap(GameConfiguration.LINE_COUNT, GameConfiguration.COLUMN_COUNT);
 	}
 
+	/**
+	 * Build all material elements in the restaurant before to start the manage of the 
+	 * restaurant, with employee and customers.
+	 * 
+	 * @param restaurantMap of the restaurant
+	 * @return restaurantManager after to build all material elements
+	 */
 	public RestaurantManager buildElements(RestaurantMap restaurantMap) {
 		RestaurantManager restaurantManager = new RestaurantManager();
 
@@ -40,6 +47,11 @@ public class RestaurantBuilder {
 		return restaurantManager;
 	}
 
+	/**
+	 * 
+	 * @param restaurantMap
+	 * @param restaurantManager
+	 */
 	private void initTableForEating(RestaurantMap restaurantMap, RestaurantManager restaurantManager) {
 		TableForEating tableForEating1 = new TableForEating(new
 				Block(GameConfiguration.LINE_COUNT - 9, GameConfiguration.COLUMN_COUNT - 5),

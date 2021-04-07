@@ -10,9 +10,10 @@ public class Customer extends Element {
 	private int timeWaiting = 0;
 	private int timeForEat;
 
-	public Customer(Block position, int id, boolean waitingOrder, boolean onTheRestaurant, int timeForEat) {
+	public Customer(Block position, int id, int order, boolean waitingOrder, boolean onTheRestaurant, int timeForEat) {
 		super(position);
 		this.id = id;
+		this.order = order;
 		this.waitingOrder = waitingOrder;
 		this.onTheRestaurant = onTheRestaurant;
 		this.timeForEat = timeForEat;

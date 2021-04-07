@@ -26,4 +26,9 @@ public class Ingredient {
 		this.nbByMenu = nbByMenu;
 	}
 
+	@Override
+	public String toString() {
+		return "Ingredient [name=" + name + ", nbByMenu=" + nbByMenu + "]";
+	}
+
 }

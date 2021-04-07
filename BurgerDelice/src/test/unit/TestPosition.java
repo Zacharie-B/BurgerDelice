@@ -22,11 +22,11 @@ public class TestPosition {
 	@Before
 	public void preparePosition() {
 		this.restaurantManager = new RestaurantManager();
-		this.customer1Top = new Customer(new Block(2, 0), 1, false, true, 2);
-		this.customer2 = new Customer(new Block(2, 1), 2, false, true, 2);
-		this.customer3Down = new Customer(new Block(2, 2), 2, false, true, 2);
-		this.customer4Right = new Customer(new Block(3, 1), 2, false, true, 2);
-		this.customer5Left = new Customer(new Block(1, 1), 2, false, true, 2);
+		this.customer1Top = new Customer(new Block(2, 0),0, 1, false, true, 2);
+		this.customer2 = new Customer(new Block(2, 1),0, 2, false, true, 2);
+		this.customer3Down = new Customer(new Block(2, 2),0, 2, false, true, 2);
+		this.customer4Right = new Customer(new Block(3, 1),0, 2, false, true, 2);
+		this.customer5Left = new Customer(new Block(1, 1),0, 2, false, true, 2);
 		this.restaurantManager.addCustomer(this.customer1Top);
 		this.restaurantManager.addCustomer(this.customer2);
 		this.restaurantManager.addCustomer(this.customer3Down);

@@ -21,8 +21,8 @@ public class TestStock {
 	
 	@Before
 	public void prepareTest() {
-		this.restaurantMap = new RestaurantMap(0, 0);
 		this.restaurantBuilder = new RestaurantBuilder();
+		this.restaurantMap = restaurantBuilder.buildMap();
 	}
 	
 	@Test

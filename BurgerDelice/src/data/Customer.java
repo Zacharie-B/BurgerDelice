@@ -75,4 +75,10 @@ public class Customer extends Element {
 		this.timeWaiting = timeWaiting;
 	}
 
+	@Override
+	public String toString() {
+		return "Customer [id=" + id + ", order=" + order + ", waitingOrder=" + waitingOrder + ", onTheRestaurant="
+				+ onTheRestaurant + ", eating=" + eating + ", timeWaiting=" + timeWaiting + ", timeForEat=" + timeForEat
+				+ "]";
+	}
 }

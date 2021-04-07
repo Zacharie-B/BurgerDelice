@@ -29,9 +29,11 @@ public class BuyDisplay extends JPanel {
 	private Dimension preferredSize = new Dimension(100, 170);
 
 	private RestaurantManager restaurantManager;
+	private OrderDisplay orderDisplay;
 
-	public BuyDisplay(RestaurantManager restaurantManager) {
+	public BuyDisplay(RestaurantManager restaurantManager, OrderDisplay orderDisplay) {
 		this.restaurantManager = restaurantManager;
+		this.orderDisplay = orderDisplay;
 
 		init();
 	}
@@ -63,7 +65,10 @@ public class BuyDisplay extends JPanel {
 
 		public void actionPerformed(ActionEvent e) {
 			restaurantManager.getOrder().buyBasket();
+			restaurantManager.getOrder().setDelivering(true);
+			
 			basketPane.setText("");
+			orderDisplay.updateOrder();
 		}
 	}
 }

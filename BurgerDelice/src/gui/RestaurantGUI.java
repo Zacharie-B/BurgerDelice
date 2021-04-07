@@ -88,12 +88,17 @@ public class RestaurantGUI extends JFrame implements Runnable {
 		while (!status) {
 			SimulationUtility.unitTime();
 			restaurantManager.generateCustomer();
-			gameDisplay.repaint();
+			restaurantManager.incrementTimeOrder();
+
 			customerManager.moveCustomer();
 			managementDisplay.moneyDisplay();
 
 			storageManagementDisplay.getStorageDisplay().updateStorageDisplay();
+			storageManagementDisplay.getOrderDisplay().updateTime();
+			
 			payOfEmployee.managePayment();
+			
+			gameDisplay.repaint();
 
 		}
 	}

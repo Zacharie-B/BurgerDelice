@@ -3,6 +3,7 @@ package process;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import config.GameConfiguration;
 import data.Block;
@@ -16,6 +17,7 @@ import data.Order;
 import data.Oven;
 import data.PositionForEating;
 import data.Server;
+import data.StorageMap;
 import data.TableForEating;
 
 public class RestaurantManager {
@@ -37,6 +39,8 @@ public class RestaurantManager {
 	private List<PositionForEating> positionForEatings = new ArrayList<PositionForEating>();
 
 	private HashMap<Integer, List<Ingredient>> orders = new HashMap<Integer, List<Ingredient>>();
+
+	private StorageMap storageMapInstance = StorageMap.getInstance();
 
 	private int currentId;
 	private double money = 0;
@@ -187,6 +191,22 @@ public class RestaurantManager {
 		return message;
 	}
 
+	public void incrementTimeOrder() {
+		if (order.isDelivering()) {
+			order.incrementTimeOrder();
+		}
+		if (order.getTimeOrder() == 30) {
+			addToStorage();
+			order = new Order();
+		}
+	}
+
+	private void addToStorage() {
+		for (Map.Entry<String, Integer> mapentry : order.getOrder().entrySet()) {
+			storageMapInstance.addIngredient(mapentry.getKey(), mapentry.getValue());
+		}
+	}
+
 	public void generateCustomer() {
 		if (!takenBlocks.contains(new Block(GameConfiguration.LINE_ENTRY, GameConfiguration.COLUMN_ENTRY))) {
 			if (SimulationUtility.getRandom(0, 10) < 2) {
@@ -207,10 +227,7 @@ public class RestaurantManager {
 					addTakenBlock(block);
 					currentId++;
 				}
-
 			}
-
 		}
-
 	}
 }

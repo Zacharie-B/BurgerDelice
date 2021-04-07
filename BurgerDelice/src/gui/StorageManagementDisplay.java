@@ -12,10 +12,12 @@ public class StorageManagementDisplay extends JPanel {
 
 	private BuyDisplay buyDisplay;
 	private StorageDisplay storageDisplay;
+	private OrderDisplay orderDisplay;
 
 	public StorageManagementDisplay(RestaurantManager restaurantManager) {
 
-		buyDisplay = new BuyDisplay(restaurantManager);
+		orderDisplay = new OrderDisplay(restaurantManager);
+		buyDisplay = new BuyDisplay(restaurantManager, orderDisplay);
 		storageDisplay = new StorageDisplay(restaurantManager, buyDisplay);
 
 		init();
@@ -23,9 +25,10 @@ public class StorageManagementDisplay extends JPanel {
 
 	private void init() {
 		setBackground(Color.WHITE);
-		
+
 		add(storageDisplay);
 		add(buyDisplay);
+		add(orderDisplay);
 	}
 
 	public BuyDisplay getBuyDisplay() {
@@ -34,6 +37,10 @@ public class StorageManagementDisplay extends JPanel {
 
 	public StorageDisplay getStorageDisplay() {
 		return storageDisplay;
+	}
+
+	public OrderDisplay getOrderDisplay() {
+		return orderDisplay;
 	}
 
 }

@@ -68,21 +68,21 @@ public class StorageDisplay extends JPanel {
 	/**
 	 * Buttons to add quantity to basket.
 	 */
-	protected JButton addSteak = new JButton("Ajouter au panier");
-	protected JButton addChicken = new JButton("Ajouter au panier");
-	protected JButton addFish = new JButton("Ajouter au panier");
-	protected JButton addBread = new JButton("Ajouter au panier");
-	protected JButton addCheese = new JButton("Ajouter au panier");
-	protected JButton addTomato = new JButton("Ajouter au panier");
-	protected JButton addSalad = new JButton("Ajouter au panier");
-	protected JButton addOnion = new JButton("Ajouter au panier");
-	protected JButton addCornichon = new JButton("Ajouter au panier");
-	protected JButton addChips = new JButton("Ajouter au panier");
-	protected JButton addSauce = new JButton("Ajouter au panier");
+	protected JButton addSteak = new JButton("Ajouter");
+	protected JButton addChicken = new JButton("Ajouter");
+	protected JButton addFish = new JButton("Ajouter");
+	protected JButton addBread = new JButton("Ajouter");
+	protected JButton addCheese = new JButton("Ajouter");
+	protected JButton addTomato = new JButton("Ajouter");
+	protected JButton addSalad = new JButton("Ajouter");
+	protected JButton addOnion = new JButton("Ajouter");
+	protected JButton addCornichon = new JButton("Ajouter");
+	protected JButton addChips = new JButton("Ajouter");
+	protected JButton addSauce = new JButton("Ajouter");
 
 	private StorageMap storageMapInstance = StorageMap.getInstance();
 
-	private Dimension preferredSize = new Dimension(550, 220);
+	private Dimension preferredSize = new Dimension(400, 220);
 
 	private RestaurantManager restaurantManager;
 	private BuyDisplay buyDisplay;

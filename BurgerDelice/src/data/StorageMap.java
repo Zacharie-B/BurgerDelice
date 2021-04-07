@@ -47,6 +47,18 @@ public class StorageMap {
 	}
 
 	/**
+	 * Allows to add ingredient with its quantity
+	 * 
+	 * @param nameIngredient the name of the variable for which we wish to register
+	 *                       the (new) value
+	 * @param quantity       the quantity of the ingredient
+	 */
+	public void addIngredient(String nameIngredient, int quantity) {
+		ingredientsStorage.get(nameIngredient)
+				.setCurrentCapacity(ingredientsStorage.get(nameIngredient).getCurrentCapacity() + quantity);
+	}
+
+	/**
 	 * Gets the value for a registered variable. If the variable with the specified
 	 * name does not exist in the repository, the method returns 0.
 	 * 

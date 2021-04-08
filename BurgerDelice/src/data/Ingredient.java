@@ -1,7 +1,14 @@
 package data;
-
+/**
+ * 
+ *this class represent the ingredient for a Menu 
+ *
+ */
 public class Ingredient {
 	private String name;
+	/**
+	 * nbByMenu is the menu number
+	 */
 	private int nbByMenu;
 
 	public Ingredient(String name, int nbByMenu) {

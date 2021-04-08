@@ -2,10 +2,22 @@ package data;
 
 /**
  * 
+ * This class represents a block of the map.
+ * 
+ * Each element has a block in position. 
  *
  */
 public class Block {
+	
+	/**
+	 * In an coordinate system, 
+	 * x matches to the value obtained by projecting this point on the horizontal axis.
+	 */
 	private int x;
+	/**
+	 * In an coordinate system, 
+	 * y matches to the value obtained by projecting this point on the vertical axis.
+	 */
 	private int y;
 
 	public Block(int x, int y) {

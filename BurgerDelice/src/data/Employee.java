@@ -1,4 +1,9 @@
 package data;
+/**-
+ * 
+ * this abstract class represent all the elements that are employees 
+ *
+ */
 
 public abstract class Employee extends Element{
 	

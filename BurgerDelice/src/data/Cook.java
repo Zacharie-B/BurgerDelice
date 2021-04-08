@@ -1,7 +1,10 @@
 package data;
-
+/**
+ * 
+ * this class represent the employee cook on the map
+ *
+ */
 public class Cook extends Employee{
-	
 	private int rating;
 
 	public Cook(Block position, String name, int salary, int rating) {

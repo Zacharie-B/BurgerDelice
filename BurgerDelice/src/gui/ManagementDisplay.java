@@ -1,12 +1,16 @@
 package gui;
 
+import java.awt.BorderLayout;
+import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.GridLayout;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 import java.util.List;
 import java.util.Map.Entry;
 
 import javax.swing.BorderFactory;
+import javax.swing.JComboBox;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextPane;
@@ -19,15 +23,17 @@ import process.RestaurantManager;
  * and the menus which choose by the customer by random way.
  *
  */
-public class ManagementDisplay extends JPanel {
+public class ManagementDisplay extends JPanel implements ItemListener {
 
 	private static final long serialVersionUID = 1L;
 
 	private RestaurantManager restaurantManager;
 
+	private JPanel cards = new JPanel(new CardLayout());
+
 	private JTextPane orderDisplay = new JTextPane();
 	private StorageManagementDisplay storageManagementDisplay;
-	private MenuDisplay menuDisplay;
+	private MenuManagementDisplay menuManagementDisplay;
 
 	/**
 	 * Manage the organization on the dashboard, with the restaurant and the storage
@@ -37,10 +43,10 @@ public class ManagementDisplay extends JPanel {
 	 * @param storageDisplay
 	 */
 	public ManagementDisplay(RestaurantManager restaurantManager, StorageManagementDisplay storageManagementDisplay,
-			MenuDisplay menuDisplay) {
+			MenuManagementDisplay menuManagementDisplay) {
 		this.restaurantManager = restaurantManager;
 		this.storageManagementDisplay = storageManagementDisplay;
-		this.menuDisplay = menuDisplay;
+		this.menuManagementDisplay = menuManagementDisplay;
 
 		initInformationDisplay();
 	}
@@ -50,18 +56,27 @@ public class ManagementDisplay extends JPanel {
 	 * the storage and the menus.
 	 */
 	protected void initInformationDisplay() {
-		GridLayout grid = new GridLayout(3, 1);
+		JPanel comboBoxPane = new JPanel(); // use FlowLayout
+		String comboBoxItems[] = { "Commande", "Menu", "Stockage" };
+		JComboBox<String> cb = new JComboBox<String>(comboBoxItems);
+		cb.setEditable(false);
+		cb.addItemListener(this);
+		comboBoxPane.add(cb);
 
 		JScrollPane jScrollPaneOrder = new JScrollPane(orderDisplay);
-		Dimension preferredSize = new Dimension(300, 500);
+		Dimension preferredSize = new Dimension(300, 550);
 
-		setLayout(grid);
+		cards.add(jScrollPaneOrder, "Commande");
+		cards.add(menuManagementDisplay, "Menu");
+		cards.add(storageManagementDisplay, "Stockage");
 
 		storageManagementDisplay.setPreferredSize(preferredSize);
+		jScrollPaneOrder.setPreferredSize(preferredSize);
+		menuManagementDisplay.setPreferredSize(preferredSize);
 
-		add(jScrollPaneOrder);
-		add(menuDisplay);
-		add(storageManagementDisplay);
+		setLayout(new BorderLayout());
+		add(comboBoxPane, BorderLayout.NORTH);
+		add(cards, BorderLayout.SOUTH);
 
 		setBorder(BorderFactory.createMatteBorder(0, 1, 0, 0, Color.LIGHT_GRAY));
 		setBackground(Color.WHITE);
@@ -78,6 +93,11 @@ public class ManagementDisplay extends JPanel {
 			message += restaurantManager.toString(mapentry.getKey()) + "\n";
 		}
 		orderDisplay.setText(message);
+	}
+
+	public void itemStateChanged(ItemEvent evt) {
+		CardLayout cl = (CardLayout) (cards.getLayout());
+		cl.show(cards, (String) evt.getItem());
 	}
 
 }

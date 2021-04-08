@@ -1,6 +1,7 @@
 package gui;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -21,6 +22,11 @@ import process.RestaurantManager;
 public class MenuDisplay extends JPanel {
 
 	private static final long serialVersionUID = 1L;
+
+	private JLabel menuLabel = new JLabel("Composition");
+	private JLabel quantityLabel = new JLabel("Quantité");
+	private JLabel addLabel = new JLabel("Ajouter");
+	private JLabel removeLabel = new JLabel("Retirer");
 
 	/*
 	 * Buttons for choose the menu to give at customer.
@@ -59,46 +65,50 @@ public class MenuDisplay extends JPanel {
 	/*
 	 * Allows to increment specific ingredient in the menu panel.
 	 */
-	private JButton addMeatButton = new JButton("Ajouter");
-	private JButton addBreadButton = new JButton("Ajouter");
-	private JButton addCheeseButton = new JButton("Ajouter");
-	private JButton addTomatoButton = new JButton("Ajouter");
-	private JButton addSaladButton = new JButton("Ajouter");
-	private JButton addOnionButton = new JButton("Ajouter");
-	private JButton addCornichonButton = new JButton("Ajouter");
-	private JButton addChipsButton = new JButton("Ajouter");
-	private JButton addSauceButton = new JButton("Ajouter");
+	private MyButton addMeatButton = new MyButton("Ajouter");
+	private MyButton addBreadButton = new MyButton("Ajouter");
+	private MyButton addCheeseButton = new MyButton("Ajouter");
+	private MyButton addTomatoButton = new MyButton("Ajouter");
+	private MyButton addSaladButton = new MyButton("Ajouter");
+	private MyButton addOnionButton = new MyButton("Ajouter");
+	private MyButton addCornichonButton = new MyButton("Ajouter");
+	private MyButton addChipsButton = new MyButton("Ajouter");
+	private MyButton addSauceButton = new MyButton("Ajouter");
 
 	/*
 	 * Allows to decrement specific ingredient in the menu panel.
 	 */
-	private JButton removeMeatButton = new JButton("Retirer");
-	private JButton removeBreadButton = new JButton("Retirer");
-	private JButton removeCheeseButton = new JButton("Retirer");
-	private JButton removeTomatoButton = new JButton("Retirer");
-	private JButton removeSaladButton = new JButton("Retirer");
-	private JButton removeOnionButton = new JButton("Retirer");
-	private JButton removeCornichonButton = new JButton("Retirer");
-	private JButton removeChipsButton = new JButton("Retirer");
-	private JButton removeSauceButton = new JButton("Retirer");
+	private MyButton removeMeatButton = new MyButton("Retirer");
+	private MyButton removeBreadButton = new MyButton("Retirer");
+	private MyButton removeCheeseButton = new MyButton("Retirer");
+	private MyButton removeTomatoButton = new MyButton("Retirer");
+	private MyButton removeSaladButton = new MyButton("Retirer");
+	private MyButton removeOnionButton = new MyButton("Retirer");
+	private MyButton removeCornichonButton = new MyButton("Retirer");
+	private MyButton removeChipsButton = new MyButton("Retirer");
+	private MyButton removeSauceButton = new MyButton("Retirer");
 
 	private int currentMenu = 0;
 	private int ingredientIndex = 0;
 	private List<Ingredient> ingredientsInMenu;
 
 	private RestaurantManager restaurantManager;
-	
+
 	private Logger logger = LoggerUtility.getLogger(MenuDisplay.class, "gui");
+
+	private Dimension preferredSize = new Dimension(500, 300);
 
 	public MenuDisplay(RestaurantManager restaurantManager) {
 
 		this.restaurantManager = restaurantManager;
-		
+
 		ingredientsInMenu = restaurantManager.getMenus().get(currentMenu).getIngredients();
 
 		initStyleMenu();
 		initLayout();
 		initActions();
+
+		printFirstMenu();
 	}
 
 	/**
@@ -109,7 +119,12 @@ public class MenuDisplay extends JPanel {
 
 		int alignement = (SwingConstants.CENTER);
 
-		ingredientLabel.setHorizontalAlignment(alignement);
+		makeStyleIngredientInMenuPanel(menuLabel, alignement);
+		makeStyleIngredientInMenuPanel(ingredientLabel, alignement);
+		makeStyleIngredientInMenuPanel(addLabel, alignement);
+		makeStyleIngredientInMenuPanel(removeLabel, alignement);
+		makeStyleIngredientInMenuPanel(quantityLabel, alignement);
+
 		/*
 		 * Do the style for the name of each ingredient.
 		 */
@@ -168,18 +183,24 @@ public class MenuDisplay extends JPanel {
 	 * Initialize the layout with the menu with his ingredients and this button.
 	 */
 	private void initLayout() {
+
+		setPreferredSize(preferredSize);
+
 		GridLayout grid = new GridLayout(11, 4);
+
 		setLayout(grid);
+		grid.setVgap(1);
+
 		setBackground(Color.WHITE);
-		add(new JLabel("Composition des menus"));
+		add(menuLabel);
 		add(changeFirstMenu);
 		add(changeSecondMenu);
 		add(changeThirdMenu);
 
 		add(ingredientLabel);
-		add(new JLabel("Quantite d'ingredients"));
-		add(new JLabel("Ajouter une quantite"));
-		add(new JLabel("Enlever une quantite"));
+		add(quantityLabel);
+		add(addLabel);
+		add(removeLabel);
 
 		addInitMenuPanel(meatLabel, meatQuantityLabel, addMeatButton, removeMeatButton);
 		addInitMenuPanel(breadLabel, breadQuantityLabel, addBreadButton, removeBreadButton);
@@ -192,6 +213,20 @@ public class MenuDisplay extends JPanel {
 		addInitMenuPanel(sauceLabel, sauceQuantityLabel, addSauceButton, removeSauceButton);
 
 		setVisible(true);
+	}
+
+	private void printFirstMenu() {
+
+		meatLabel.setText(String.valueOf(ingredientsInMenu.get(0).getName()));
+		meatQuantityLabel.setText(String.valueOf(ingredientsInMenu.get(0).getNbByMenu()));
+		breadQuantityLabel.setText(String.valueOf(ingredientsInMenu.get(1).getNbByMenu()));
+		saladQuantityLabel.setText(String.valueOf(ingredientsInMenu.get(2).getNbByMenu()));
+		cornichonQuantityLabel.setText(String.valueOf(ingredientsInMenu.get(3).getNbByMenu()));
+		cheeseQuantityLabel.setText(String.valueOf(ingredientsInMenu.get(4).getNbByMenu()));
+		onionQuantityLabel.setText(String.valueOf(ingredientsInMenu.get(5).getNbByMenu()));
+		tomatoQuantityLabel.setText(String.valueOf(ingredientsInMenu.get(6).getNbByMenu()));
+		chipsQuantityLabel.setText(String.valueOf(ingredientsInMenu.get(7).getNbByMenu()));
+		sauceQuantityLabel.setText(String.valueOf(ingredientsInMenu.get(8).getNbByMenu()));
 	}
 
 	/*
@@ -225,7 +260,7 @@ public class MenuDisplay extends JPanel {
 		 * Action to increment an ingredient in the menu.
 		 */
 		addMeatButton.addActionListener(new IncrementIngredient("Steak", meatQuantityLabel));
-		addMeatButton.addActionListener(new IncrementIngredient("Poulet Pane", meatQuantityLabel));
+		addMeatButton.addActionListener(new IncrementIngredient("Poulet pane", meatQuantityLabel));
 		addMeatButton.addActionListener(new IncrementIngredient("Fish", meatQuantityLabel));
 		addBreadButton.addActionListener(new IncrementIngredient("Pain", breadQuantityLabel));
 		addCheeseButton.addActionListener(new IncrementIngredient("Cheddar", cheeseQuantityLabel));
@@ -240,7 +275,7 @@ public class MenuDisplay extends JPanel {
 		 * Action to decrement an ingredient in the menu.
 		 */
 		removeMeatButton.addActionListener(new DecrementIngredient("Steak", meatQuantityLabel));
-		removeMeatButton.addActionListener(new DecrementIngredient("Poulet Pane", meatQuantityLabel));
+		removeMeatButton.addActionListener(new DecrementIngredient("Poulet pane", meatQuantityLabel));
 		removeMeatButton.addActionListener(new DecrementIngredient("Fish", meatQuantityLabel));
 		removeBreadButton.addActionListener(new DecrementIngredient("Pain", breadQuantityLabel));
 		removeCheeseButton.addActionListener(new DecrementIngredient("Cheddar", cheeseQuantityLabel));

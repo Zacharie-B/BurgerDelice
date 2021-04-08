@@ -7,7 +7,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Map;
 
-import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -21,12 +20,12 @@ public class BuyDisplay extends JPanel {
 
 	private JLabel basketLabel = new JLabel("Votre panier : ");
 
-	private JButton buyButton = new JButton("Payer");
+	private MyButton buyButton = new MyButton("Payer");
 
 	private JTextPane basketPane = new JTextPane();
 	private JScrollPane jScrollPane = new JScrollPane(basketPane);
 
-	private Dimension preferredSize = new Dimension(100, 170);
+	private Dimension preferredSize = new Dimension(250, 100);
 
 	private RestaurantManager restaurantManager;
 	private OrderDisplay orderDisplay;

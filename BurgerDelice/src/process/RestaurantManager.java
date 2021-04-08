@@ -196,14 +196,42 @@ public class RestaurantManager {
 			order.incrementTimeOrder();
 		}
 		if (order.getTimeOrder() == 30) {
-			addToStorage();
-			order = new Order();
+			order.setDelivering(false);
 		}
 	}
 
-	private void addToStorage() {
+	public void addToStorage() {
 		for (Map.Entry<String, Integer> mapentry : order.getOrder().entrySet()) {
 			storageMapInstance.addIngredient(mapentry.getKey(), mapentry.getValue());
+		}
+		order = new Order();
+
+	}
+
+	public void addBasket(String name) {
+
+		if (order.getBasket().get(name) == null) {
+			if (storageMapInstance.getIngredientsStorage().get(name).getCurrentCapacity() + 10 <= 100) {
+				order.getBasket().put(name, 10);
+			}
+		} else {
+			if (storageMapInstance.getIngredientsStorage().get(name).getCurrentCapacity() + order.getBasket().get(name)
+					+ 10 <= 100) {
+				order.getBasket().put(name, order.getBasket().get(name) + 10);
+			}
+
+		}
+
+	}
+
+	public void removeBasket(String name) {
+
+		if (order.getBasket().get(name) != null) {
+			if (order.getBasket().get(name) > 10) {
+				order.getBasket().put(name, order.getBasket().get(name) - 10);
+			} else if (order.getBasket().get(name) == 10) {
+				order.getBasket().remove(name);
+			}
 		}
 	}
 

@@ -19,18 +19,9 @@ public class Order {
 		timeOrder++;
 	}
 
-	public void addBasket(String name) {
-		if (basket.get(name) == null) {
-			basket.put(name, 10);
-		} else {
-			basket.put(name, basket.get(name) + 10);
-		}
-	}
-
 	public void buyBasket() {
 		order = basket;
 		basket = new HashMap<String, Integer>();
-
 	}
 
 	public HashMap<String, Integer> getBasket() {

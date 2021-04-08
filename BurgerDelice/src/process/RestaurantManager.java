@@ -219,9 +219,7 @@ public class RestaurantManager {
 					+ 10 <= 100) {
 				order.getBasket().put(name, order.getBasket().get(name) + 10);
 			}
-
 		}
-
 	}
 
 	public void removeBasket(String name) {

@@ -1,7 +1,11 @@
 package data;
-
+/**
+ * 
+ * this class represent a table where you can eat 
+ *
+ */
 public class TableForEating extends Element{
-
+	
 	PositionForEating posForEating1;
 	PositionForEating posForEating2;
 	

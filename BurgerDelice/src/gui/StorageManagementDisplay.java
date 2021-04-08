@@ -15,7 +15,7 @@ public class StorageManagementDisplay extends JPanel {
 
 	private BuyDisplay buyDisplay;
 	private StorageDisplay storageDisplay;
-	private OrderDisplay orderDisplay;
+	private RestaurantOrderDisplay restaurantOrderDisplay;
 
 	private JLabel storageLabel = new JLabel("Stockage du restaurant");
 
@@ -23,8 +23,8 @@ public class StorageManagementDisplay extends JPanel {
 
 	public StorageManagementDisplay(RestaurantManager restaurantManager) {
 
-		orderDisplay = new OrderDisplay(restaurantManager);
-		buyDisplay = new BuyDisplay(restaurantManager, orderDisplay);
+		restaurantOrderDisplay = new RestaurantOrderDisplay(restaurantManager);
+		buyDisplay = new BuyDisplay(restaurantManager, restaurantOrderDisplay);
 		storageDisplay = new StorageDisplay(restaurantManager, buyDisplay);
 
 		init();
@@ -49,7 +49,7 @@ public class StorageManagementDisplay extends JPanel {
 		add(storageDisplay);
 		add(orderLabel);
 		add(buyDisplay);
-		add(orderDisplay);
+		add(restaurantOrderDisplay);
 	}
 
 	public BuyDisplay getBuyDisplay() {
@@ -60,8 +60,8 @@ public class StorageManagementDisplay extends JPanel {
 		return storageDisplay;
 	}
 
-	public OrderDisplay getOrderDisplay() {
-		return orderDisplay;
+	public RestaurantOrderDisplay getOrderDisplay() {
+		return restaurantOrderDisplay;
 	}
 
 }

@@ -85,6 +85,7 @@ public class StorageDisplay extends JPanel {
 
 	private RestaurantManager restaurantManager;
 	private BuyDisplay buyDisplay;
+	private int storageIndex = 0;
 
 	public StorageDisplay(RestaurantManager restaurantManager, BuyDisplay buyDisplay) {
 		this.restaurantManager = restaurantManager;
@@ -103,77 +104,33 @@ public class StorageDisplay extends JPanel {
 		setLayout(grid);
 		setBackground(Color.WHITE);
 		add(new JLabel("Nom"));
-		add(new JLabel("Quantité"));
+		add(new JLabel("QuantitÃ©"));
 		add(new JLabel("Acheter"));
 		add(new JLabel("Retirer"));
 
-		addStorageLabel(steakLabel, steakQuantityLabel);
-		add(addSteak);
-		add(removeSteak);
-		addSteak.addActionListener(new AddToBasket(0));
-		removeSteak.addActionListener(new RemoveFromBasket(0));
-
-		addStorageLabel(chickenLabel, chickenQuantityLabel);
-		add(addChicken);
-		add(removeChicken);
-		addChicken.addActionListener(new AddToBasket(1));
-		removeChicken.addActionListener(new RemoveFromBasket(1));
-
-		addStorageLabel(fishLabel, fishQuantityLabel);
-		add(addFish);
-		add(removeFish);
-		addFish.addActionListener(new AddToBasket(2));
-		removeFish.addActionListener(new RemoveFromBasket(2));
-
-		addStorageLabel(breadLabel, breadQuantityLabel);
-		add(addBread);
-		add(removeBread);
-		addBread.addActionListener(new AddToBasket(3));
-		removeBread.addActionListener(new RemoveFromBasket(3));
-
-		addStorageLabel(saladLabel, saladQuantityLabel);
-		add(addCheese);
-		add(removeCheese);
-		addCheese.addActionListener(new AddToBasket(4));
-		removeCheese.addActionListener(new RemoveFromBasket(4));
-
-		addStorageLabel(cornichonLabel, cornichonQuantityLabel);
-		add(addTomato);
-		add(removeTomato);
-		addTomato.addActionListener(new AddToBasket(5));
-		removeTomato.addActionListener(new RemoveFromBasket(5));
-
-		addStorageLabel(cheeseLabel, cheeseQuantityLabel);
-		add(addSalad);
-		add(removeSalad);
-		addSalad.addActionListener(new AddToBasket(6));
-		removeSalad.addActionListener(new RemoveFromBasket(6));
-
-		addStorageLabel(onionLabel, onionQuantityLabel);
-		add(addOnion);
-		add(removeOnion);
-		addOnion.addActionListener(new AddToBasket(7));
-		removeOnion.addActionListener(new RemoveFromBasket(7));
-
-		addStorageLabel(tomatoLabel, tomatoQuantityLabel);
-		add(addCornichon);
-		add(removeCornichon);
-		addCornichon.addActionListener(new AddToBasket(8));
-		removeCornichon.addActionListener(new RemoveFromBasket(8));
-
-		addStorageLabel(chipsLabel, chipsQuantityLabel);
-		add(addChips);
-		add(removeChips);
-		addChips.addActionListener(new AddToBasket(9));
-		removeChips.addActionListener(new RemoveFromBasket(9));
-
-		addStorageLabel(sauceLabel, sauceQuantityLabel);
-		add(addSauce);
-		add(removeSauce);
-		addSauce.addActionListener(new AddToBasket(10));
-		removeSauce.addActionListener(new RemoveFromBasket(10));
+		addActionForChangeStorage(steakLabel, steakQuantityLabel, addSteak, removeSteak);
+		addActionForChangeStorage(chickenLabel, chickenQuantityLabel, addChicken, removeChicken);
+		addActionForChangeStorage(fishLabel, fishQuantityLabel, addFish, removeFish);
+		addActionForChangeStorage(breadLabel, breadQuantityLabel, addBread, removeBread);
+		addActionForChangeStorage(saladLabel, saladQuantityLabel, addSalad, removeSalad);
+		addActionForChangeStorage(tomatoLabel, tomatoQuantityLabel, addTomato, removeTomato);
+		addActionForChangeStorage(cheeseLabel, cheeseQuantityLabel, addCheese, removeCheese);
+		addActionForChangeStorage(onionLabel, onionQuantityLabel, addOnion, removeOnion);
+		addActionForChangeStorage(cornichonLabel, cornichonQuantityLabel, addCornichon, removeCornichon);
+		addActionForChangeStorage(chipsLabel, chipsQuantityLabel, addChips, removeChips);
+		addActionForChangeStorage(sauceLabel, sauceQuantityLabel, addSauce, removeSauce);
 
 		setVisible(true);
+	}
+	
+	private void addActionForChangeStorage(JLabel nameLabel, JLabel quantityLabel, 
+			MyButton addButton, MyButton removeButton) {
+		addStorageLabel(nameLabel, quantityLabel);
+		add(addButton);
+		add(removeButton);
+		addButton.addActionListener(new AddToBasket(storageIndex));
+		removeButton.addActionListener(new RemoveFromBasket(storageIndex));
+		storageIndex++;
 	}
 
 	/**

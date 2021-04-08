@@ -5,7 +5,6 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.List;
 import java.util.Map;
 
 import javax.swing.JLabel;
@@ -13,16 +12,15 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextPane;
 
-import data.Ingredient;
 import process.RestaurantManager;
 
-public class OrderDisplay extends JPanel {
+public class RestaurantOrderDisplay extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 
 	private JLabel basketLabel = new JLabel("Pas de commande");
 
-	private MyButton getButton = new MyButton("Récupérer votre commande");
+	private MyButton getButton = new MyButton("RÃ©cupÃ©rer votre commande");
 
 	private JTextPane basketPane = new JTextPane();
 	private JScrollPane jScrollPane = new JScrollPane(basketPane);
@@ -31,7 +29,7 @@ public class OrderDisplay extends JPanel {
 
 	private RestaurantManager restaurantManager;
 
-	public OrderDisplay(RestaurantManager restaurantManager) {
+	public RestaurantOrderDisplay(RestaurantManager restaurantManager) {
 		this.restaurantManager = restaurantManager;
 
 		init();
@@ -65,13 +63,13 @@ public class OrderDisplay extends JPanel {
 			basketPane.setText("");
 			basketLabel.setText("Pas de commande");
 		} else if (restaurantManager.getOrder().getTimeOrder() < 10) {
-			basketLabel.setText("Commande en préparation");
+			basketLabel.setText("Commande en prÃ©paration");
 		} else if (restaurantManager.getOrder().getTimeOrder() < 22) {
-			basketLabel.setText("Commande expediée");
+			basketLabel.setText("Commande expediÃ©e");
 		} else if (restaurantManager.getOrder().getTimeOrder() < 29) {
 			basketLabel.setText("Commande en livraison");
 		} else if (restaurantManager.getOrder().getTimeOrder() == 30) {
-			basketLabel.setText("Commande livrée");
+			basketLabel.setText("Commande livrÃ©e");
 		}
 	}
 

@@ -1,5 +1,10 @@
 package data;
 
+/**
+ * 
+ * 
+ *
+ */
 public class Checkout extends Element {
 
 	private float capacityMax;

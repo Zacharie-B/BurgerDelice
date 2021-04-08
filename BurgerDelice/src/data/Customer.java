@@ -1,7 +1,13 @@
 package data;
-
+/**
+ * 
+ * this class represent the element customer on the map
+ *
+ */
 public class Customer extends Element {
-
+	/**
+	 * id is the number assigned to a customer
+	 */
 	private int id;
 	private int order;
 	private boolean waitingOrder;

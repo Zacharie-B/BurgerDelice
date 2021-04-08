@@ -1,5 +1,9 @@
 package data;
-
+/**
+ * 
+ * this abstract class represent everything present on the map
+ *
+ */
 public abstract class Element {
 	private Block position;
 

@@ -75,12 +75,24 @@ public class CustomerManager extends MoveCharacters {
 
 	private void addOrder(Customer customer) {
 		List<Ingredient> ingredients = restaurantManager.getMenus().get(customer.getOrder()).getIngredients();
-
+		
 		restaurantManager.add(customer.getId(), restaurantManager.getMenus().get(customer.getOrder()).getIngredients());
 
+		boolean enoughIngredients = true;
 		for (Ingredient ingredient : ingredients) {
 			for (Entry<String, Storage> storage : storageMapInstance.getIngredientsStorage().entrySet()) {
 				if (ingredient.getName().equals(storage.getKey())) {
+					if(storage.getValue().getCurrentCapacity() < ingredient.getNbByMenu()) {
+						enoughIngredients = false;
+					}
+					break;
+				}
+			}
+		}
+		
+		if(enoughIngredients) {
+			for (Ingredient ingredient : ingredients) {
+				for (Entry<String, Storage> storage : storageMapInstance.getIngredientsStorage().entrySet()) {
 					storage.getValue().decrementCapacity(ingredient.getNbByMenu());
 					restaurantManager.addMoney(SimulationUtility.lookingForPrice(ingredient.getName()) * ingredient.getNbByMenu());
 				}

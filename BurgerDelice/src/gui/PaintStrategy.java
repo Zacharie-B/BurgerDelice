@@ -60,7 +60,10 @@ public class PaintStrategy {
 		int y = position.getY();
 		int x = position.getX();
 
-		graphics.setColor(Color.BLUE);
+		if(customer.isHappiness())
+			graphics.setColor(Color.BLUE);
+		else
+			graphics.setColor(Color.RED);
 		graphics.fillOval(x * blockSize, y * blockSize, blockSize, blockSize);
 	}
 

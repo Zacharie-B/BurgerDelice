@@ -3,7 +3,6 @@ package process;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 
 import org.apache.log4j.Logger;
 
@@ -32,11 +31,16 @@ public class CustomerManager extends MoveCharacters {
 		for (Customer customer : customers) {
 			if (!customer.isWaitingOrder()) {
 				moveCustomerBeforeOrder(customer);
-			} else if (customer.isWaitingOrder()
+			}
+			else if(!customer.isHappiness()) {
+				moveCustomerToExit(customer);
+			}
+			else if (customer.isWaitingOrder()
 					&& customer.getPosition().getX() == GameConfiguration.COLUMN_ORDER_RECEPTION
 					&& customer.getTimeWaiting() < GameConfiguration.TIME_FOR_ORDER_RECEPTION) {
 				customer.incrementWaitingTime();
-			} else if (customer.getTimeWaiting() == GameConfiguration.TIME_FOR_ORDER_RECEPTION) {
+			}
+			else if (customer.getTimeWaiting() == GameConfiguration.TIME_FOR_ORDER_RECEPTION) {
 				if(customer.isOnTheRestaurant()) {
 					moveToFindTable(customer);
 				}
@@ -88,6 +92,7 @@ public class CustomerManager extends MoveCharacters {
 			}
 			else {
 				enoughIngredient = false;
+				customer.setHappiness(false);
 			}
 		}
 		if(enoughIngredient) {

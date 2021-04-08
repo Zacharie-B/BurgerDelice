@@ -7,6 +7,7 @@ public class Customer extends Element {
 	private boolean waitingOrder;
 	private boolean onTheRestaurant;
 	private boolean eating = false;
+	private boolean happiness = true;
 	private int timeWaiting = 0;
 	private int timeForEat;
 
@@ -73,6 +74,14 @@ public class Customer extends Element {
 
 	public void setTimeWaiting(int timeWaiting) {
 		this.timeWaiting = timeWaiting;
+	}
+
+	public boolean isHappiness() {
+		return happiness;
+	}
+
+	public void setHappiness(boolean happiness) {
+		this.happiness = happiness;
 	}
 
 	@Override

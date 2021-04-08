@@ -14,7 +14,7 @@ import javax.swing.JTextPane;
 
 import process.RestaurantManager;
 
-public class OrderDisplay extends JPanel {
+public class RestaurantOrderDisplay extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 
@@ -29,7 +29,7 @@ public class OrderDisplay extends JPanel {
 
 	private RestaurantManager restaurantManager;
 
-	public OrderDisplay(RestaurantManager restaurantManager) {
+	public RestaurantOrderDisplay(RestaurantManager restaurantManager) {
 		this.restaurantManager = restaurantManager;
 
 		init();

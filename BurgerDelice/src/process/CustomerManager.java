@@ -1,6 +1,8 @@
 package process;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Map.Entry;
 
 import org.apache.log4j.Logger;
@@ -75,28 +77,25 @@ public class CustomerManager extends MoveCharacters {
 
 	private void addOrder(Customer customer) {
 		List<Ingredient> ingredients = restaurantManager.getMenus().get(customer.getOrder()).getIngredients();
+		List<Ingredient> ingredientsForOrder = new ArrayList<Ingredient>();
 		
-		restaurantManager.add(customer.getId(), restaurantManager.getMenus().get(customer.getOrder()).getIngredients());
-
-		boolean enoughIngredients = true;
+		Map<String, Storage> storages = storageMapInstance.getIngredientsStorage();
+		
+		boolean enoughIngredient = true;
 		for (Ingredient ingredient : ingredients) {
-			for (Entry<String, Storage> storage : storageMapInstance.getIngredientsStorage().entrySet()) {
-				if (ingredient.getName().equals(storage.getKey())) {
-					if(storage.getValue().getCurrentCapacity() < ingredient.getNbByMenu()) {
-						enoughIngredients = false;
-					}
-					break;
-				}
+			if(storages.get(ingredient.getName()).getCurrentCapacity() >= ingredient.getNbByMenu()) {
+				ingredientsForOrder.add(ingredient);
+			}
+			else {
+				enoughIngredient = false;
 			}
 		}
-		
-		if(enoughIngredients) {
-			for (Ingredient ingredient : ingredients) {
-				for (Entry<String, Storage> storage : storageMapInstance.getIngredientsStorage().entrySet()) {
-					storage.getValue().decrementCapacity(ingredient.getNbByMenu());
-					restaurantManager.addMoney(SimulationUtility.lookingForPrice(ingredient.getName()) * ingredient.getNbByMenu());
-				}
+		if(enoughIngredient) {
+			for(Ingredient ingredientOrder : ingredientsForOrder) {
+				storages.get(ingredientOrder.getName()).decrementCapacity(ingredientOrder.getNbByMenu());;
+				restaurantManager.addMoney(SimulationUtility.lookingForPrice(ingredientOrder.getName()) * ingredientOrder.getNbByMenu());
 			}
+			restaurantManager.add(customer.getId(), restaurantManager.getMenus().get(customer.getOrder()).getIngredients());
 		}
 	}
 	

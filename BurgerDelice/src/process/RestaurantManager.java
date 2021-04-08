@@ -235,6 +235,21 @@ public class RestaurantManager {
 		}
 	}
 
+	public boolean paymentVerification() {
+		double payment = 0;
+
+		for (Map.Entry<String, Integer> mapentry : order.getBasket().entrySet()) {
+			payment += mapentry.getValue() * SimulationUtility.lookingForPrice(mapentry.getKey());
+		}
+
+		if (money >= payment) {
+			return true;
+
+		} else {
+			return false;
+		}
+	}
+
 	public void generateCustomer() {
 		if (!takenBlocks.contains(new Block(GameConfiguration.LINE_ENTRY, GameConfiguration.COLUMN_ENTRY))) {
 			if (SimulationUtility.getRandom(0, 10) < 2) {

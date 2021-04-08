@@ -12,6 +12,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextPane;
 
+import process.OrderPayment;
 import process.RestaurantManager;
 
 public class BuyDisplay extends JPanel {
@@ -30,9 +31,12 @@ public class BuyDisplay extends JPanel {
 	private RestaurantManager restaurantManager;
 	private OrderDisplay orderDisplay;
 
+	private OrderPayment orderPayment;
+
 	public BuyDisplay(RestaurantManager restaurantManager, OrderDisplay orderDisplay) {
 		this.restaurantManager = restaurantManager;
 		this.orderDisplay = orderDisplay;
+		this.orderPayment = new OrderPayment(restaurantManager);
 
 		init();
 	}
@@ -63,11 +67,11 @@ public class BuyDisplay extends JPanel {
 	private class BuyBasket implements ActionListener {
 
 		public void actionPerformed(ActionEvent e) {
-			restaurantManager.getOrder().buyBasket();
-			restaurantManager.getOrder().setDelivering(true);
-			
-			basketPane.setText("");
-			orderDisplay.updateOrder();
+			if (restaurantManager.paymentVerification()) {
+				orderPayment.managePayment();
+				basketPane.setText("");
+				orderDisplay.updateOrder();
+			}
 		}
 	}
 }

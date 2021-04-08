@@ -72,12 +72,6 @@ public class BuyDisplay extends JPanel {
 				basketPane.setText("");
 				restaurantOrderDisplay.updateOrder();
 			}
-
-			restaurantManager.getOrder().buyBasket();
-			restaurantManager.getOrder().setDelivering(true);
-
-			basketPane.setText("");
-			restaurantOrderDisplay.updateOrder();
 		}
 	}
 }

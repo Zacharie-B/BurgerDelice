@@ -1,8 +1,8 @@
 package config;
 
 public class GameConfiguration {
-	public static final int WINDOW_WIDTH = 700;
-	public static final int WINDOW_HEIGHT = 700;
+	public static final int WINDOW_WIDTH = 600;
+	public static final int WINDOW_HEIGHT = 600;
 
 	public static final int BLOCK_SIZE = 50;
 
@@ -29,9 +29,9 @@ public class GameConfiguration {
 
 	// Table with all ingredients in the restaurant
 	public static final String INGREDIENT[] = { "Steak", "Poulet pane", "Fish", "Pain", "Salade", "Cornichon",
-			"Cheddar", "Oignon", "Tomate", "Frites moyenne", "Sauce" };
+			"Cheddar", "Oignon", "Tomate", "Frites moyenne", "Sauce"};
 
 	// Table with all ingredient prices
-	public static final double INGREDIENT_PRICES[] = { 1.50, 1.15, 0.90, 0.30, 0.25, 0.20, 0.25, 0.20, 0.20, 0.35, 0.10};
+	public static final double INGREDIENT_PRICES[] = {1.50, 1.15, 0.90, 0.30, 0.25, 0.20, 0.25, 0.20, 0.20, 0.35, 0.10};
 
 }

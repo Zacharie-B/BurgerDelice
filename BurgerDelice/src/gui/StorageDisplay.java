@@ -7,7 +7,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.BorderFactory;
-import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
@@ -51,38 +50,38 @@ public class StorageDisplay extends JPanel {
 	protected JLabel sauceQuantityLabel = new JLabel();
 
 	/**
-	 * Quantity maximum of each ingredient display in window.
-	 */
-	protected JLabel steakQuantityMaxLabel = new JLabel();
-	protected JLabel chickenQuantityMaxLabel = new JLabel();
-	protected JLabel fishQuantityMaxLabel = new JLabel();
-	protected JLabel breadQuantityMaxLabel = new JLabel();
-	protected JLabel cheeseQuantityMaxLabel = new JLabel();
-	protected JLabel tomatoQuantityMaxLabel = new JLabel();
-	protected JLabel saladQuantityMaxLabel = new JLabel();
-	protected JLabel onionQuantityMaxLabel = new JLabel();
-	protected JLabel cornichonQuantityMaxLabel = new JLabel();
-	protected JLabel chipsQuantityMaxLabel = new JLabel();
-	protected JLabel sauceQuantityMaxLabel = new JLabel();
-
-	/**
 	 * Buttons to add quantity to basket.
 	 */
-	protected JButton addSteak = new JButton("Ajouter");
-	protected JButton addChicken = new JButton("Ajouter");
-	protected JButton addFish = new JButton("Ajouter");
-	protected JButton addBread = new JButton("Ajouter");
-	protected JButton addCheese = new JButton("Ajouter");
-	protected JButton addTomato = new JButton("Ajouter");
-	protected JButton addSalad = new JButton("Ajouter");
-	protected JButton addOnion = new JButton("Ajouter");
-	protected JButton addCornichon = new JButton("Ajouter");
-	protected JButton addChips = new JButton("Ajouter");
-	protected JButton addSauce = new JButton("Ajouter");
+	protected MyButton addSteak = new MyButton("Ajouter");
+	protected MyButton addChicken = new MyButton("Ajouter");
+	protected MyButton addFish = new MyButton("Ajouter");
+	protected MyButton addBread = new MyButton("Ajouter");
+	protected MyButton addCheese = new MyButton("Ajouter");
+	protected MyButton addTomato = new MyButton("Ajouter");
+	protected MyButton addSalad = new MyButton("Ajouter");
+	protected MyButton addOnion = new MyButton("Ajouter");
+	protected MyButton addCornichon = new MyButton("Ajouter");
+	protected MyButton addChips = new MyButton("Ajouter");
+	protected MyButton addSauce = new MyButton("Ajouter");
+
+	/**
+	 * Buttons to remove quantity to basket.
+	 */
+	protected MyButton removeSteak = new MyButton("Retirer");
+	protected MyButton removeChicken = new MyButton("Retirer");
+	protected MyButton removeFish = new MyButton("Retirer");
+	protected MyButton removeBread = new MyButton("Retirer");
+	protected MyButton removeCheese = new MyButton("Retirer");
+	protected MyButton removeTomato = new MyButton("Retirer");
+	protected MyButton removeSalad = new MyButton("Retirer");
+	protected MyButton removeOnion = new MyButton("Retirer");
+	protected MyButton removeCornichon = new MyButton("Retirer");
+	protected MyButton removeChips = new MyButton("Retirer");
+	protected MyButton removeSauce = new MyButton("Retirer");
 
 	private StorageMap storageMapInstance = StorageMap.getInstance();
 
-	private Dimension preferredSize = new Dimension(400, 220);
+	private Dimension preferredSize = new Dimension(500, 300);
 
 	private RestaurantManager restaurantManager;
 	private BuyDisplay buyDisplay;
@@ -105,52 +104,74 @@ public class StorageDisplay extends JPanel {
 		setBackground(Color.WHITE);
 		add(new JLabel("Nom"));
 		add(new JLabel("Quantité"));
-		add(new JLabel("Quantité max"));
 		add(new JLabel("Acheter"));
+		add(new JLabel("Retirer"));
 
-		addStorageLabel(steakLabel, steakQuantityLabel, steakQuantityMaxLabel);
+		addStorageLabel(steakLabel, steakQuantityLabel);
 		add(addSteak);
+		add(removeSteak);
 		addSteak.addActionListener(new AddToBasket(0));
+		removeSteak.addActionListener(new RemoveFromBasket(0));
 
-		addStorageLabel(chickenLabel, chickenQuantityLabel, chickenQuantityMaxLabel);
+		addStorageLabel(chickenLabel, chickenQuantityLabel);
 		add(addChicken);
+		add(removeChicken);
 		addChicken.addActionListener(new AddToBasket(1));
+		removeChicken.addActionListener(new RemoveFromBasket(1));
 
-		addStorageLabel(fishLabel, fishQuantityLabel, fishQuantityMaxLabel);
+		addStorageLabel(fishLabel, fishQuantityLabel);
 		add(addFish);
+		add(removeFish);
 		addFish.addActionListener(new AddToBasket(2));
+		removeFish.addActionListener(new RemoveFromBasket(2));
 
-		addStorageLabel(breadLabel, breadQuantityLabel, breadQuantityMaxLabel);
+		addStorageLabel(breadLabel, breadQuantityLabel);
 		add(addBread);
+		add(removeBread);
 		addBread.addActionListener(new AddToBasket(3));
+		removeBread.addActionListener(new RemoveFromBasket(3));
 
-		addStorageLabel(saladLabel, saladQuantityLabel, saladQuantityMaxLabel);
+		addStorageLabel(saladLabel, saladQuantityLabel);
 		add(addCheese);
+		add(removeCheese);
 		addCheese.addActionListener(new AddToBasket(4));
+		removeCheese.addActionListener(new RemoveFromBasket(4));
 
-		addStorageLabel(cornichonLabel, cornichonQuantityLabel, cornichonQuantityMaxLabel);
+		addStorageLabel(cornichonLabel, cornichonQuantityLabel);
 		add(addTomato);
+		add(removeTomato);
 		addTomato.addActionListener(new AddToBasket(5));
+		removeTomato.addActionListener(new RemoveFromBasket(5));
 
-		addStorageLabel(cheeseLabel, cheeseQuantityLabel, cheeseQuantityMaxLabel);
+		addStorageLabel(cheeseLabel, cheeseQuantityLabel);
 		add(addSalad);
+		add(removeSalad);
 		addSalad.addActionListener(new AddToBasket(6));
+		removeSalad.addActionListener(new RemoveFromBasket(6));
 
-		addStorageLabel(onionLabel, onionQuantityLabel, onionQuantityMaxLabel);
+		addStorageLabel(onionLabel, onionQuantityLabel);
 		add(addOnion);
+		add(removeOnion);
 		addOnion.addActionListener(new AddToBasket(7));
+		removeOnion.addActionListener(new RemoveFromBasket(7));
 
-		addStorageLabel(tomatoLabel, tomatoQuantityLabel, tomatoQuantityMaxLabel);
+		addStorageLabel(tomatoLabel, tomatoQuantityLabel);
 		add(addCornichon);
+		add(removeCornichon);
 		addCornichon.addActionListener(new AddToBasket(8));
+		removeCornichon.addActionListener(new RemoveFromBasket(8));
 
-		addStorageLabel(chipsLabel, chipsQuantityLabel, chipsQuantityMaxLabel);
+		addStorageLabel(chipsLabel, chipsQuantityLabel);
 		add(addChips);
+		add(removeChips);
 		addChips.addActionListener(new AddToBasket(9));
+		removeChips.addActionListener(new RemoveFromBasket(9));
 
-		addStorageLabel(sauceLabel, sauceQuantityLabel, sauceQuantityMaxLabel);
+		addStorageLabel(sauceLabel, sauceQuantityLabel);
 		add(addSauce);
+		add(removeSauce);
 		addSauce.addActionListener(new AddToBasket(10));
+		removeSauce.addActionListener(new RemoveFromBasket(10));
 
 		setVisible(true);
 	}
@@ -162,17 +183,14 @@ public class StorageDisplay extends JPanel {
 	 * @param quantityLabel    actually quantity of one ingredient
 	 * @param quantityMaxLabel quantity maximum of one ingredient
 	 */
-	private void addStorageLabel(JLabel jLabel, JLabel quantityLabel, JLabel quantityMaxLabel) {
+	private void addStorageLabel(JLabel jLabel, JLabel quantityLabel) {
 		add(jLabel);
 		jLabel.setBorder(BorderFactory.createMatteBorder(1, 0, 0, 0, Color.gray));
 		quantityLabel.setText(
 				String.valueOf(storageMapInstance.getIngredientToStorage(jLabel.getText()).getCurrentCapacity()));
 		add(quantityLabel);
 		quantityLabel.setBorder(BorderFactory.createMatteBorder(1, 0, 0, 0, Color.gray));
-		quantityMaxLabel
-				.setText(String.valueOf(storageMapInstance.getIngredientToStorage(jLabel.getText()).getCapacityMax()));
-		add(quantityMaxLabel);
-		quantityMaxLabel.setBorder(BorderFactory.createMatteBorder(1, 0, 0, 0, Color.gray));
+
 //		logger.info(jLabel.getText());
 	}
 
@@ -185,10 +203,10 @@ public class StorageDisplay extends JPanel {
 	 * @param quantityMaxLabel quantity maximum of an ingredient that storage can
 	 *                         get
 	 */
-	private void updateStorageIngredient(JLabel quantityLabel, JLabel quantityMaxLabel, String nameIngredient) {
+	private void updateStorageIngredient(JLabel quantityLabel, String nameIngredient) {
 		Storage storage = storageMapInstance.getIngredientToStorage(nameIngredient);
-		quantityLabel.setText(String.valueOf(storage.getCurrentCapacity()));
-		quantityMaxLabel.setText(String.valueOf(storage.getCapacityMax()));
+		quantityLabel.setText(
+				String.valueOf(storage.getCurrentCapacity()) + " / " + String.valueOf(storage.getCapacityMax()));
 	}
 
 	/**
@@ -197,17 +215,17 @@ public class StorageDisplay extends JPanel {
 	 */
 	public void updateStorageDisplay() {
 
-		updateStorageIngredient(steakQuantityLabel, steakQuantityMaxLabel, GameConfiguration.INGREDIENT[0]);
-		updateStorageIngredient(chickenQuantityLabel, chickenQuantityMaxLabel, GameConfiguration.INGREDIENT[1]);
-		updateStorageIngredient(fishQuantityLabel, fishQuantityMaxLabel, GameConfiguration.INGREDIENT[2]);
-		updateStorageIngredient(breadQuantityLabel, breadQuantityMaxLabel, GameConfiguration.INGREDIENT[3]);
-		updateStorageIngredient(saladQuantityLabel, saladQuantityMaxLabel, GameConfiguration.INGREDIENT[4]);
-		updateStorageIngredient(cornichonQuantityLabel, cornichonQuantityMaxLabel, GameConfiguration.INGREDIENT[5]);
-		updateStorageIngredient(cheeseQuantityLabel, cheeseQuantityMaxLabel, GameConfiguration.INGREDIENT[6]);
-		updateStorageIngredient(onionQuantityLabel, onionQuantityMaxLabel, GameConfiguration.INGREDIENT[7]);
-		updateStorageIngredient(tomatoQuantityLabel, tomatoQuantityMaxLabel, GameConfiguration.INGREDIENT[8]);
-		updateStorageIngredient(chipsQuantityLabel, chipsQuantityMaxLabel, GameConfiguration.INGREDIENT[9]);
-		updateStorageIngredient(sauceQuantityLabel, sauceQuantityMaxLabel, GameConfiguration.INGREDIENT[10]);
+		updateStorageIngredient(steakQuantityLabel, GameConfiguration.INGREDIENT[0]);
+		updateStorageIngredient(chickenQuantityLabel, GameConfiguration.INGREDIENT[1]);
+		updateStorageIngredient(fishQuantityLabel, GameConfiguration.INGREDIENT[2]);
+		updateStorageIngredient(breadQuantityLabel, GameConfiguration.INGREDIENT[3]);
+		updateStorageIngredient(saladQuantityLabel, GameConfiguration.INGREDIENT[4]);
+		updateStorageIngredient(cornichonQuantityLabel, GameConfiguration.INGREDIENT[5]);
+		updateStorageIngredient(cheeseQuantityLabel, GameConfiguration.INGREDIENT[6]);
+		updateStorageIngredient(onionQuantityLabel, GameConfiguration.INGREDIENT[7]);
+		updateStorageIngredient(tomatoQuantityLabel, GameConfiguration.INGREDIENT[8]);
+		updateStorageIngredient(chipsQuantityLabel, GameConfiguration.INGREDIENT[9]);
+		updateStorageIngredient(sauceQuantityLabel, GameConfiguration.INGREDIENT[10]);
 
 	}
 
@@ -220,7 +238,21 @@ public class StorageDisplay extends JPanel {
 		}
 
 		public void actionPerformed(ActionEvent e) {
-			restaurantManager.getOrder().addBasket(GameConfiguration.INGREDIENT[number]);
+			restaurantManager.addBasket(GameConfiguration.INGREDIENT[number]);
+			buyDisplay.updateBasket();
+		}
+	}
+
+	private class RemoveFromBasket implements ActionListener {
+
+		private int number;
+
+		public RemoveFromBasket(int number) {
+			this.number = number;
+		}
+
+		public void actionPerformed(ActionEvent e) {
+			restaurantManager.removeBasket(GameConfiguration.INGREDIENT[number]);
 			buyDisplay.updateBasket();
 		}
 	}

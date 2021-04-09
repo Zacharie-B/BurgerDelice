@@ -2,7 +2,10 @@ package data;
 
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * this class represent restaurant's menu
+ *
+ */
 public class Menu {
 
 	private int numberOfMenu;

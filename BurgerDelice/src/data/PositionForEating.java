@@ -1,5 +1,9 @@
 package data;
-
+/**
+ * 
+ *this class represent a position available to eat on the spot
+ *
+ */
 public class PositionForEating extends Block{
 
 	private boolean isOccuped = false;

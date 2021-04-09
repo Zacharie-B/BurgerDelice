@@ -1,7 +1,10 @@
 package data;
 
 import java.util.HashMap;
-
+/**
+ * this class represent the restaurant's order
+ *
+ */
 public class Order {
 
 	private HashMap<String, Integer> basket = new HashMap<String, Integer>();

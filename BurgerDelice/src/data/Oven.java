@@ -1,5 +1,8 @@
 package data;
-
+/**
+ * this class represent the element oven on the map
+ * 
+ */
 public class Oven extends Element {
 
 	private int cookingTime;

@@ -1,5 +1,9 @@
 package data;
-
+/**
+ * 
+ * This class is a map made up of blocks.
+ * 
+ */
 public class RestaurantMap {
 	private Block[][] blocks;
 

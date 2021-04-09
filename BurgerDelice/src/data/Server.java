@@ -1,5 +1,9 @@
 package data;
-
+/**
+ * 
+ * this class represent the employee Server on the map
+ *
+ */
 public class Server extends Employee{
 
 	private int rapidity;

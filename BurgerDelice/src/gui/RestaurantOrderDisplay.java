@@ -21,7 +21,7 @@ public class RestaurantOrderDisplay extends JPanel {
 
 	private JLabel basketLabel = new JLabel("Pas de commande");
 
-	private MyButton getButton = new MyButton("RÃ©cupÃ©rer votre commande");
+	private MyButton getButton = new MyButton("Récupérer votre commande");
 
 	private JTextPane basketPane = new JTextPane();
 	private JScrollPane jScrollPane = new JScrollPane(basketPane);
@@ -55,7 +55,7 @@ public class RestaurantOrderDisplay extends JPanel {
 		String message = "";
 		for (Map.Entry<String, Integer> mapentry : restaurantManager.getOrder().getOrder().entrySet()) {
 			message += mapentry.getKey() + " : " + mapentry.getValue() + " - " 
-				+ mapentry.getValue() * SimulationUtility.lookingIngredientToBuy(mapentry.getKey()) + "â‚¬\n";
+				+ mapentry.getValue() * SimulationUtility.lookingIngredientToBuy(mapentry.getKey()) + " euros \n";
 		}
 		basketPane.setText(message);
 	}
@@ -65,13 +65,13 @@ public class RestaurantOrderDisplay extends JPanel {
 			basketPane.setText("");
 			basketLabel.setText("Pas de commande");
 		} else if (restaurantManager.getOrder().getTimeOrder() < 10) {
-			basketLabel.setText("Commande en prÃ©paration");
+			basketLabel.setText("Commande en préparation");
 		} else if (restaurantManager.getOrder().getTimeOrder() < 22) {
-			basketLabel.setText("Commande expediÃ©e");
+			basketLabel.setText("Commande expediée");
 		} else if (restaurantManager.getOrder().getTimeOrder() < 29) {
 			basketLabel.setText("Commande en livraison");
 		} else if (restaurantManager.getOrder().getTimeOrder() == 30) {
-			basketLabel.setText("Commande livrÃ©e");
+			basketLabel.setText("Commande livrée");
 		}
 	}
 
@@ -81,7 +81,6 @@ public class RestaurantOrderDisplay extends JPanel {
 			if (restaurantManager.getOrder().getTimeOrder() == 30) {
 				restaurantManager.addToStorage();
 			}
-
 		}
 	}
 }

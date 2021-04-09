@@ -179,20 +179,18 @@ public class RestaurantManager {
 		return order;
 	}
 
-	public void setOrder(Order order) {
-		this.order = order;
-	}
-
 	public String toString(Integer index) {
-		String message = "NÂ°" + index + " - Commande : ";
+		String message = "N°" + index + " - Commande : ";
 		for (Ingredient ingredient : orders.get(index)) {
 			message += ingredient.getName() + " : " + ingredient.getNbByMenu() + " -- ";
 		}
-		return message;
+		return message + "\n----------------------------------------------"
+				+ "--------------------------------------------------------------------------------------------------";
 	}
 
 	public void incrementTimeOrder() {
 		if (order.isDelivering()) {
+			order.setFinished(false);
 			order.incrementTimeOrder();
 		}
 		if (order.getTimeOrder() == 30) {
@@ -204,8 +202,9 @@ public class RestaurantManager {
 		for (Map.Entry<String, Integer> mapentry : order.getOrder().entrySet()) {
 			storageMapInstance.addIngredient(mapentry.getKey(), mapentry.getValue());
 		}
-		order = new Order();
-
+		order.setOrder(new HashMap<String, Integer>());
+		order.setTimeOrder(0);
+		order.setFinished(true);
 	}
 
 	public void addBasket(String name) {
@@ -235,12 +234,21 @@ public class RestaurantManager {
 
 	public boolean paymentVerification() {
 		double payment = 0;
+		boolean isExceeding = false;
 
 		for (Map.Entry<String, Integer> mapentry : order.getBasket().entrySet()) {
-			payment += mapentry.getValue() * SimulationUtility.lookingForPrice(mapentry.getKey());
+			if (mapentry.getValue() + storageMapInstance.getIngredientToStorage(mapentry.getKey())
+					.getCurrentCapacity() > storageMapInstance.getIngredientToStorage(mapentry.getKey())
+							.getCapacityMax()) {
+				isExceeding = true;
+			}
 		}
 
-		if (money >= payment) {
+		for (Map.Entry<String, Integer> mapentry : order.getBasket().entrySet()) {
+			payment += mapentry.getValue() * SimulationUtility.lookingIngredientToBuy(mapentry.getKey());
+		}
+
+		if (money >= payment && !isExceeding) {
 			return true;
 
 		} else {

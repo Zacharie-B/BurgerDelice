@@ -91,10 +91,12 @@ public class RestaurantGUI extends JFrame implements Runnable {
 			restaurantManager.incrementTimeOrder();
 
 			customerManager.moveCustomer();
+			managementDisplay.orderDisplay();
 			managementDisplay.moneyDisplay();
 
 			storageManagementDisplay.getStorageDisplay().updateStorageDisplay();
 			storageManagementDisplay.getOrderDisplay().updateTime();
+			storageManagementDisplay.getBuyDisplay().updateMoney();
 
 			payOfEmployee.managePayment();
 

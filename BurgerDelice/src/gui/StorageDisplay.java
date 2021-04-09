@@ -104,7 +104,7 @@ public class StorageDisplay extends JPanel {
 		setLayout(grid);
 		setBackground(Color.WHITE);
 		add(new JLabel("Nom"));
-		add(new JLabel("Quantité"));
+		add(new JLabel("QuantitÃ©"));
 		add(new JLabel("Acheter"));
 		add(new JLabel("Retirer"));
 

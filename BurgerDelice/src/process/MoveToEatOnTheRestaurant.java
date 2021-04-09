@@ -1,15 +1,10 @@
 package process;
 
-import org.apache.log4j.Logger;
-
 import data.Customer;
 import data.PositionForEating;
-import log.LoggerUtility;
 
 public class MoveToEatOnTheRestaurant extends MoveCharacters{
-	
-	private Logger logger = LoggerUtility.getLogger(MoveToEatOnTheRestaurant.class, "process");
-	
+		
 	/**
 	 * Move the customer in order to eat on the restaurant.
 	 * @param customer who eat on the restaurant 

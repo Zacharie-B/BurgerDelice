@@ -13,10 +13,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
-import org.apache.log4j.Logger;
-
 import data.Ingredient;
-import log.LoggerUtility;
 import process.RestaurantManager;
 
 public class MenuDisplay extends JPanel {
@@ -93,8 +90,6 @@ public class MenuDisplay extends JPanel {
 	private List<Ingredient> ingredientsInMenu;
 
 	private RestaurantManager restaurantManager;
-
-	private Logger logger = LoggerUtility.getLogger(MenuDisplay.class, "gui");
 
 	private Dimension preferredSize = new Dimension(500, 250);
 

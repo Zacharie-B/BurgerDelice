@@ -11,16 +11,15 @@ import org.apache.log4j.PropertyConfigurator;
  * @author Zacharie
  */
 public class LoggerUtility {
-	private static final String PROCESS_LOG_CONFIG = "src/log/log4j-process.properties";
-	private static final String GUI_LOG_CONFIG = "src/log/log4j-gui.properties";
+	private static final String PROCESS_LOG_CONFIG = "BurgerDelice\\src\\log\\log4j-process.properties";
+	private static final String GUI_LOG_CONFIG = "BurgerDelice\\src\\log\\log4j-gui.properties";
 
 	public static Logger getLogger(Class<?> logClass, String logFileType) {
 		if (logFileType.equals("process")) {
 			PropertyConfigurator.configure(PROCESS_LOG_CONFIG);
-		} else if(logFileType.equals("gui")) {
+		} else if (logFileType.equals("gui")) {
 			PropertyConfigurator.configure(GUI_LOG_CONFIG);
-		}
-		else {
+		} else {
 			throw new IllegalArgumentException("Unknown log file type !");
 		}
 

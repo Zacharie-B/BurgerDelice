@@ -20,7 +20,7 @@ public class BuyDisplay extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 
-	private JLabel basketLabel = new JLabel("Votre crédit : ");
+	private JLabel basketLabel = new JLabel("Votre crÃ©dit : ");
 
 	private MyButton buyButton = new MyButton("Payer");
 
@@ -49,6 +49,7 @@ public class BuyDisplay extends JPanel {
 		basketLabel.setOpaque(true);
 
 		basketPane.setPreferredSize(preferredSize);
+		basketPane.setEditable(false);
 
 		buyButton.addActionListener(new BuyBasket());
 
@@ -74,13 +75,13 @@ public class BuyDisplay extends JPanel {
 				orderPayment.managePayment();
 				basketPane.setText("");
 				restaurantOrderDisplay.updateOrder();
-				basketLabel.setText("Votre crédit : " + (double) Math.round(restaurantManager.getMoney() * 100) / 100);
+				basketLabel.setText("Votre crÃ©dit : " + (double) Math.round(restaurantManager.getMoney() * 100) / 100);
 			}
 		}
 	}
 
 	public void updateMoney() {
 		basketLabel
-				.setText("Votre crédit : " + (double) Math.round(restaurantManager.getMoney() * 100) / 100 + " euros");
+				.setText("Votre crÃ©dit : " + (double) Math.round(restaurantManager.getMoney() * 100) / 100 + " euros");
 	}
 }

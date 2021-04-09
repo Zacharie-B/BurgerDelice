@@ -41,18 +41,16 @@ public class TestSalarie {
 	}
 	
 	@Test
-	public void testPayment() {
-		//System.out.println("Money = " + this.restaurantManager.getMoney());
+	public void testPaymentOrder() {
 		assertEquals(0, (long) this.restaurantManager.getMoney());
 		for(int time=0 ; time<5 ; time++) {
 			customerManager.moveCustomer();
 		}
-		//System.out.println("Money = " + this.restaurantManager.getMoney());
 		assertNotEquals(0, this.restaurantManager.getMoney());
 	}
 	
 	@Test
-	public void PayOfEmployee() {
+	public void testPayOfEmployee() {
 		this.restaurantManager.addMoney(100000);
 		assertEquals(100000, (long) this.restaurantManager.getMoney());
 		this.payOfEmployee.managePayment();

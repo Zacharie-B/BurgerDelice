@@ -21,7 +21,7 @@ public class RestaurantOrderDisplay extends JPanel {
 
 	private JLabel basketLabel = new JLabel("Pas de commande");
 
-	private MyButton getButton = new MyButton("RÃ©cupÃ©rer votre commande");
+	private MyButton getButton = new MyButton("Récupérer votre commande");
 
 	private JTextPane basketPane = new JTextPane();
 	private JScrollPane jScrollPane = new JScrollPane(basketPane);

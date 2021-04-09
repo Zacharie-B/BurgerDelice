@@ -29,9 +29,11 @@ public class RestaurantGUI extends JFrame implements Runnable {
 	private RestaurantBuilder restaurantBuilder;
 
 	private GameDisplay gameDisplay;
+
 	private ManagementDisplay managementDisplay;
 	private StorageManagementDisplay storageManagementDisplay;
 	private MenuManagementDisplay menuManagementDisplay;
+	private MenuOrderDisplay menuOrderDisplay;
 
 	private boolean status = false;
 
@@ -62,8 +64,10 @@ public class RestaurantGUI extends JFrame implements Runnable {
 
 		storageManagementDisplay = new StorageManagementDisplay(restaurantManager);
 		menuManagementDisplay = new MenuManagementDisplay(restaurantManager);
+		menuOrderDisplay = new MenuOrderDisplay(restaurantManager);
 
-		managementDisplay = new ManagementDisplay(restaurantManager, storageManagementDisplay, menuManagementDisplay);
+		managementDisplay = new ManagementDisplay(restaurantManager, storageManagementDisplay, menuOrderDisplay,
+				menuManagementDisplay);
 		managementDisplay.setPreferredSize(preferredSize);
 
 		payOfEmployee = new PayOfEmployee(restaurantManager, 100);
@@ -91,8 +95,8 @@ public class RestaurantGUI extends JFrame implements Runnable {
 			restaurantManager.incrementTimeOrder();
 
 			customerManager.moveCustomer();
-			managementDisplay.orderDisplay();
-			managementDisplay.moneyDisplay();
+			managementDisplay.getMenuOrderDisplay().orderDisplay();
+			managementDisplay.getMenuOrderDisplay().moneyDisplay();
 
 			storageManagementDisplay.getStorageDisplay().updateStorageDisplay();
 			storageManagementDisplay.getOrderDisplay().updateTime();

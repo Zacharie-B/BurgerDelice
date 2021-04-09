@@ -17,7 +17,7 @@ public class MenuManagementDisplay extends JPanel {
 	private IngredientInfoDisplay ingredientInfoDisplay;
 	
 	private JLabel menuLabel = new JLabel("Modifier les menus");
-	private JLabel priceLabel = new JLabel("Prix d'achat et de vente d'ingrÃ©dient");
+	private JLabel priceLabel = new JLabel("Prix d'achat et de vente d'ingrédient");
 
 	public MenuManagementDisplay(RestaurantManager restaurantManager) {
 		menuDisplay = new MenuDisplay(restaurantManager);

@@ -6,18 +6,11 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
-import java.util.List;
-import java.util.Map.Entry;
 
 import javax.swing.BorderFactory;
 import javax.swing.JComboBox;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTextPane;
-import javax.swing.SwingConstants;
 
-import data.Ingredient;
 import process.RestaurantManager;
 
 /**
@@ -29,15 +22,11 @@ public class ManagementDisplay extends JPanel implements ItemListener {
 
 	private static final long serialVersionUID = 1L;
 
-	private RestaurantManager restaurantManager;
-
 	private JPanel cards = new JPanel(new CardLayout());
 
-	private JLabel moneyLabel = new JLabel();
-
-	private JTextPane orderDisplay = new JTextPane();
 	private StorageManagementDisplay storageManagementDisplay;
 	private MenuManagementDisplay menuManagementDisplay;
+	private MenuOrderDisplay menuOrderDisplay;
 
 	private Dimension preferredSize = new Dimension(300, 550);
 
@@ -49,10 +38,11 @@ public class ManagementDisplay extends JPanel implements ItemListener {
 	 * @param storageDisplay
 	 */
 	public ManagementDisplay(RestaurantManager restaurantManager, StorageManagementDisplay storageManagementDisplay,
-			MenuManagementDisplay menuManagementDisplay) {
-		this.restaurantManager = restaurantManager;
+			MenuOrderDisplay menuOrderDisplay, MenuManagementDisplay menuManagementDisplay) {
+
 		this.storageManagementDisplay = storageManagementDisplay;
 		this.menuManagementDisplay = menuManagementDisplay;
+		this.menuOrderDisplay = menuOrderDisplay;
 
 		initInformationDisplay();
 	}
@@ -62,7 +52,8 @@ public class ManagementDisplay extends JPanel implements ItemListener {
 	 * the storage and the menus.
 	 */
 	protected void initInformationDisplay() {
-		JPanel comboBoxPane = new JPanel(); // use FlowLayout
+
+		JPanel comboBoxPane = new JPanel(); // Use FlowLayout
 		comboBoxPane.setBackground(Color.WHITE);
 		String comboBoxItems[] = { "Commande", "Menu", "Stockage" };
 		JComboBox<String> cb = new JComboBox<String>(comboBoxItems);
@@ -70,25 +61,16 @@ public class ManagementDisplay extends JPanel implements ItemListener {
 		cb.addItemListener(this);
 		comboBoxPane.add(cb);
 
-		moneyLabel.setPreferredSize(new Dimension(500, 20));
-		moneyLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		moneyLabel.setBackground(new Color(32, 207, 190));
-		moneyLabel.setForeground(Color.WHITE);
-		moneyLabel.setOpaque(true);
-
-		JScrollPane jScrollPaneOrder = new JScrollPane(orderDisplay);
-
-		cards.add(jScrollPaneOrder, "Commande");
+		cards.add(menuOrderDisplay, "Commande");
 		cards.add(menuManagementDisplay, "Menu");
 		cards.add(storageManagementDisplay, "Stockage");
 
 		storageManagementDisplay.setPreferredSize(preferredSize);
-		jScrollPaneOrder.setPreferredSize(preferredSize);
 		menuManagementDisplay.setPreferredSize(preferredSize);
 
 		setLayout(new BorderLayout());
+
 		add(comboBoxPane, BorderLayout.NORTH);
-		add(moneyLabel, BorderLayout.CENTER);
 		add(cards, BorderLayout.SOUTH);
 
 		setBorder(BorderFactory.createMatteBorder(0, 1, 0, 0, Color.LIGHT_GRAY));
@@ -96,25 +78,21 @@ public class ManagementDisplay extends JPanel implements ItemListener {
 		setVisible(true);
 	}
 
-	/**
-	 * Display the orders in preparing in a preparing display..
-	 */
-	protected void orderDisplay() {
-		String message = "";
-		for (Entry<Integer, List<Ingredient>> mapentry : restaurantManager.getOrders().entrySet()) {
-			message += restaurantManager.toString(mapentry.getKey()) + "\n";
-		}
-		orderDisplay.setText(message);
-	}
-
-	protected void moneyDisplay() {
-		moneyLabel.setText("Revenu du restaurant : " + (double) Math.round(restaurantManager.getMoney() * 100) / 100
-				+ " euros \n");
-	}
-
 	public void itemStateChanged(ItemEvent evt) {
 		CardLayout cl = (CardLayout) (cards.getLayout());
 		cl.show(cards, (String) evt.getItem());
+	}
+
+	public StorageManagementDisplay getStorageManagementDisplay() {
+		return storageManagementDisplay;
+	}
+
+	public MenuManagementDisplay getMenuManagementDisplay() {
+		return menuManagementDisplay;
+	}
+
+	public MenuOrderDisplay getMenuOrderDisplay() {
+		return menuOrderDisplay;
 	}
 
 }

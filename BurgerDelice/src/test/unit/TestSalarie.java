@@ -11,6 +11,7 @@ import data.Block;
 import data.Customer;
 import data.RestaurantMap;
 import process.CustomerManager;
+import process.OrderPayment;
 import process.PayOfEmployee;
 import process.Payment;
 import process.RestaurantBuilder;
@@ -24,6 +25,7 @@ public class TestSalarie {
 	private CustomerManager customerManager;
 	private Customer customer;
 	private Payment payOfEmployee;
+	private OrderPayment orderPayment;
 	
 	@Before
 	public void prepareTest() {
@@ -36,12 +38,13 @@ public class TestSalarie {
 		this.customerManager = new CustomerManager(this.restaurantManager);
 		this.restaurantManager.addCustomer(this.customer);
 		this.restaurantManager.addTakenBlock(block);
+		this.orderPayment = new OrderPayment(restaurantManager);
 		
 		this.payOfEmployee = new PayOfEmployee(restaurantManager, 1);
 	}
 	
 	@Test
-	public void testPaymentOrder() {
+	public void testPaymentMenu() {
 		assertEquals(0, (long) this.restaurantManager.getMoney());
 		for(int time=0 ; time<5 ; time++) {
 			customerManager.moveCustomer();
@@ -55,5 +58,15 @@ public class TestSalarie {
 		assertEquals(100000, (long) this.restaurantManager.getMoney());
 		this.payOfEmployee.managePayment();
 		assertNotEquals(100000, this.restaurantManager.getMoney());
+	}
+	
+	@Test
+	public void testPaymentOrder() {
+		this.restaurantManager.addBasket("Steak");
+		this.restaurantManager.addMoney(100000);
+		assertEquals(100000, (long) this.restaurantManager.getMoney());
+		this.orderPayment.managePayment();
+		assertNotEquals(100000, this.restaurantManager.getMoney());
+		
 	}
 }

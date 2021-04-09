@@ -26,6 +26,9 @@ public class CustomerManager extends MoveCharacters {
 		this.restaurantManager = restaurantManager;
 	}
 
+	/**
+	 * Choose the movement of all customers in function if he go order, take order, etc.
+	 */
 	public void moveCustomer() {
 		List<Customer> customers = restaurantManager.getCustomers();
 		for (Customer customer : customers) {
@@ -53,6 +56,10 @@ public class CustomerManager extends MoveCharacters {
 		}
 	}
 
+	/**
+	 * Move one customer until first server to order.
+	 * @param customer who move to order
+	 */
 	private void moveCustomerBeforeOrder(Customer customer) {
 		Block block = customer.getPosition();
 
@@ -65,12 +72,20 @@ public class CustomerManager extends MoveCharacters {
 		}
 	}
 
+	/**
+	 * Move one customer until second server to get his order.
+	 * @param customer who move to get his order
+	 */
 	private void moveCustomerToOrder(Customer customer) {
 		if (customer.getPosition().getX() > GameConfiguration.COLUMN_ORDER_RECEPTION) {
 			moveLeftCollision(customer.getPosition(), restaurantManager);
 		}
 	}
 
+	/**
+	 * Move one customer until the exit.
+	 * @param customer
+	 */
 	private void moveCustomerToExit(Customer customer) {
 		int error = moveLeftCollision(customer.getPosition(), restaurantManager);
 		if(error == 1)
@@ -81,6 +96,10 @@ public class CustomerManager extends MoveCharacters {
 		restaurantManager.removeOrder(customer.getId());
 	}
 
+	/**
+	 * Add an order for a customer if there are enough ingredients, do nothing else.
+	 * @param customer who ordering
+	 */
 	private void addOrder(Customer customer) {
 		List<Ingredient> ingredients = restaurantManager.getMenus().get(customer.getOrder()).getIngredients();
 		List<Ingredient> ingredientsForOrder = new ArrayList<Ingredient>();
@@ -106,6 +125,10 @@ public class CustomerManager extends MoveCharacters {
 		}
 	}
 	
+	/**
+	 * Move the customer until he find a table to eat on the restaurant.
+	 * @param customer who eat on the restaurant
+	 */
 	private void moveToFindTable(Customer customer) {
 		moveToEatOnTheRestaurant.eatOnTable(customer, restaurantManager);
 

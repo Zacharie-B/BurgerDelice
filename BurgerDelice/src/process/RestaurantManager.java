@@ -74,6 +74,10 @@ public class RestaurantManager {
 	public void addCustomer(Customer customer) {
 		customers.add(customer);
 	}
+	
+	public void removeCustomer(Customer customer) {
+		customers.remove(customer);
+	}
 
 	public void addTakenBlock(Block block) {
 		takenBlocks.add(block);
@@ -180,7 +184,7 @@ public class RestaurantManager {
 	}
 
 	public String toString(Integer index) {
-		String message = "N°" + index + " - Commande : ";
+		String message = "Nï¿½" + index + " - Commande : ";
 		for (Ingredient ingredient : orders.get(index)) {
 			message += ingredient.getName() + " : " + ingredient.getNbByMenu() + " -- ";
 		}

@@ -13,7 +13,7 @@ public class MoveToEatOnTheRestaurant extends MoveCharacters{
 	/**
 	 * Move the customer in order to eat on the restaurant.
 	 * @param customer who eat on the restaurant 
-	 * @param restaurantManager
+	 * @param restaurantManager 
 	 */
 	public void eatOnTable(Customer customer, RestaurantManager restaurantManager) {
 		if(!customer.isEating()) {
@@ -23,6 +23,9 @@ public class MoveToEatOnTheRestaurant extends MoveCharacters{
 			int columnDistance = 0;
 			int currentDistance = 0;
 			PositionForEating positionForEating = null;
+			/**
+			 * Find the nearest position.
+			 */
 			for(PositionForEating eating : restaurantManager.getPositionForEatings()) {
 				if(eating != null) {
 					if(!eating.isOccuped()) {

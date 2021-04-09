@@ -2,6 +2,10 @@ package process;
 
 import data.Block;
 
+/**
+ * Manage the characters movement, protecting of the collision. 
+ *
+ */
 public class MoveCharacters extends BasicMove {
 
 	public int moveTopCollision(Block block, RestaurantManager restaurantManager) {

@@ -1,7 +1,5 @@
 package test.unit;
 
-import static org.junit.Assert.assertNotNull;
-
 import org.junit.Before;
 import org.junit.Test;
 
@@ -9,7 +7,7 @@ import data.RestaurantMap;
 import process.RestaurantBuilder;
 
 /**
- * the Stock are implemented in the code, we can changer the stocke
+ * the Stock are implemented in the code, we can change the stock
  * 
  * @author QA
  *

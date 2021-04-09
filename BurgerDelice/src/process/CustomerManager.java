@@ -4,15 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.log4j.Logger;
-
 import config.GameConfiguration;
 import data.Block;
 import data.Customer;
 import data.Ingredient;
 import data.Storage;
 import data.StorageMap;
-import log.LoggerUtility;
 
 public class CustomerManager extends MoveCharacters {
 
@@ -20,7 +17,6 @@ public class CustomerManager extends MoveCharacters {
 
 	private RestaurantManager restaurantManager;
 	private MoveToEatOnTheRestaurant moveToEatOnTheRestaurant = new MoveToEatOnTheRestaurant();
-	private Logger log = LoggerUtility.getLogger(CustomerManager.class, "process");
 	
 	public CustomerManager(RestaurantManager restaurantManager) {
 		this.restaurantManager = restaurantManager;

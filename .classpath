@@ -6,5 +6,6 @@
 	<classpathentry kind="lib" path="BurgerDelice/libs/junit-4.13.1.jar"/>
 	<classpathentry kind="lib" path="BurgerDelice/libs/log4j-1.2.15.jar"/>
 	<classpathentry kind="lib" path="BurgerDelice/libs/log4j.jar"/>
+	<classpathentry kind="lib" path="C:/Users/vofre/Downloads/junit-4.13.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

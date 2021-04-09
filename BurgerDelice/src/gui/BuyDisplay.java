@@ -12,7 +12,6 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextPane;
 
-import config.GameConfiguration;
 import process.OrderPayment;
 import process.RestaurantManager;
 import process.SimulationUtility;
@@ -21,7 +20,7 @@ public class BuyDisplay extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 
-	private JLabel basketLabel = new JLabel("Votre panier : ");
+	private JLabel basketLabel = new JLabel("Votre crédit : ");
 
 	private MyButton buyButton = new MyButton("Payer");
 
@@ -61,8 +60,8 @@ public class BuyDisplay extends JPanel {
 	public void updateBasket() {
 		String message = "";
 		for (Map.Entry<String, Integer> mapentry : restaurantManager.getOrder().getBasket().entrySet()) {
-				message += mapentry.getKey() + " : " + mapentry.getValue() + " - " 
-			+ mapentry.getValue() * SimulationUtility.lookingIngredientToBuy(mapentry.getKey()) + "â‚¬\n";
+			message += mapentry.getKey() + " : " + mapentry.getValue() + " - "
+					+ mapentry.getValue() * SimulationUtility.lookingIngredientToBuy(mapentry.getKey()) + " euros\n";
 		}
 		basketPane.setText(message);
 	}
@@ -70,11 +69,18 @@ public class BuyDisplay extends JPanel {
 	private class BuyBasket implements ActionListener {
 
 		public void actionPerformed(ActionEvent e) {
-			if (restaurantManager.paymentVerification()) {
+			if (restaurantManager.paymentVerification() && !restaurantManager.getOrder().isDelivering()
+					&& restaurantManager.getOrder().isFinished()) {
 				orderPayment.managePayment();
 				basketPane.setText("");
 				restaurantOrderDisplay.updateOrder();
+				basketLabel.setText("Votre crédit : " + (double) Math.round(restaurantManager.getMoney() * 100) / 100);
 			}
 		}
+	}
+
+	public void updateMoney() {
+		basketLabel
+				.setText("Votre crédit : " + (double) Math.round(restaurantManager.getMoney() * 100) / 100 + " euros");
 	}
 }

@@ -10,6 +10,7 @@ public class Order {
 	private int timeOrder = 0;
 
 	private boolean isDelivering = false;
+	private boolean isFinished = true;
 
 	public Order() {
 		super();
@@ -54,6 +55,14 @@ public class Order {
 
 	public void setDelivering(boolean isDelivering) {
 		this.isDelivering = isDelivering;
+	}
+
+	public boolean isFinished() {
+		return isFinished;
+	}
+
+	public void setFinished(boolean isFinished) {
+		this.isFinished = isFinished;
 	}
 
 }

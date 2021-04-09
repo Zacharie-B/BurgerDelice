@@ -24,7 +24,7 @@ public class MenuDisplay extends JPanel {
 	private static final long serialVersionUID = 1L;
 
 	private JLabel menuLabel = new JLabel("Composition");
-	private JLabel quantityLabel = new JLabel("QuantitÃ©");
+	private JLabel quantityLabel = new JLabel("Quantité");
 	private JLabel addLabel = new JLabel("Ajouter");
 	private JLabel removeLabel = new JLabel("Retirer");
 
@@ -96,7 +96,7 @@ public class MenuDisplay extends JPanel {
 
 	private Logger logger = LoggerUtility.getLogger(MenuDisplay.class, "gui");
 
-	private Dimension preferredSize = new Dimension(500, 300);
+	private Dimension preferredSize = new Dimension(500, 250);
 
 	public MenuDisplay(RestaurantManager restaurantManager) {
 

@@ -44,7 +44,7 @@ public class MoveToEatOnTheRestaurant extends MoveCharacters{
 			if(Math.abs(lineDistance) > Math.abs(columnDistance)) {
 				if(lineDistance > 0) {
 					int error = moveLeftCollision(customer.getPosition(), restaurantManager);
-					if(error == 1) 
+					if(error == 1)
 						moveDownCollision(customer.getPosition(), restaurantManager);
 				}
 				else {

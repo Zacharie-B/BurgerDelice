@@ -13,6 +13,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextPane;
 
 import process.RestaurantManager;
+import process.SimulationUtility;
 
 public class RestaurantOrderDisplay extends JPanel {
 
@@ -53,7 +54,8 @@ public class RestaurantOrderDisplay extends JPanel {
 	public void updateOrder() {
 		String message = "";
 		for (Map.Entry<String, Integer> mapentry : restaurantManager.getOrder().getOrder().entrySet()) {
-			message += mapentry.getKey() + " : " + mapentry.getValue() + "\n";
+			message += mapentry.getKey() + " : " + mapentry.getValue() + " - " 
+				+ mapentry.getValue() * SimulationUtility.lookingIngredientToBuy(mapentry.getKey()) + "€\n";
 		}
 		basketPane.setText(message);
 	}

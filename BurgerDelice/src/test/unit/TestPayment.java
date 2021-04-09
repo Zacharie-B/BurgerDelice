@@ -17,7 +17,7 @@ import process.Payment;
 import process.RestaurantBuilder;
 import process.RestaurantManager;
 
-public class TestSalarie {
+public class TestPayment {
 
 	private RestaurantManager restaurantManager;
 	private RestaurantBuilder restaurantBuilder;
@@ -25,7 +25,7 @@ public class TestSalarie {
 	private CustomerManager customerManager;
 	private Customer customer;
 	private Payment payOfEmployee;
-	private OrderPayment orderPayment;
+	private Payment orderPayment;
 	
 	@Before
 	public void prepareTest() {

@@ -12,7 +12,10 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextPane;
 
+import config.GameConfiguration;
+import process.OrderPayment;
 import process.RestaurantManager;
+import process.SimulationUtility;
 
 public class BuyDisplay extends JPanel {
 
@@ -28,11 +31,14 @@ public class BuyDisplay extends JPanel {
 	private Dimension preferredSize = new Dimension(250, 100);
 
 	private RestaurantManager restaurantManager;
-	private OrderDisplay orderDisplay;
+	private RestaurantOrderDisplay restaurantOrderDisplay;
 
-	public BuyDisplay(RestaurantManager restaurantManager, OrderDisplay orderDisplay) {
+	private OrderPayment orderPayment;
+
+	public BuyDisplay(RestaurantManager restaurantManager, RestaurantOrderDisplay restaurantOrderDisplay) {
 		this.restaurantManager = restaurantManager;
-		this.orderDisplay = orderDisplay;
+		this.orderPayment = new OrderPayment(restaurantManager);
+		this.restaurantOrderDisplay = restaurantOrderDisplay;
 
 		init();
 	}
@@ -55,7 +61,8 @@ public class BuyDisplay extends JPanel {
 	public void updateBasket() {
 		String message = "";
 		for (Map.Entry<String, Integer> mapentry : restaurantManager.getOrder().getBasket().entrySet()) {
-			message += mapentry.getKey() + " : " + mapentry.getValue() + "\n";
+				message += mapentry.getKey() + " : " + mapentry.getValue() + " - " 
+			+ mapentry.getValue() * SimulationUtility.lookingIngredientToBuy(mapentry.getKey()) + "€\n";
 		}
 		basketPane.setText(message);
 	}
@@ -63,11 +70,11 @@ public class BuyDisplay extends JPanel {
 	private class BuyBasket implements ActionListener {
 
 		public void actionPerformed(ActionEvent e) {
-			restaurantManager.getOrder().buyBasket();
-			restaurantManager.getOrder().setDelivering(true);
-			
-			basketPane.setText("");
-			orderDisplay.updateOrder();
+			if (restaurantManager.paymentVerification()) {
+				orderPayment.managePayment();
+				basketPane.setText("");
+				restaurantOrderDisplay.updateOrder();
+			}
 		}
 	}
 }

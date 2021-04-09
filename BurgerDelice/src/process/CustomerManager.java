@@ -74,7 +74,9 @@ public class CustomerManager extends MoveCharacters {
 	private void moveCustomerToExit(Customer customer) {
 		int error = moveLeftCollision(customer.getPosition(), restaurantManager);
 		if(error == 1)
-			moveDownCollision(customer.getPosition(), restaurantManager);
+			error = moveDownCollision(customer.getPosition(), restaurantManager);
+			if(error == 1)
+				moveRightCollision(customer.getPosition(), restaurantManager);
 
 		restaurantManager.removeOrder(customer.getId());
 	}

@@ -5,8 +5,6 @@ import data.Server;
 
 /**
  * This class manage the salary of employees in used to all the money of the restaurant.
- * 
- * @author Zacharie
  *
  */
 public class PayOfEmployee implements Payment{

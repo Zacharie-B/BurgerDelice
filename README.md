@@ -14,7 +14,7 @@ for the restaurant ; and the left part shows the customers in action.
 - go in project > src > test > open "TestGame" class > run
 
 ## Autors
-Zacharie-B    FredFrV   Samy-cho    22-AS
+Zacharie-B  FredFrV  Samy-cho  22-AS
 
 ## Licence
 All rights reserved.

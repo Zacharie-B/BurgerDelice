@@ -7,13 +7,13 @@ We did a GUI where there are to right the orders of each customer until he take 
 for the restaurant ; and the left part shows the customers in action.
 
 ## Execute the project
-<br/>Import the project in Eclipse :
+Import the project in Eclipse :
 - get at minimal the jdk version 8
 - "clone a git repository" in the "Git Repositories" section
 - right click on git repository > "import projects"
 - go in project > src > test > open "TestGame" class > run
 
-## Autors
+## Authors
 Zacharie-B  FredFrV  Samy-cho  22-AS
 
 ## Licence
